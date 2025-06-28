@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +15,16 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getGeneralConfig(): Observable<GeneralConfigResponse[]> {
-    return this.http.get<GeneralConfigResponse[]>(
+  getGeneralConfig(): Observable<GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined> {
+    return this.http.get<GeneralConfigResponse>(
       `${environment.apiBaseUrl}/config`,
+      { headers: this.headers }
+    );
+  }
+
+  getRoutes(): Observable<GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined> {
+    return this.http.get<GeneralConfigResponse>(
+      `${environment.apiBaseUrl}/pages?select=name,routes`,
       { headers: this.headers }
     );
   }
@@ -40,4 +47,9 @@ export interface Page {
   id: number;
   name: string;
   template: string;
+}
+
+export interface Language {
+  id: number;
+  code: string;
 }
