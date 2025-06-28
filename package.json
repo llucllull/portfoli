@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "dev": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portfoli": "node dist/portfoli/server/server.mjs"
+    "build:ssr": "ng build && ng run portfoli:server",
+    "serve:ssr": "node dist/portfoli/server/server.mjs",
+    "ssr": "npm run build:ssr && npm run serve:ssr"
   },
   "private": true,
   "dependencies": {
