@@ -15,17 +15,43 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getGeneralConfig(): Observable<GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined> {
+  getGeneralConfig(): Observable<
+    GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
+  > {
     return this.http.get<GeneralConfigResponse>(
       `${environment.apiBaseUrl}/config`,
       { headers: this.headers }
     );
   }
 
-  getRoutes(): Observable<GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined> {
+  getRoutes(): Observable<
+    GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
+  > {
     return this.http.get<GeneralConfigResponse>(
       `${environment.apiBaseUrl}/pages?select=name,routes`,
       { headers: this.headers }
+    );
+  }
+
+  getPageById(
+    pageId: string | number | undefined
+  ): Observable<any | HttpResponse<any> | undefined> {
+    return this.http.get<any>(
+      `${environment.apiBaseUrl}/pages?id=eq.${pageId}`,
+      {
+        headers: this.headers,
+      }
+    );
+  }
+
+  getPageByName(
+    pageName: string | number | undefined
+  ): Observable<any | HttpResponse<any> | undefined> {
+    return this.http.get<any>(
+      `${environment.apiBaseUrl}/pages?name=eq.${pageName}`,
+      {
+        headers: this.headers,
+      }
     );
   }
 }
