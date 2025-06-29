@@ -15,44 +15,32 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
+  private get<T>(url: string): Observable<T> {
+    return this.http.get<T>(url, { headers: this.headers });
+  }
+
   getGeneralConfig(): Observable<
     GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
   > {
-    return this.http.get<GeneralConfigResponse>(
-      `${environment.apiBaseUrl}/config`,
-      { headers: this.headers }
-    );
+    return this.get<GeneralConfigResponse>(`${environment.apiBaseUrl}/config`);
   }
 
   getRoutes(): Observable<
     GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
   > {
-    return this.http.get<GeneralConfigResponse>(
-      `${environment.apiBaseUrl}/pages?select=name,routes`,
-      { headers: this.headers }
-    );
+    return this.get<GeneralConfigResponse>(`${environment.apiBaseUrl}/pages?select=name,routes`);
   }
 
   getPageById(
     pageId: string | number | undefined
   ): Observable<any | HttpResponse<any> | undefined> {
-    return this.http.get<any>(
-      `${environment.apiBaseUrl}/pages?id=eq.${pageId}`,
-      {
-        headers: this.headers,
-      }
-    );
+    return this.get<any>(`${environment.apiBaseUrl}/pages?id=eq.${pageId}`);
   }
 
   getPageByName(
     pageName: string | number | undefined
   ): Observable<any | HttpResponse<any> | undefined> {
-    return this.http.get<any>(
-      `${environment.apiBaseUrl}/pages?name=eq.${pageName}`,
-      {
-        headers: this.headers,
-      }
-    );
+    return this.get<any>(`${environment.apiBaseUrl}/pages?name=eq.${pageName}`);
   }
 }
 
