@@ -19,9 +19,7 @@ export class ApiService {
     return this.http.get<T>(url, { headers: this.headers });
   }
 
-  getGeneralConfig(): Observable<
-    GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
-  > {
+  getGeneralConfig(): Observable<GeneralConfigResponse> {
     return this.get<GeneralConfigResponse>(`${environment.apiBaseUrl}/config`);
   }
 
@@ -29,7 +27,7 @@ export class ApiService {
     GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
   > {
     return this.get<GeneralConfigResponse>(
-      `${environment.apiBaseUrl}/pages?select=name,routes`
+      `${environment.apiBaseUrl}/pages?select=name,routes,home`
     );
   }
 
