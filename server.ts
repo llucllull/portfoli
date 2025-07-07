@@ -27,6 +27,7 @@ export function app(): express.Express {
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
+    const acceptLanguage = headers['accept-language'] || '';
 
     commonEngine
       .render({
@@ -34,7 +35,10 @@ export function app(): express.Express {
         documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: browserDistFolder,
-        providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
+        providers: [
+          { provide: APP_BASE_HREF, useValue: baseUrl },
+          { provide: 'REQUEST_LANGUAGE', useValue: acceptLanguage }
+        ],
       })
       .then((html) => res.send(html))
       .catch((err) => next(err));
