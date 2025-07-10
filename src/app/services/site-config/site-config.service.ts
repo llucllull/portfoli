@@ -121,4 +121,9 @@ export class SiteConfigService {
       localStorage.setItem('language', JSON.stringify(language));
     }
   }
+
+  getAvailableLanguages(): Language[] {
+    const config: any = this.config$.value;
+    return config?.[0]?.languages ?? [];
+  }
 }

@@ -47,24 +47,31 @@ export class RoutesService {
   }
 
   private setAngularRoutes(routes: PageRoute[]) {
-    const lang = this.siteSvc.getCurrentLanguage()?.code ?? 'es';
+    const langs =
+      this.siteSvc.getAvailableLanguages()?.map((l) => l.code) ?? [];
     this.homeRoute = routes.find((r) => r.home) ?? null;
 
-    const childrenRoutes: Route[] = routes
-      .map((r) => {
-        const rawSlug = r.routes[lang];
-        const slug = rawSlug?.replace(/^\/|\/$/g, '');
-        if (!slug) return null;
+    const childrenRoutes: Route[] = [];
 
-        return {
+    for (const lang of langs) {
+      for (const r of routes) {
+        const rawSlug = r.routes?.[lang];
+        const slug = rawSlug?.replace(/^\/|\/$/g, '');
+        if (!slug) continue;
+
+        childrenRoutes.push({
           path: slug,
           loadComponent: () => getComponent(r.template),
-        };
-      })
-      .filter(Boolean) as Route[];
+        });
+      }
+    }
 
-    if (this.homeRoute?.routes?.[lang]) {
-      const homeSlug = this.homeRoute.routes[lang].replace(/^\/|\/$/g, '');
+    const redirectLang = langs[0] ?? 'es';
+    const homeSlug = this.homeRoute?.routes?.[redirectLang]?.replace(
+      /^\/|\/$/g,
+      ''
+    );
+    if (homeSlug) {
       childrenRoutes.unshift({
         path: '',
         redirectTo: homeSlug,
@@ -78,34 +85,6 @@ export class RoutesService {
         import('../../pages/404/404.component').then((m) => m.ErrorComponent),
     });
 
-    const angularRoutes: Route[] = routes
-      .map((r) => {
-        const rawSlug = r.routes[lang];
-        const slug = rawSlug?.replace(/^\/|\/$/g, '');
-        if (!slug) return null;
-
-        return {
-          path: slug,
-          loadComponent: () => getComponent(r.template),
-        };
-      })
-      .filter(Boolean) as Route[];
-
-    if (this.homeRoute?.routes?.[lang]) {
-      const homeSlug = this.homeRoute.routes[lang].replace(/^\/|\/$/g, '');
-      angularRoutes.unshift({
-        path: '',
-        redirectTo: homeSlug,
-        pathMatch: 'full',
-      });
-    }
-
-    angularRoutes.push({
-      path: '**',
-      loadComponent: () =>
-        import('../../pages/404/404.component').then((m) => m.ErrorComponent),
-    });
-
-    this.router.resetConfig(angularRoutes);
+    this.router.resetConfig(childrenRoutes);
   }
 }
