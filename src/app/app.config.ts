@@ -1,10 +1,9 @@
 import { APP_INITIALIZER, ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { RoutesService } from './services/routes/routes.service';
+import { MapperService } from 'ui-lib';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     },
     provideClientHydration(),
     provideHttpClient(withFetch()),
+    MapperService,
   ],
 };
 
