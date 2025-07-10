@@ -36,7 +36,6 @@ export class SiteConfigService {
       tap((config) => {
         // Si es HttpResponse, saca el body
         const data = (config as any).body ? (config as any).body : config;
-        console.log('Languages recibidos:', data?.[0]?.languages);
         const languages = data?.[0]?.languages ?? [];
         this.config$.next(data);
 

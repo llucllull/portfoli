@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { PageRoute } from '../routes/routes.service';
 
 @Injectable({
   providedIn: 'root',
@@ -23,11 +24,9 @@ export class ApiService {
     return this.get<GeneralConfigResponse>(`${environment.apiBaseUrl}/config`);
   }
 
-  getRoutes(): Observable<
-    GeneralConfigResponse | HttpResponse<GeneralConfigResponse> | undefined
-  > {
-    return this.get<GeneralConfigResponse>(
-      `${environment.apiBaseUrl}/pages?select=name,routes,home`
+  getRoutes(): Observable<PageRoute[]> {
+    return this.get<PageRoute[]>(
+      `${environment.apiBaseUrl}/pages?select=name,routes,home,template`
     );
   }
 
