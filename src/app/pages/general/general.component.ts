@@ -1,4 +1,4 @@
-import { TopSliderComponent } from 'ui-lib';
+import { TopSliderComponent } from '@lluc_llull/ui-lib';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 

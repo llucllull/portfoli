@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { RoutesService } from './services/routes/routes.service';
-import { MapperService } from 'ui-lib';
+import { MapperService } from '@lluc_llull/ui-lib';
 
 export const appConfig: ApplicationConfig = {
   providers: [
