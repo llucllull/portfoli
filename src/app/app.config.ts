@@ -4,14 +4,16 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { RoutesService } from './services/routes/routes.service';
 import { MapperService } from '@lluc_llull/ui-lib';
+import { SiteConfigService } from './services/site-config/site-config.service';
+import { firstValueFrom } from 'rxjs';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter([]),
     {
       provide: APP_INITIALIZER,
-      useFactory: routesInitializer,
-      deps: [RoutesService],
+      useFactory: appInitializer,
+      deps: [SiteConfigService, RoutesService],
       multi: true,
     },
     provideClientHydration(),
@@ -20,6 +22,12 @@ export const appConfig: ApplicationConfig = {
   ],
 };
 
-export function routesInitializer(routesService: RoutesService) {
-  return () => routesService.init().toPromise();
+export function appInitializer(
+  siteConfig: SiteConfigService,
+  routes: RoutesService
+) {
+  return async () => {
+    await firstValueFrom(siteConfig.init());
+    await firstValueFrom(routes.init());
+  };
 }
