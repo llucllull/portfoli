@@ -1,20 +1,16 @@
 import { Inject, Injectable, PLATFORM_ID, Optional } from '@angular/core';
 import {
   ApiService,
-  GeneralConfigResponse,
-  Language,
 } from '../api/api.service';
 import {
   BehaviorSubject,
   catchError,
-  filter,
-  map,
-  Observable,
   tap,
   throwError,
 } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
+import { GeneralConfigResponse, Language } from '@lluc_llull/ui-lib';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +24,7 @@ export class SiteConfigService {
   constructor(
     private api: ApiService,
     @Inject(PLATFORM_ID) private platformId: Object,
-    @Optional() @Inject('REQUEST_LANGUAGE') private requestLanguage: string // <-- añade esto
+    @Optional() @Inject('REQUEST_LANGUAGE') private requestLanguage: string
   ) {}
 
   init() {
