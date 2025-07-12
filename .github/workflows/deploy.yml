@@ -26,4 +26,15 @@ jobs:
       run: npm install
 
     - name: Build Angular app
-      run: npm run build -- --configuration=production
+      run: |
+        if [ "${{ github.ref }}" == "refs/heads/prod" ]; then
+          echo "🔧 Building production version"
+          npm run build:ssr
+        else
+          echo "🛠️ Building development version"
+          npm run build -- --configuration=production
+        fi
+
+    - name: Trigger Render Deploy
+      if: github.ref == 'refs/heads/prod'
+      run: curl -X POST https://api.render.com/deploy/srv-d1p8g7mr433s73d4dh30?key=_960sBQDmxA
