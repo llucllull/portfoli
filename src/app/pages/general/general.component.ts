@@ -1,10 +1,12 @@
-import { TopSliderComponent } from '@lluc_llull/ui-lib';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BasePageComponent } from '../../shared/base-page/base-page.component';
+import { HeroSectionComponent } from '@lluc_llull/ui-lib';
 
 const COMPONENTS = [
-  TopSliderComponent
+  HeroSectionComponent
 ];
+
 @Component({
   selector: 'app-general',
   standalone: true,
@@ -13,6 +15,4 @@ const COMPONENTS = [
   styleUrl: './general.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GeneralComponent {
-
-}
+export class GeneralComponent extends BasePageComponent {}

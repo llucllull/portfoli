@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import { PageRoute } from '../routes/routes.service';
+import { GeneralConfigResponse, PageComponent, PageComponentTranslation } from '@lluc_llull/ui-lib';
 
 @Injectable({
   providedIn: 'root',
@@ -46,7 +47,17 @@ export class ApiService {
     pageId: number,
     langId: number
   ): Observable<PageComponentTranslation[]> {
-    const url = `${environment.apiBaseUrl}/page_component_translations?lang_id=eq.${langId}&page_component!inner.page_id=eq.${pageId}&select=*,page_component(*)`;
+    const url = `${environment.apiBaseUrl}/page_component_translations?lang_id=eq.${langId}&page_components.page_id=eq.${pageId}&select=*,page_components(*)`;
+    return this.get<PageComponentTranslation[]>(url);
+  }
+
+  getPageComponentTranslationsByComponentIds(
+    componentIds: number[],
+    langId: number
+  ): Observable<PageComponentTranslation[]> {
+    if (!componentIds.length) return of([]);
+    const ids = componentIds.join(',');
+    const url = `${environment.apiBaseUrl}/page_component_translations?lang_id=eq.${langId}&page_component_id=in.(${ids})&select=*,page_component:page_component_id(*,component:component_id(*))`;
     return this.get<PageComponentTranslation[]>(url);
   }
 
@@ -56,43 +67,3 @@ export class ApiService {
     );
   }
 }
-
-export interface GeneralConfigResponse {
-  id: number;
-  name: string;
-  favicons: string | null;
-  languages: {
-    id: number;
-    code: string;
-  }[];
-  logos: string | null;
-  pages: Page[];
-  theme: string;
-}
-
-export interface Page {
-  id: number;
-  name: string;
-  template: string;
-}
-
-export interface Language {
-  id: number;
-  code: string;
-}
-
-export interface PageComponentTranslation {
-  id: number;
-  page_component_id: number;
-  lang_id: number;
-  props: any;
-  page_component?: PageComponent;
-}
-
-export interface PageComponent {
-  id: number;
-  page_id: number;
-  component_id: number;
-  order: number;
-}
-

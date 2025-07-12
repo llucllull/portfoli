@@ -24,7 +24,7 @@
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.5",
-    "@lluc_llull/ui-lib": "^0.1.1",
+    "@lluc_llull/ui-lib": "^0.1.2",
     "@supabase/supabase-js": "^2.50.2",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",

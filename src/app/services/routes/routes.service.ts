@@ -1,11 +1,11 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, Observable, of, tap } from 'rxjs';
-import { ApiService } from '../api/api.service';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
-import { Route, Router } from '@angular/router';
+import { NavigationEnd, Route, Router } from '@angular/router';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { ApiService } from '../api/api.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 import { getComponent } from './component-loader';
-import { LayoutComponent } from '../../layout/layout.component';
 
 export interface PageRoute {
   name: string;
@@ -34,6 +34,7 @@ export class RoutesService {
       const cached = this.transferState.get(ROUTES_KEY, []);
       this.routes$.next(cached);
       this.setAngularRoutes(cached);
+      this.setupNavigationListener(cached);
       return of(cached);
     }
 
@@ -42,6 +43,7 @@ export class RoutesService {
         this.transferState.set(ROUTES_KEY, routes);
         this.routes$.next(routes);
         this.setAngularRoutes(routes);
+        this.setupNavigationListener(routes);
       })
     );
   }
@@ -86,5 +88,32 @@ export class RoutesService {
     });
 
     this.router.resetConfig(childrenRoutes);
+    this.detectLanguageFromCurrentUrl(routes);
+  }
+
+  private setupNavigationListener(routes: PageRoute[]) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.detectLanguageFromCurrentUrl(routes);
+    });
+  }
+
+  private detectLanguageFromCurrentUrl(routes: PageRoute[]) {
+    const currentUrl = this.router.url;
+    const availableLanguages = this.siteSvc.getAvailableLanguages();
+    
+    for (const lang of availableLanguages) {
+      for (const route of routes) {
+        const routePath = route.routes?.[lang.code];
+        if (routePath && currentUrl.includes(routePath.replace(/^\/|\/$/g, ''))) {
+          const currentLanguage = this.siteSvc.getCurrentLanguage();
+          if (currentLanguage?.code !== lang.code) {
+            this.siteSvc.setLanguage(lang);
+          }
+          return;
+        }
+      }
+    }
   }
 }

@@ -1,2 +1,31 @@
-<p>general works!</p>
-<lib-top-slider></lib-top-slider>
+@if (pageConfig$ | async; as pageData) {
+    <div>
+        @for (component of pageData.body; track $index) {
+            @if (component.name) {
+                @switch (component.name.toLowerCase()) {
+                    @case ('hero-section') {
+                        <ng-container
+                            *ngTemplateOutlet="
+                                heroSection;
+                                context: { data: component }
+                            "
+                        ></ng-container>
+                    }
+                }
+            }
+        }
+    </div>
+}
+
+<ng-template #heroSection let-data="data">
+    @if (data?.props; as props) {
+        @defer (on immediate) {
+            <lib-hero-section
+                [title]="props.title"
+                [subtitle]="props.subtitle"
+                [text]="props.text"
+                [buttons]="props.buttons"
+            ></lib-hero-section>
+        }
+    }
+</ng-template>
