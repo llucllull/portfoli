@@ -12,8 +12,6 @@ export const getComponent = (template: string): Promise<any> => {
         (m) => m.ContactComponent
       );
 
-    // Añade aquí más templates
-
     default:
       return import('../../pages/404/404.component').then(
         (m) => m.ErrorComponent
