@@ -74,13 +74,13 @@ export class ApiService {
     );
   }
 
-  getNavLinks(langId: number): Observable<any[]> {
-    const url = `${environment.apiBaseUrl}/nav_link_translations?lang_id=eq.${langId}&select=*,nav_link:nav_link_id(*)`;
+  getNavLinks(langCode: string): Observable<any[]> {
+    const url = `${environment.apiBaseUrl}/nav_link_translations?language_code=eq.${langCode}&select=label,nav_link:nav_link_id(name,linktype,children,active,order,page:page_id(routes))`;
     return this.get<any[]>(url);
   }
 
-  getSocialLinks(langId: number): Observable<any[]> {
-    const url = `${environment.apiBaseUrl}/social_link_translations?lang_code=eq.${langId}&select=*,social_link:social_link_id(*)`;
+  getSocialLinks(langCode: string): Observable<any[]> {
+    const url = `${environment.apiBaseUrl}/social_link_translations?language_code=eq.${langCode}&select=label,social_link:social_link_id(name,url,icon,order,active)`;
     return this.get<any[]>(url);
   }
 
