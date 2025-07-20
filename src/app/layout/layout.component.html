@@ -1,5 +1,20 @@
-<header>Header</header>
+@if (header$ | async; as headerComponent) {
+  @if (headerComponent?.name) {
+    @switch (headerComponent.name.toLowerCase()) {
+      @case ('header-clear') {
+        @if (headerComponent?.props; as props) {
+          <lib-header-clear
+            [lang]="props.lang"
+            [navItems]="props.navItems"
+          ></lib-header-clear>
+        }
+      }
+    }
+  }
+}
+
 <main>
   <ng-content></ng-content>
 </main>
+
 <footer>Footer</footer>

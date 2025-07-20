@@ -64,10 +64,17 @@ export class BasePageComponent implements OnInit {
                   )
                   .pipe(
                     map((translations) => {
-                      const bodyComponents = this.mapComponentsToBody(
-                        components,
-                        translations
-                      );
+                      const componentsWithProps = translations
+                        .sort((a, b) => (a.page_component?.order ?? 0) - (b.page_component?.order ?? 0))
+                        .map((translation) => {
+                          const name = translation.page_component && translation.page_component.component ? translation.page_component.component.name : undefined;
+                          return {
+                            name,
+                            order: translation.page_component?.order ?? 0,
+                            props: translation?.props || {},
+                          };
+                        });
+                      const bodyComponents = this.mapperService.mapComponents(componentsWithProps);
                       return {
                         ...pageData,
                         body: bodyComponents,
@@ -98,35 +105,6 @@ export class BasePageComponent implements OnInit {
         );
       })
     );
-  }
-
-  private mapComponentsToBody(
-    components: any[],
-    translations: any[]
-  ): BodyComponent<any>[] {
-    if (!components || !translations) return [];
-
-    const componentsWithProps = components
-      .sort((a, b) => a.order - b.order)
-      .map((component) => {
-        const translation = translations.find(
-          (t) => t.page_component_id === component.id
-        );
-        
-        let name = `component-${component.component_id}`;
-        if (translation?.page_component?.component?.name) {
-          name = translation.page_component.component.name;
-        }
-        return {
-          name,
-          order: component.order,
-          props: translation?.props || {},
-        };
-      });
-
-    const mappedComponents = this.mapperService.mapComponents(componentsWithProps);
-    
-    return mappedComponents;
   }
 
   getTitle(): string {
