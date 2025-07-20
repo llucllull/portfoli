@@ -3,7 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { PageRoute } from '../routes/routes.service';
-import { GeneralConfigResponse, PageComponent, PageComponentTranslation } from '@lluc_llull/ui-lib';
+import {
+  GeneralConfigResponse,
+  PageComponent,
+  PageComponentTranslation,
+} from '@lluc_llull/ui-lib';
 
 @Injectable({
   providedIn: 'root',
@@ -57,13 +61,34 @@ export class ApiService {
   ): Observable<PageComponentTranslation[]> {
     if (!componentIds.length) return of([]);
     const ids = componentIds.join(',');
-    const url = `${environment.apiBaseUrl}/page_component_translations?lang_id=eq.${langId}&page_component_id=in.(${ids})&select=*,page_component:page_component_id(*,component:component_id(*))`;
+    const url =
+      `${environment.apiBaseUrl}/page_component_translations` +
+      `?lang_id=eq.${langId}&page_component_id=in.(${ids})` +
+      `&select=id,lang_id,props,page_component:page_component_id(component:component_id(name))`;
     return this.get<PageComponentTranslation[]>(url);
   }
 
   getPageComponents(pageId: number): Observable<PageComponent[]> {
     return this.get<PageComponent[]>(
       `${environment.apiBaseUrl}/page_components?page_id=eq.${pageId}&select=*`
+    );
+  }
+
+  getNavLinks(langCode: string): Observable<any[]> {
+    const url = `${environment.apiBaseUrl}/nav_link_translations?language_code=eq.${langCode}&select=label,nav_link:nav_link_id(name,linktype,children,active,order,external_url,page:page_id(routes))`;
+    return this.get<any[]>(url);
+  }
+
+  getSocialLinks(langCode: string): Observable<any[]> {
+    const url = `${environment.apiBaseUrl}/social_link_translations?language_code=eq.${langCode}&select=label,social_link:social_link_id(name,url,icon,order,active)`;
+    return this.get<any[]>(url);
+  }
+
+  getPageByTemplate(
+    template: string
+  ): Observable<any | HttpResponse<any> | undefined> {
+    return this.get<any>(
+      `${environment.apiBaseUrl}/pages?template=eq.${template}`
     );
   }
 }
