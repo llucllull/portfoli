@@ -75,7 +75,7 @@ export class ApiService {
   }
 
   getNavLinks(langCode: string): Observable<any[]> {
-    const url = `${environment.apiBaseUrl}/nav_link_translations?language_code=eq.${langCode}&select=label,nav_link:nav_link_id(name,linktype,children,active,order,page:page_id(routes))`;
+    const url = `${environment.apiBaseUrl}/nav_link_translations?language_code=eq.${langCode}&select=label,nav_link:nav_link_id(name,linktype,children,active,order,external_url,page:page_id(routes))`;
     return this.get<any[]>(url);
   }
 
