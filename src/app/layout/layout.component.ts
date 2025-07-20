@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { HeaderClearComponent } from '@lluc_llull/ui-lib';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { LayoutService } from '../services/layout/layout.service';
 
 const COMPONENTS = [
   HeaderClearComponent,
@@ -15,5 +18,8 @@ const COMPONENTS = [
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
-  
+  private readonly layoutService = inject(LayoutService);
+
+  header$: Observable<any> = this.layoutService.header$;
+  footer$: Observable<any> = this.layoutService.footer$;
 }
