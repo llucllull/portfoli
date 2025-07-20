@@ -1,14 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MapperService } from '@lluc_llull/ui-lib';
-import { combineLatest, of } from 'rxjs';
+import { Observable, combineLatest, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { LayoutComponent } from './layout/layout.component';
 import { ApiService } from './services/api/api.service';
 import { LayoutService } from './services/layout/layout.service';
 import { RoutesService } from './services/routes/routes.service';
-import { SiteConfigService } from './services/site-config/site-config.service';
 import { TEMPLATES } from './services/routes/templates';
+import { SiteConfigService } from './services/site-config/site-config.service';
 
 @Component({
   selector: 'app-root',
@@ -24,11 +24,13 @@ export class AppComponent implements OnInit {
   private readonly mapperService = inject(MapperService);
   private readonly routesService = inject(RoutesService);
 
+  private mapGlobalComponents(componentsWithProps: any[], langCode: string): Observable<any[]> {
+    return of(componentsWithProps);
+  }
+
   ngOnInit(): void {
-    // Inicializa la configuración global e idioma
     this.siteConfig.init().subscribe({
       next: () => {
-        // Inicializa rutas dinámicas después de tener idiomas/configuración
         this.routesService.init().subscribe();
       },
       error: (err) => {
@@ -36,7 +38,6 @@ export class AppComponent implements OnInit {
       },
     });
 
-    // Inicializa el layout global
     combineLatest([
       this.siteConfig.getLanguage$(),
       this.apiService.getPageByTemplate(TEMPLATES.GLOBAL),
@@ -47,10 +48,17 @@ export class AppComponent implements OnInit {
           if (!page) return of([]);
 
           return this.apiService.getPageComponents(page.id).pipe(
-            switchMap((components) =>
-              this.apiService
+            switchMap((components) => {
+              const componentIds = components.map((c: any) => c.id);
+              
+              if (componentIds.length === 0) {
+                console.log('No component IDs found, returning empty array');
+                return of([]);
+              }
+
+              return this.apiService
                 .getPageComponentTranslationsByComponentIds(
-                  components.map((c) => c.id),
+                  componentIds,
                   lang.id
                 )
                 .pipe(
@@ -67,24 +75,27 @@ export class AppComponent implements OnInit {
                         return {
                           name,
                           order: translation.page_component?.order ?? 0,
-                          props: translation?.props || {},
+                          props: translation.props || {},
                         };
                       });
 
-                    const mappedComponents =
-                      this.mapperService.mapComponents(componentsWithProps);
+                    return this.mapGlobalComponents(componentsWithProps, lang.code).pipe(
+                      map((componentsWithNav) => {
+                        const mappedComponents = this.mapperService.mapComponents(componentsWithNav);
 
-                    const headerComponent = mappedComponents.find(
-                      (c) => c.name === 'header-clear'
+                        const headerComponent = mappedComponents.find(
+                          (c) => c.name === 'header-clear'
+                        );
+                        if (headerComponent) {
+                          this.layoutService.setHeader(headerComponent);
+                        }
+                        return mappedComponents;
+                      })
                     );
-                    if (headerComponent) {
-                      this.layoutService.setHeader(headerComponent);
-                    }
-
-                    return mappedComponents;
-                  })
-                )
-            )
+                  }),
+                  switchMap((result) => result)
+                );
+            })
           );
         })
       )
