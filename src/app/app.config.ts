@@ -6,6 +6,7 @@ import { RoutesService } from './services/routes/routes.service';
 import { MapperService } from '@lluc_llull/ui-lib';
 import { SiteConfigService } from './services/site-config/site-config.service';
 import { firstValueFrom } from 'rxjs';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     },
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    MapperService,
+    MapperService, provideAnimationsAsync(),
   ],
 };
 
