@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import { PageRoute } from '../routes/routes.service';
 import {
   GeneralConfigResponse,
   PageComponent,
   PageComponentTranslation,
 } from '@lluc_llull/ui-lib';
+import { Observable, of } from 'rxjs';
+import { environment } from '../../../environments/environment';
+import { PageRoute } from '../routes/routes.service';
 
 @Injectable({
   providedIn: 'root',
@@ -89,6 +89,12 @@ export class ApiService {
   ): Observable<any | HttpResponse<any> | undefined> {
     return this.get<any>(
       `${environment.apiBaseUrl}/pages?template=eq.${template}`
+    );
+  }
+
+  getLangs(langCode: string): Observable<any[]> {
+    return this.get<any[]>(
+      `${environment.apiBaseUrl}/lang?active=eq.true&select=*,lang_translations!lang_translations_lang_code_fkey(*)&lang_translations.lang_code=eq.${langCode}`
     );
   }
 }
