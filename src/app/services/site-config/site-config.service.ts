@@ -19,7 +19,7 @@ export class SiteConfigService {
   private config$ = new BehaviorSubject<GeneralConfigResponse | undefined>(
     undefined
   );
-  private language$ = new BehaviorSubject<Language | null>(null);
+  public language$ = new BehaviorSubject<Language | null>(null);
 
   constructor(
     private api: ApiService,
