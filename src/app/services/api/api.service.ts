@@ -5,7 +5,7 @@ import {
   PageComponent,
   PageComponentTranslation,
 } from '@lluc_llull/ui-lib';
-import { Observable, of } from 'rxjs';
+import { forkJoin, map, Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { PageRoute } from '../routes/routes.service';
 
@@ -92,9 +92,17 @@ export class ApiService {
     );
   }
 
-  getLangs(langCode: string): Observable<any[]> {
-    return this.get<any[]>(
-      `${environment.apiBaseUrl}/lang?active=eq.true&select=*,lang_translations!lang_translations_lang_code_fkey(*)&lang_translations.lang_code=eq.${langCode}`
+  getLangsAndTranslations(): Observable<any[]> {
+    const langs$ = this.get<any[]>(`${environment.apiBaseUrl}/lang?active=eq.true`);
+    const translations$ = this.get<any[]>(`${environment.apiBaseUrl}/lang_translations`);
+  
+    return forkJoin([langs$, translations$]).pipe(
+      map(([langs, translations]) =>
+        langs.map(lang => ({
+          ...lang,
+          lang_translations: translations.filter(t => t.lang_code === lang.code)
+        }))
+      )
     );
   }
 }
