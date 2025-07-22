@@ -1,9 +1,8 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HeaderClearComponent, LangModalComponent } from '@lluc_llull/ui-lib';
+import { HeaderClearComponent, LangModalComponent, UiLibLangItemI } from '@lluc_llull/ui-lib';
 import { Observable } from 'rxjs';
-import { UiLibLangItemI } from '../../../../ui-lib/projects/ui-lib/src/lib/interfaces/ui-lib-lang-item.interface';
 import { ApiService } from '../services/api/api.service';
 import { LayoutService } from '../services/layout/layout.service';
 import { SiteConfigService } from '../services/site-config/site-config.service';
