@@ -1,15 +1,18 @@
 @if (header$ | async; as headerComponent) {
-  @if (headerComponent?.name) {
-    @switch (headerComponent.name.toLowerCase()) {
-      @case ('header-clear') {
-        @if (headerComponent?.props; as props) {
-          <lib-header-clear
-            [lang]="props.lang"
-            [navItems]="props.navItems"
-            (langModal)="openLanguagesModal()"
-          ></lib-header-clear>
-        }
-      }
+  @if (headerComponent?.props; as props) {
+    @if (!screen.isXs()) {
+      <lib-header-clear
+        [lang]="props.lang"
+        [navItems]="props.navItems"
+        (langModal)="openLanguagesModal()"
+      ></lib-header-clear>
+    }
+    @if (screen.isXs()) {
+      <lib-header-mobile
+        [lang]="props.lang"
+        [navItems]="props.navItems"
+        (langModal)="openLanguagesModal()"
+      ></lib-header-mobile>
     }
   }
 }
@@ -17,5 +20,3 @@
 <main>
   <ng-content></ng-content>
 </main>
-
-<footer>Footer</footer>
