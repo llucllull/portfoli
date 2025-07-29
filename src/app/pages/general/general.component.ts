@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BasePageComponent } from '../../shared/base-page/base-page.component';
-import { HeroSectionComponent } from '@lluc_llull/ui-lib';
+import { HeroSectionComponent, SectionIntroComponent } from '@lluc_llull/ui-lib';
 
 const COMPONENTS = [
-  HeroSectionComponent
+  HeroSectionComponent,
+  SectionIntroComponent
 ];
 
 @Component({

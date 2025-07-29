@@ -11,6 +11,14 @@
                             "
                         ></ng-container>
                     }
+                    @case ('section-intro') {
+                        <ng-container
+                            *ngTemplateOutlet="
+                                sectionIntro;
+                                context: { data: component }
+                            "
+                        ></ng-container>
+                    }
                 }
             }
         }
@@ -26,6 +34,20 @@
                 [text]="props.text"
                 [buttons]="props.buttons"
             ></lib-hero-section>
+        }
+    }
+</ng-template>
+
+<ng-template #sectionIntro let-data="data">
+    @if (data?.props; as props) {
+        @defer (on immediate) {
+            <lib-section-intro
+                [pretitle]="props.pretitle"
+                [title]="props.title"
+                [subtitle]="props.subtitle"
+                [text]="props.text"
+                [button]="props.button"
+            ></lib-section-intro>
         }
     }
 </ng-template>
