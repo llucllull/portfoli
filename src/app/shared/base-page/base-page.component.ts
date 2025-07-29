@@ -39,68 +39,89 @@ export class BasePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageConfig$ = combineLatest([
-      this.route.params,
+      this.route.url,
       this.siteConfig.getLanguage$().pipe(distinctUntilChanged())
     ]).pipe(
-      switchMap(([params, currentLanguage]) => {
-        const pageName = params['page'] || 'home';
-        return this.apiService.getPageByName(pageName).pipe(
-          switchMap((pageResponse) => {
-            const page = (pageResponse as any)?.body
-              ? (pageResponse as any).body
-              : pageResponse;
-            const pageData = page?.[0];
+      switchMap(([urlSegments, currentLanguage]) => {
+        // Obtener el path actual de la URL
+        const currentPath = urlSegments.map(segment => segment.path).join('/');
+        
+        // Buscar la página que corresponde a este path
+        return this.apiService.getRoutes().pipe(
+          switchMap((routes) => {
+            const currentPage = routes.find(route => 
+              Object.values(route.routes).some(routePath => 
+                routePath.replace(/^\/|\/$/g, '') === currentPath
+              )
+            );
+            
+            const pageName = currentPage?.name || 'home';
+            
+            return this.apiService.getPageByName(pageName).pipe(
+              switchMap((pageResponse) => {
+                const page = (pageResponse as any)?.body
+                  ? (pageResponse as any).body
+                  : pageResponse;
+                const pageData = page?.[0];
 
-            if (!pageData) return of(null);
 
-            return this.apiService.getPageComponents(pageData.id).pipe(
-              switchMap((components) => {
-                const componentIds = components.map((c) => c.id);
-                const langId = currentLanguage?.id || 1;
-                return this.apiService
-                  .getPageComponentTranslationsByComponentIds(
-                    componentIds,
-                    langId
-                  )
-                  .pipe(
-                    map((translations) => {
-                      const componentsWithProps = translations
-                        .sort((a, b) => (a.page_component?.order ?? 0) - (b.page_component?.order ?? 0))
-                        .map((translation) => {
-                          const name = translation.page_component && translation.page_component.component ? translation.page_component.component.name : undefined;
-                          return {
-                            name,
-                            order: translation.page_component?.order ?? 0,
-                            props: translation?.props || {},
-                          };
-                        });
-                      const bodyComponents = this.mapperService.mapComponents(componentsWithProps);
-                      return {
-                        ...pageData,
-                        body: bodyComponents,
-                      };
-                    }),
-                    catchError((error) => {
-                      console.error('Error loading page components:', error);
+                if (!pageData) return of(null);
+
+                return this.apiService.getPageComponents(pageData.id).pipe(
+                  switchMap((components) => {
+                    const componentIds = components.map((c) => c.id);
+                    const langId = currentLanguage?.id || 1;
+                    
+                    if (componentIds.length === 0) {
                       return of({
                         ...pageData,
                         body: [],
                       });
-                    })
-                  );
+                    }
+                    
+                    return this.apiService
+                      .getPageComponentTranslationsByComponentIds(componentIds, langId)
+                      .pipe(
+                        map((translations) => {
+                          const componentsWithProps = translations
+                            .sort((a, b) => (a.page_component?.order ?? 0) - (b.page_component?.order ?? 0))
+                            .map((translation) => {
+                              const name = translation.page_component?.component?.name;
+                              return {
+                                name,
+                                order: translation.page_component?.order ?? 0,
+                                props: translation?.props || {},
+                              };
+                            });
+                          const bodyComponents = this.mapperService.mapComponents(componentsWithProps);
+                          return {
+                            ...pageData,
+                            body: bodyComponents,
+                          };
+                        }),
+                        catchError((error) => {
+                          console.error('Error loading page components:', error);
+                          return of({
+                            ...pageData,
+                            body: [],
+                          });
+                        })
+                      );
+                  }),
+                  catchError((error) => {
+                    console.error('Error loading page components:', error);
+                    return of({
+                      ...pageData,
+                      body: [],
+                    });
+                  })
+                );
               }),
               catchError((error) => {
-                console.error('Error loading page components:', error);
-                return of({
-                  ...pageData,
-                  body: [],
-                });
+                console.error('Error loading page:', error);
+                return of(null);
               })
             );
-          }),
-          catchError((error) => {
-            console.error('Error loading page:', error);
-            return of(null);
           })
         );
       })

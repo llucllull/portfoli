@@ -64,7 +64,18 @@ export class ApiService {
     const url =
       `${environment.apiBaseUrl}/page_component_translations` +
       `?lang_id=eq.${langId}&page_component_id=in.(${ids})` +
-      `&select=id,lang_id,props,page_component:page_component_id(component:component_id(name))`;
+      `&select=id,lang_id,props,page_component:page_component_id(component:component_id(name),order)`;
+    return this.get<PageComponentTranslation[]>(url);
+  }
+
+  getPageComponentTranslationsForPage(
+    pageId: number,
+    langId: number
+  ): Observable<PageComponentTranslation[]> {
+    const url =
+      `${environment.apiBaseUrl}/page_component_translations` +
+      `?lang_id=eq.${langId}&page_component_id.page_id=eq.${pageId}&page_component_id.isnot.null` +
+      `&select=id,lang_id,props,page_component:page_component_id(component:component_id(name),order,page_id)`;
     return this.get<PageComponentTranslation[]>(url);
   }
 
