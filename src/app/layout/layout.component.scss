@@ -8,4 +8,14 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  padding-top: 55px;
+}
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 55px;
 }
