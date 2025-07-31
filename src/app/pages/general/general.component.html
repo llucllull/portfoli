@@ -19,6 +19,14 @@
                             "
                         ></ng-container>
                     }
+                    @case ('category-progress') {
+                        <ng-container
+                            *ngTemplateOutlet="
+                                categoryProgress;
+                                context: { data: component }
+                            "
+                        ></ng-container>
+                    }
                 }
             }
         }
@@ -48,6 +56,18 @@
                 [text]="props.text"
                 [button]="props.button"
             ></lib-section-intro>
+        }
+    }
+</ng-template>
+
+<ng-template #categoryProgress let-data="data">
+    @if (data?.props; as props) {
+        @defer (on immediate) {
+            <lib-category-progress
+                [pretitle]="props.pretitle"
+                [title]="props.title"
+                [categories]="props.categories"
+            ></lib-category-progress>
         }
     }
 </ng-template>
