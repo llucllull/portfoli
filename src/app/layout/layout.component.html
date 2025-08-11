@@ -1,19 +1,23 @@
 @if (header$ | async; as headerComponent) {
   @if (headerComponent?.props; as props) {
-    @if (!screen.isXs()) {
-      <lib-header-clear
-        [lang]="props.lang"
-        [navItems]="props.navItems"
-        (langModal)="openLanguagesModal()"
-      ></lib-header-clear>
-    }
-    @if (screen.isXs()) {
-      <lib-header-mobile
-        [lang]="props.lang"
-        [navItems]="props.navItems"
-        (langModal)="openLanguagesModal()"
-      ></lib-header-mobile>
-    }
+    <div class="header-container">
+      @if (!screen.isXs()) {
+        <lib-header-clear
+          [logo]="props.logo"
+          [lang]="props.lang"
+          [navItems]="props.navItems"
+          (langModal)="openLanguagesModal()"
+        ></lib-header-clear>
+      }
+      @if (screen.isXs()) {
+        <lib-header-mobile
+          [logo]="props.logo"
+          [lang]="props.lang"
+          [navItems]="props.navItems"
+          (langModal)="openLanguagesModal()"
+        ></lib-header-mobile>
+      }
+    </div>
   }
 }
 
