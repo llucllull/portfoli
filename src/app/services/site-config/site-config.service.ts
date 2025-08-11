@@ -1,16 +1,16 @@
-import { Inject, Injectable, PLATFORM_ID, Optional } from '@angular/core';
-import {
-  ApiService,
-} from '../api/api.service';
+import { isPlatformBrowser } from '@angular/common';
+import { HttpResponse } from '@angular/common/http';
+import { Inject, Injectable, Optional, PLATFORM_ID } from '@angular/core';
+import { GeneralConfigResponse, Language } from '@lluc_llull/ui-lib';
 import {
   BehaviorSubject,
   catchError,
   tap,
   throwError,
 } from 'rxjs';
-import { HttpResponse } from '@angular/common/http';
-import { isPlatformBrowser } from '@angular/common';
-import { GeneralConfigResponse, Language } from '@lluc_llull/ui-lib';
+import {
+  ApiService,
+} from '../api/api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +34,11 @@ export class SiteConfigService {
         const data = (config as any).body ? (config as any).body : config;
         const languages = data?.[0]?.languages ?? [];
         this.config$.next(data);
+
+        // Actualizar favicons si están disponibles en la configuración
+        if (data?.[0]?.favicons) {
+          this.updateFavicons(data[0].favicons);
+        }
 
         if (languages.length === 0) {
           console.warn(
@@ -121,5 +126,78 @@ export class SiteConfigService {
   getAvailableLanguages(): Language[] {
     const config: any = this.config$.value;
     return config?.[0]?.languages ?? [];
+  }
+
+  private updateFavicons(faviconConfig: { ico: string; svg: string }): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    try {
+      const svgUrl = this.buildFaviconUrl(faviconConfig.svg);
+      const icoUrl = this.buildFaviconUrl(faviconConfig.ico);
+
+      this.updateFaviconLink('icon', svgUrl, 'image/svg+xml');
+      this.updateFaviconLink('icon', icoUrl, 'image/x-icon');
+    } catch (error) {
+      console.error('Error actualizando favicons:', error);
+    }
+  }
+
+  private buildFaviconUrl(faviconPath: string): string {
+    if (faviconPath.startsWith('http://') || faviconPath.startsWith('https://')) {
+      return faviconPath;
+    }
+
+    const baseUrl = window.location.origin;
+
+    if (faviconPath.startsWith('/')) {
+      return `${baseUrl}${faviconPath}`;
+    }
+
+    // Si empieza con 'branding/', asumir que está en assets
+    if (faviconPath.startsWith('branding/')) {
+      return `${baseUrl}/assets/${faviconPath}`;
+    }
+
+    // Para otras rutas relativas, también asumir assets
+    return `${baseUrl}/assets/${faviconPath}`;
+  }
+
+  private updateFaviconLink(rel: string, href: string, type: string): void {
+    const head = document.head;
+    
+    let existingLink = head.querySelector(`link[rel="${rel}"]`) as HTMLLinkElement;
+    
+    if (existingLink) {
+      existingLink.href = href;
+      existingLink.type = type;
+    } else {
+      const link = document.createElement('link');
+      link.rel = rel;
+      link.href = href;
+      link.type = type;
+      head.appendChild(link);
+    }
+  }
+
+  updateFaviconsFromConfig(): void {
+    const config: any = this.config$.value;
+    if (config?.[0]?.favicons) {
+      this.updateFavicons(config[0].favicons);
+    }
+  }
+
+  restoreDefaultFavicons(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    try {
+      this.updateFaviconLink('icon', 'assets/favicons/favicon.svg', 'image/svg+xml');
+      this.updateFaviconLink('icon', 'assets/favicons/favicon.ico', 'image/x-icon');
+    } catch (error) {
+      console.error('Error restaurando favicons por defecto:', error);
+    }
   }
 }
