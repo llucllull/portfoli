@@ -17,5 +17,5 @@ jobs:
             -o /dev/null -w "%{http_code}\n"
     env:
       # usa la URL exacta que te muestra Supabase:
-      FUNC_URL: "https://ujpxanmobdxrwjsndr2q.supabase.co/functions/v1/health"
+      FUNC_URL: "https://ujpxanmobdxrwjsndrzq.supabase.co/functions/v1/health"
       ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
