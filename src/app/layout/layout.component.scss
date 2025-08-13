@@ -7,7 +7,7 @@
 main {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  min-height: calc(100vh - 55px);
   padding-top: 55px;
 }
 
