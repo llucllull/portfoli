@@ -56,8 +56,6 @@ export class LayoutComponent implements OnInit {
 
   openLanguagesModal(): void {
     const dialogRef = this.dialog.open(LangModalComponent, {
-      width: '400px',
-      maxWidth: '90vw',
       data: {
         langs: this.languagesFromApi,
         currentLang: this.currentLang
