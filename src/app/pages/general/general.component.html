@@ -37,10 +37,12 @@
     @if (data?.props; as props) {
         @defer (on immediate) {
             <lib-hero-section
+                [pretitle]="props.pretitle"
                 [title]="props.title"
                 [subtitle]="props.subtitle"
                 [text]="props.text"
                 [buttons]="props.buttons"
+                [highlight]="props.highlight"
             ></lib-hero-section>
         }
     }
