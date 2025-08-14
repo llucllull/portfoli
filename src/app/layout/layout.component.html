@@ -6,6 +6,7 @@
           [logo]="props.logo"
           [lang]="props.lang"
           [navItems]="props.navItems"
+          [homeLink]="props.navItems[0]"
           (langModal)="openLanguagesModal()"
         ></lib-header-clear>
       }
@@ -14,6 +15,7 @@
           [logo]="props.logo"
           [lang]="props.lang"
           [navItems]="props.navItems"
+          [homeLink]="props.navItems[0]"
           (langModal)="openLanguagesModal()"
         ></lib-header-mobile>
       }

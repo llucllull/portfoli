@@ -7,4 +7,34 @@
 
   //Fonts
   --font-base: 'Montserrat', sans-serif;
+  --font-size-base: 16px;
+
+  //Spacings
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  //Buttons
+  --button-primary-bg: #C6E030;
+  --button-primary-text: #0a0a0a;
+  --button-primary-bg-hover: #0a0a0a;
+  --button-primary-text-hover: #C6E030;
+
+  --button-secondary-bg: #0a0a0a;
+  --button-secondary-text: #f9f9f9;
+  --button-secondary-bg-hover: #000000;
+  --button-secondary-text-hover: #C6E030;
+
+  --button-link-text: #0a0a0a;
+  --button-link-text-hover: #0a0a0a;
+
+  //Headers
+  --header-clear-bg: #C6E030;
+  --header-mobile-bg: #C6E030;
+
+  //Modals
+  --modal-bg: #C6E030;
+  --close-btn: #0a0a0a;
+  --item-text: #0a0a0a;
 }
