@@ -1,12 +1,12 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { HeaderClearComponent, HeaderMobileComponent, LangModalComponent, UiLibLangItemI, ScreenSizerService } from '@lluc_llull/ui-lib';
+import { Router } from '@angular/router';
+import { HeaderClearComponent, HeaderMobileComponent, LangModalComponent, ScreenSizerService, UiLibLangItemI } from '@lluc_llull/ui-lib';
 import { Observable } from 'rxjs';
 import { ApiService } from '../services/api/api.service';
 import { LayoutService } from '../services/layout/layout.service';
 import { SiteConfigService } from '../services/site-config/site-config.service';
-import { Router } from '@angular/router';
 
 const COMPONENTS = [
   HeaderClearComponent,
@@ -19,7 +19,7 @@ const COMPONENTS = [
   imports: [CommonModule, ...COMPONENTS],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class LayoutComponent implements OnInit {
   public screen = inject(ScreenSizerService);

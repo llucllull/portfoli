@@ -4,6 +4,7 @@
       @if (!screen.isXs()) {
         <lib-header-clear
           [logo]="props.logo"
+          [logoDark]="props.logoDark"
           [lang]="props.lang"
           [navItems]="props.navItems"
           [homeLink]="props.navItems[0]"
@@ -13,6 +14,7 @@
       @if (screen.isXs()) {
         <lib-header-mobile
           [logo]="props.logo"
+          [logoDark]="props.logoDark"
           [lang]="props.lang"
           [navItems]="props.navItems"
           [homeLink]="props.navItems[0]"
