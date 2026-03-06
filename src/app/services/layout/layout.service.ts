@@ -1,47 +1,39 @@
 import { Injectable, signal } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { BodyComponent } from '@lluc_llull/ui-lib';
-import { BehaviorSubject } from 'rxjs';
-
-export type HeaderComponentName = 'headerClear';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LayoutService {
   private readonly header = signal<BodyComponent<any> | undefined>(undefined);
-  private readonly footer = signal<BodyComponent<any> | undefined>(undefined); // Preparado para el futuro
+  private readonly footer = signal<BodyComponent<any> | undefined>(undefined);
   private readonly layoutLoaded = signal<boolean>(false);
 
-  // Subjects para exponer como observables
-  private headerSubject = new BehaviorSubject<BodyComponent<any> | undefined>(undefined);
-  private footerSubject = new BehaviorSubject<BodyComponent<any> | undefined>(undefined);
-  header$ = this.headerSubject.asObservable();
-  footer$ = this.footerSubject.asObservable();
+  // Observables para templates que usan async pipe
+  header$ = toObservable(this.header);
+  footer$ = toObservable(this.footer);
 
-  // Getters
-  get headerComponent(): BodyComponent<any> | undefined {
+  // getters
+  get headerComponent() {
     return this.header();
   }
 
-  // Footer getter preparado para el futuro
-  get footerComponent(): BodyComponent<any> | undefined {
+  get footerComponent() {
     return this.footer();
   }
 
-  get layoutReady(): boolean {
+  get layoutReady() {
     return this.layoutLoaded();
   }
 
-  // Setters
+  // setters
   setHeader(component: BodyComponent<any>) {
     this.header.set(component);
-    this.headerSubject.next(component);
   }
 
-  // Setter para el footer preparado para el futuro
   setFooter(component: BodyComponent<any>) {
     this.footer.set(component);
-    this.footerSubject.next(component);
   }
 
   markLayoutAsLoaded() {
@@ -51,8 +43,6 @@ export class LayoutService {
   resetLayout() {
     this.header.set(undefined);
     this.footer.set(undefined);
-    this.headerSubject.next(undefined);
-    this.footerSubject.next(undefined);
     this.layoutLoaded.set(false);
   }
 }
