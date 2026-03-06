@@ -4,7 +4,7 @@ export const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'en',
+    redirectTo: 'es',
     pathMatch: 'full'
   },
 
