@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, shareReplay } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -7,34 +8,45 @@ import { environment } from '../../../environments/environment';
 })
 export class ContentService {
   private base = environment.contentBaseUrl;
+  private cache = new Map<string, Observable<any>>();
 
   constructor(private http: HttpClient) {}
 
+  private fetch(url: string) {
+    if (!this.cache.has(url)) {
+      const request$ = this.http.get(url).pipe(shareReplay(1));
+
+      this.cache.set(url, request$);
+    }
+
+    return this.cache.get(url)!;
+  }
+
   getConfig() {
-    return this.http.get(`${this.base}/config.json`);
+    return this.fetch(`${this.base}/config.json`);
   }
 
   getLanguages() {
-    return this.http.get(`${this.base}/languages.json`);
+    return this.fetch(`${this.base}/languages.json`);
   }
 
   getNavigation() {
-    return this.http.get(`${this.base}/navigation.json`);
+    return this.fetch(`${this.base}/navigation.json`);
   }
 
   getSocial() {
-    return this.http.get(`${this.base}/social.json`);
+    return this.fetch(`${this.base}/social.json`);
   }
 
   getPage(page: string) {
-    return this.http.get(`${this.base}/pages/${page}.json`);
+    return this.fetch(`${this.base}/pages/${page}.json`);
   }
 
   getProjects() {
-    return this.http.get(`${this.base}/projects/projects.json`);
+    return this.fetch(`${this.base}/projects/projects.json`);
   }
 
   getProject(project: string) {
-    return this.http.get(`${this.base}/projects/${project}.json`);
+    return this.fetch(`${this.base}/projects/${project}.json`);
   }
 }
