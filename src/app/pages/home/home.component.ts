@@ -13,8 +13,8 @@ const COMPONENTS = [
   selector: 'app-general',
   standalone: true,
   imports: [CommonModule, ...COMPONENTS],
-  templateUrl: './general.component.html',
-  styleUrl: './general.component.scss',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GeneralComponent extends BasePageComponent {}
