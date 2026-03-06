@@ -38,6 +38,10 @@ export class ContentService {
     return this.fetch(`${this.base}/social.json`);
   }
 
+  getLayout() {
+    return this.fetch(`${this.base}/layout.json`);
+  }
+
   getPage(page: string) {
     return this.fetch(`${this.base}/pages/${page}.json`);
   }
