@@ -1,3 +1,3 @@
-@if (page()) {
-  <dynamic-renderer [components]="page().body"></dynamic-renderer>
+@if (page(); as pageData) {
+  <dynamic-renderer [components]="pageData.body"></dynamic-renderer>
 }

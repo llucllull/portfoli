@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MapperService } from '@lluc_llull/ui-lib';
 import { ContentStore } from '../../services/content/content.store';
 import { SiteConfigService } from '../../services/site-config/site-config.service';
+import { resolveLang } from '../../utils/resolve-lang';
 import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
 
 @Component({
@@ -19,7 +20,6 @@ import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.c
   standalone: true,
   imports: [CommonModule, DynamicRendererComponent],
   templateUrl: './base-page.component.html',
-  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasePageComponent {
@@ -55,24 +55,22 @@ export class BasePageComponent {
   }
 
   page = computed(() => {
+    const slug = this.slug();
+    const page = this.store.page(slug);
 
-  const slug = this.slug();
-  const page = this.store.page(slug);
+    if (!page) return null;
 
-  if (!page) return null;
+    const lang = this.siteConfig.getLanguage();
 
-  const lang = this.siteConfig.getLanguage();
+    const body = page.body.map((c: any, index: number) => ({
+      name: c.component,
+      order: index,
+      props: resolveLang(c.props, lang),
+    }));
 
-  const body = page.body.map((c: any, index: number) => ({
-    name: c.component,
-    order: index,
-    props: this.store.resolveLang(c.props, lang)
-  }));
-
-  return {
-    ...page,
-    body: this.mapper.mapComponents(body)
-  };
-
-});
+    return {
+      ...page,
+      body: this.mapper.mapComponents(body),
+    };
+  });
 }
