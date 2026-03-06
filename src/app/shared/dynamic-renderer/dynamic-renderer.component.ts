@@ -19,9 +19,17 @@ export class DynamicRendererComponent implements OnChanges {
   @Input() components: BodyComponent<any>[] = [];
 
   private vcr = inject(ViewContainerRef);
+  private lastHash = '';
 
   ngOnChanges(changes: SimpleChanges) {
-    if (!changes['components'] || !this.components?.length) return;
+    if (!changes['components']) return;
+    if (!this.components?.length) return;
+
+    const hash = JSON.stringify(this.components);
+
+    if (hash === this.lastHash) return;
+
+    this.lastHash = hash;
 
     this.render();
   }
@@ -38,9 +46,11 @@ export class DynamicRendererComponent implements OnChanges {
       }
 
       const component = await loader();
+
       const ref = this.vcr.createComponent(component);
 
       Object.assign(ref.instance as any, c.props);
+
       ref.changeDetectorRef.detectChanges();
     }
   }
