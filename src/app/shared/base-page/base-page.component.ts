@@ -39,42 +39,40 @@ export class BasePageComponent {
   constructor() {
     effect(
       () => {
-        const slug = this.slug();
-        this.store.loadPage(slug);
+        const lang = this.params()?.get('lang') || 'es';
+        this.siteConfig.setLanguage(lang);
       },
       { allowSignalWrites: true },
     );
+
     effect(
       () => {
-        const lang = this.lang();
-        this.siteConfig.setLanguage(lang);
+        const slug = this.slug();
+        this.store.loadPage(slug);
       },
       { allowSignalWrites: true },
     );
   }
 
   page = computed(() => {
-    const slug = this.slug();
-    const page = this.store.page(slug);
 
-    if (!page) return null;
+  const slug = this.slug();
+  const page = this.store.page(slug);
 
-    const lang = this.siteConfig.getLanguage();
-    const body = page.body.map((c: any, index: number) => ({
-      name: c.component,
-      order: index,
-      props: this.store.resolveLang(c.props, lang),
-    }));
+  if (!page) return null;
 
-    const mapped = this.mapper.mapComponents(body);
+  const lang = this.siteConfig.getLanguage();
 
-    return {
-      ...page,
-      body: mapped,
-    };
-  });
+  const body = page.body.map((c: any, index: number) => ({
+    name: c.component,
+    order: index,
+    props: this.store.resolveLang(c.props, lang)
+  }));
 
-  lang = computed(() => {
-    return this.params()?.get('lang') || 'es';
-  });
+  return {
+    ...page,
+    body: this.mapper.mapComponents(body)
+  };
+
+});
 }

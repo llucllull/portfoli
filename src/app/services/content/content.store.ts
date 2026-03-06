@@ -1,6 +1,5 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { ContentService } from './content.service';
-
 @Injectable({ providedIn: 'root' })
 export class ContentStore {
   private content = inject(ContentService);
@@ -25,7 +24,7 @@ export class ContentStore {
     if (obj == null) return obj;
 
     if (Array.isArray(obj)) {
-      return obj.map((item) => this.resolveLang(item, lang));
+      return obj.map((v) => this.resolveLang(v, lang));
     }
 
     if (typeof obj !== 'object') {
@@ -33,8 +32,9 @@ export class ContentStore {
     }
 
     const keys = Object.keys(obj);
+
     const isLangObject =
-      keys.length > 0 && keys.every((key) => ['es', 'en', 'ca'].includes(key));
+      keys.length > 0 && keys.every((k) => ['es', 'en', 'ca'].includes(k));
 
     if (isLangObject) {
       return obj[lang] ?? obj['es'] ?? obj[keys[0]] ?? '';
