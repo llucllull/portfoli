@@ -50,7 +50,9 @@ export class DynamicRendererComponent {
       const component = await loader();
       const ref = this.vcr.createComponent(component);
 
-      Object.assign(ref.instance as any, c.props);
+      for (const key in c.props) {
+        ref.setInput(key, c.props[key]);
+      }
     }
 
     this.rendering = false;

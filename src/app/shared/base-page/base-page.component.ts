@@ -7,7 +7,7 @@ import {
   inject,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { MapperService } from '@lluc_llull/ui-lib';
 import { ContentStore } from '../../services/content/content.store';
@@ -32,21 +32,18 @@ export class BasePageComponent {
   private params = toSignal(this.route.paramMap);
   private lastSlug = '';
 
+  private router = inject(Router);
+
   slug = computed(() => {
-    const segments = this.url();
+    const url = this.router.url;
 
-    if (!segments?.length) return 'home';
+    const parts = url.split('/').filter(Boolean);
 
-    const paths = segments.map((s) => s.path);
+    if (parts.length <= 1) return 'home';
 
-    const langs = this.siteConfig.getLanguages().map((l) => l.code);
-
-    if (langs.includes(paths[0])) {
-      paths.shift();
-    }
-
-    return paths.join('/') || 'home';
+    return parts.slice(1).join('/');
   });
+
   constructor() {
     effect(
       () => {
