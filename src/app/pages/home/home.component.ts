@@ -17,4 +17,4 @@ const COMPONENTS = [
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GeneralComponent extends BasePageComponent {}
+export class HomeComponent extends BasePageComponent {}
