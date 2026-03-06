@@ -20,4 +20,32 @@ export class ContentStore {
   page(slug: string) {
     return this.pages()[slug];
   }
+
+  resolveLang(obj: any, lang: string): any {
+    if (obj == null) return obj;
+
+    if (Array.isArray(obj)) {
+      return obj.map((item) => this.resolveLang(item, lang));
+    }
+
+    if (typeof obj !== 'object') {
+      return obj;
+    }
+
+    const keys = Object.keys(obj);
+    const isLangObject =
+      keys.length > 0 && keys.every((key) => ['es', 'en', 'ca'].includes(key));
+
+    if (isLangObject) {
+      return obj[lang] ?? obj['es'] ?? obj[keys[0]] ?? '';
+    }
+
+    const result: any = {};
+
+    for (const key of keys) {
+      result[key] = this.resolveLang(obj[key], lang);
+    }
+
+    return result;
+  }
 }

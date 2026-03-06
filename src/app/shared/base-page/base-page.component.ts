@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 import { MapperService } from '@lluc_llull/ui-lib';
 import { ContentStore } from '../../services/content/content.store';
 import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
+import { SiteConfigService } from '../../services/site-config/site-config.service';
 
 @Component({
   selector: 'app-base-page',
@@ -25,6 +26,7 @@ export class BasePageComponent {
   protected route = inject(ActivatedRoute);
   protected store = inject(ContentStore);
   protected mapper = inject(MapperService);
+  protected siteConfig = inject(SiteConfigService);
 
   private url = toSignal(this.route.url);
 
@@ -34,11 +36,14 @@ export class BasePageComponent {
   });
 
   constructor() {
-    effect(() => {
-      const slug = this.slug();
+    effect(
+      () => {
+        const slug = this.slug();
 
-      this.store.loadPage(slug);
-    }, { allowSignalWrites: true });
+        this.store.loadPage(slug);
+      },
+      { allowSignalWrites: true },
+    );
   }
 
   page = computed(() => {
@@ -48,13 +53,15 @@ export class BasePageComponent {
 
     if (!page) return null;
 
-    const mapped = this.mapper.mapComponents(
-      page.body.map((c: any, index: number) => ({
-        name: c.component,
-        order: index,
-        props: c.props,
-      })),
-    );
+    const lang = this.siteConfig.getLanguage();
+
+    const body = page.body.map((c: any, index: number) => ({
+      name: c.component,
+      order: index,
+      props: this.store.resolveLang(c.props, lang),
+    }));
+
+    const mapped = this.mapper.mapComponents(body);
 
     return {
       ...page,

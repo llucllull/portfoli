@@ -38,10 +38,10 @@ export class DynamicRendererComponent implements OnChanges {
       }
 
       const component = await loader();
-
       const ref = this.vcr.createComponent(component);
 
       Object.assign(ref.instance as any, c.props);
+      ref.changeDetectorRef.detectChanges();
     }
   }
 }
