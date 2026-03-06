@@ -19,4 +19,17 @@ export class ContentStore {
   page(slug: string) {
     return this.pages()[slug];
   }
+
+  prefetchPages(slugs: string[]) {
+    for (const slug of slugs) {
+      if (this.pages()[slug]) continue;
+
+      this.content.getPage(slug).subscribe((page) => {
+        this.pages.update((p) => ({
+          ...p,
+          [slug]: page,
+        }));
+      });
+    }
+  }
 }
