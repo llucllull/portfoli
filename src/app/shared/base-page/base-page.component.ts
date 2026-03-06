@@ -30,17 +30,37 @@ export class BasePageComponent {
 
   private url = toSignal(this.route.url);
   private params = toSignal(this.route.paramMap);
+  private lastSlug = '';
 
   slug = computed(() => {
     const segments = this.url();
-    return segments?.map((s) => s.path).join('/') || 'home';
-  });
 
+    if (!segments?.length) return 'home';
+
+    const paths = segments.map((s) => s.path);
+
+    const langs = this.siteConfig.getLanguages().map((l) => l.code);
+
+    if (langs.includes(paths[0])) {
+      paths.shift();
+    }
+
+    return paths.join('/') || 'home';
+  });
   constructor() {
     effect(
       () => {
-        const lang = this.params()?.get('lang') || 'es';
-        this.siteConfig.setLanguage(lang);
+        const params = this.params();
+
+        if (!params) return;
+
+        const lang = params.get('lang');
+
+        const langs = this.siteConfig.getLanguages()?.map((l) => l.code) ?? [];
+
+        if (lang && langs.includes(lang)) {
+          this.siteConfig.setLanguage(lang);
+        }
       },
       { allowSignalWrites: true },
     );
@@ -48,6 +68,11 @@ export class BasePageComponent {
     effect(
       () => {
         const slug = this.slug();
+
+        if (!slug) return;
+        if (slug === this.lastSlug) return;
+
+        this.lastSlug = slug;
         this.store.loadPage(slug);
       },
       { allowSignalWrites: true },

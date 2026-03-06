@@ -1,10 +1,9 @@
 import {
   Component,
-  inject,
-  Input,
-  OnChanges,
-  SimpleChanges,
   ViewContainerRef,
+  effect,
+  inject,
+  input,
 } from '@angular/core';
 
 import { BodyComponent } from '@lluc_llull/ui-lib';
@@ -15,29 +14,32 @@ import { COMPONENT_REGISTRY } from './component-registry.service';
   standalone: true,
   template: '',
 })
-export class DynamicRendererComponent implements OnChanges {
-  @Input() components: BodyComponent<any>[] = [];
+export class DynamicRendererComponent {
+  components = input<BodyComponent<any>[]>([]);
 
   private vcr = inject(ViewContainerRef);
-  private lastHash = '';
+  private rendering = false;
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (!changes['components']) return;
-    if (!this.components?.length) return;
+  constructor() {
+    effect(() => {
+      const comps = this.components();
 
-    const hash = JSON.stringify(this.components);
+      if (!comps?.length) {
+        this.vcr.clear();
+        return;
+      }
 
-    if (hash === this.lastHash) return;
-
-    this.lastHash = hash;
-
-    this.render();
+      this.render(comps);
+    });
   }
 
-  private async render() {
+  private async render(comps: BodyComponent<any>[]) {
+    if (this.rendering) return;
+
+    this.rendering = true;
     this.vcr.clear();
 
-    for (const c of this.components) {
+    for (const c of comps) {
       const loader = COMPONENT_REGISTRY[c.name];
 
       if (!loader) {
@@ -46,12 +48,11 @@ export class DynamicRendererComponent implements OnChanges {
       }
 
       const component = await loader();
-
       const ref = this.vcr.createComponent(component);
 
       Object.assign(ref.instance as any, c.props);
-
-      ref.changeDetectorRef.detectChanges();
     }
+
+    this.rendering = false;
   }
 }

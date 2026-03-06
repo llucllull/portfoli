@@ -27,7 +27,8 @@ export class ContentLoaderService {
     }).pipe(
       tap(({ config, languages, navigation }) => {
         this.siteConfig.setConfig(config);
-        this.siteConfig.setLanguages(languages);
+        this.siteConfig.setLanguages(languages.languages);
+        this.siteConfig.setDefaultLanguage(languages.default);
 
         const body = (navigation.body || []).map((c: any, index: number) => ({
           name: c.component,

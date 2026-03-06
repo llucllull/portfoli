@@ -4,6 +4,7 @@ import { Injectable, signal } from '@angular/core';
 export class SiteConfigService {
   private language = signal('es');
   private languages = signal<any[]>([]);
+  private defaultLanguage = signal('es');
   private config = signal<any>(null);
 
   setLanguage(lang: string) {
@@ -11,7 +12,7 @@ export class SiteConfigService {
   }
 
   getLanguage() {
-    return this.language();
+    return this.language() ?? this.defaultLanguage();
   }
 
   setLanguages(langs: any[]) {
@@ -20,6 +21,19 @@ export class SiteConfigService {
 
   getLanguages() {
     return this.languages();
+  }
+
+  setDefaultLanguage(lang: string) {
+    this.defaultLanguage.set(lang);
+
+    // si aún no hay language, usar el default
+    if (!this.language()) {
+      this.language.set(lang);
+    }
+  }
+
+  getDefaultLanguage() {
+    return this.defaultLanguage();
   }
 
   setConfig(config: any) {

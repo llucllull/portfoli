@@ -9,10 +9,14 @@ export class ContentStore {
     if (this.pages()[slug]) return;
 
     this.content.getPage(slug).subscribe((page) => {
-      this.pages.update((p) => ({
-        ...p,
-        [slug]: page,
-      }));
+      this.pages.update((p) => {
+        if (p[slug]) return p;
+
+        return {
+          ...p,
+          [slug]: page,
+        };
+      });
     });
   }
 
