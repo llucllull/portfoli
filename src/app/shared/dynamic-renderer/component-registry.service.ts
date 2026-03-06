@@ -1,6 +1,8 @@
 import { Type } from '@angular/core';
 
-export const COMPONENT_REGISTRY: Record<string, () => Promise<Type<any>>> = {
+type ComponentLoader = () => Promise<Type<any>>;
+
+export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'header-clear': () =>
     import('@lluc_llull/ui-lib').then((m) => m.HeaderClearComponent),
 
