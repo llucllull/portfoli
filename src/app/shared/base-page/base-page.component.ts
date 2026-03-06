@@ -11,8 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { MapperService } from '@lluc_llull/ui-lib';
 import { ContentStore } from '../../services/content/content.store';
-import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
 import { SiteConfigService } from '../../services/site-config/site-config.service';
+import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
 
 @Component({
   selector: 'app-base-page',
@@ -29,6 +29,7 @@ export class BasePageComponent {
   protected siteConfig = inject(SiteConfigService);
 
   private url = toSignal(this.route.url);
+  private params = toSignal(this.route.paramMap);
 
   slug = computed(() => {
     const segments = this.url();
@@ -39,8 +40,14 @@ export class BasePageComponent {
     effect(
       () => {
         const slug = this.slug();
-
         this.store.loadPage(slug);
+      },
+      { allowSignalWrites: true },
+    );
+    effect(
+      () => {
+        const lang = this.lang();
+        this.siteConfig.setLanguage(lang);
       },
       { allowSignalWrites: true },
     );
@@ -48,13 +55,11 @@ export class BasePageComponent {
 
   page = computed(() => {
     const slug = this.slug();
-
     const page = this.store.page(slug);
 
     if (!page) return null;
 
     const lang = this.siteConfig.getLanguage();
-
     const body = page.body.map((c: any, index: number) => ({
       name: c.component,
       order: index,
@@ -67,5 +72,9 @@ export class BasePageComponent {
       ...page,
       body: mapped,
     };
+  });
+
+  lang = computed(() => {
+    return this.params()?.get('lang') || 'es';
   });
 }
