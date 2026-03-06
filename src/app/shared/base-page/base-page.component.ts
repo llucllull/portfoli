@@ -2,141 +2,63 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  effect,
   inject,
-  OnInit,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { BodyComponent, MapperService } from '@lluc_llull/ui-lib';
-import { combineLatest, Observable, of } from 'rxjs';
-import { catchError, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
-import { ApiService } from '../../services/api/api.service';
-import { RoutesService } from '../../services/routes/routes.service';
-import { SiteConfigService } from '../../services/site-config/site-config.service';
 
-interface PageConfig {
-  id: number;
-  name: string;
-  template: string;
-  body: BodyComponent<any>[];
-}
+import { MapperService } from '@lluc_llull/ui-lib';
+import { ContentStore } from '../../services/content/content.store';
+import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
 
 @Component({
   selector: 'app-base-page',
   standalone: true,
-  imports: [CommonModule],
-  template: '',
-  styles: '',
+  imports: [CommonModule, DynamicRendererComponent],
+  templateUrl: './base-page.component.html',
+  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BasePageComponent implements OnInit {
-  protected readonly siteConfig = inject(SiteConfigService);
-  protected readonly routesService = inject(RoutesService);
-  protected readonly apiService = inject(ApiService);
-  protected readonly route = inject(ActivatedRoute);
-  protected readonly mapperService = inject(MapperService);
+export class BasePageComponent {
+  protected route = inject(ActivatedRoute);
+  protected store = inject(ContentStore);
+  protected mapper = inject(MapperService);
 
-  pageConfig$!: Observable<PageConfig | null>;
+  private url = toSignal(this.route.url);
 
-  ngOnInit(): void {
-    this.pageConfig$ = combineLatest([
-      this.route.url,
-      this.siteConfig.getLanguage$().pipe(distinctUntilChanged())
-    ]).pipe(
-      switchMap(([urlSegments, currentLanguage]) => {
-        // Obtener el path actual de la URL
-        const currentPath = urlSegments.map(segment => segment.path).join('/');
-        
-        // Buscar la página que corresponde a este path
-        return this.apiService.getRoutes().pipe(
-          switchMap((routes) => {
-            const currentPage = routes.find(route => 
-              Object.values(route.routes).some(routePath => 
-                routePath.replace(/^\/|\/$/g, '') === currentPath
-              )
-            );
-            
-            const pageName = currentPage?.name || 'home';
-            
-            return this.apiService.getPageByName(pageName).pipe(
-              switchMap((pageResponse) => {
-                const page = (pageResponse as any)?.body
-                  ? (pageResponse as any).body
-                  : pageResponse;
-                const pageData = page?.[0];
+  slug = computed(() => {
+    const segments = this.url();
+    return segments?.map((s) => s.path).join('/') || 'home';
+  });
 
+  constructor() {
+    effect(() => {
+      const slug = this.slug();
 
-                if (!pageData) return of(null);
+      this.store.loadPage(slug);
+    }, { allowSignalWrites: true });
+  }
 
-                return this.apiService.getPageComponents(pageData.id).pipe(
-                  switchMap((components) => {
-                    const componentIds = components.map((c) => c.id);
-                    const langId = currentLanguage?.id || 1;
-                    
-                    if (componentIds.length === 0) {
-                      return of({
-                        ...pageData,
-                        body: [],
-                      });
-                    }
-                    
-                    return this.apiService
-                      .getPageComponentTranslationsByComponentIds(componentIds, langId)
-                      .pipe(
-                        map((translations) => {
-                          const componentsWithProps = translations
-                            .sort((a, b) => (a.page_component?.order ?? 0) - (b.page_component?.order ?? 0))
-                            .map((translation) => {
-                              const name = translation.page_component?.component?.name;
-                              return {
-                                name,
-                                order: translation.page_component?.order ?? 0,
-                                props: translation?.props || {},
-                              };
-                            });
-                          const bodyComponents = this.mapperService.mapComponents(componentsWithProps);
-                          return {
-                            ...pageData,
-                            body: bodyComponents,
-                          };
-                        }),
-                        catchError((error) => {
-                          console.error('Error loading page components:', error);
-                          return of({
-                            ...pageData,
-                            body: [],
-                          });
-                        })
-                      );
-                  }),
-                  catchError((error) => {
-                    console.error('Error loading page components:', error);
-                    return of({
-                      ...pageData,
-                      body: [],
-                    });
-                  })
-                );
-              }),
-              catchError((error) => {
-                console.error('Error loading page:', error);
-                return of(null);
-              })
-            );
-          })
-        );
-      })
+  page = computed(() => {
+    const slug = this.slug();
+
+    const page = this.store.page(slug);
+
+    if (!page) return null;
+
+    const mapped = this.mapper.mapComponents(
+      page.body.map((c: any, index: number) => ({
+        name: c.component,
+        order: index,
+        props: c.props,
+      })),
     );
-  }
 
-  getTitle(): string {
-    const currentConfig = this.siteConfig.getCurrentConfig();
-    const data = (currentConfig as any)?.body
-      ? (currentConfig as any).body
-      : currentConfig;
-    return data?.[0]?.name || 'Portfolio';
-  }
-
-  getComponentList(): any[] {
-    return [];
-  }
+    return {
+      ...page,
+      body: mapped,
+    };
+  });
 }

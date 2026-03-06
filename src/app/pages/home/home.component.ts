@@ -1,19 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { PAGE_IMPORTS } from '../../imports/page-imports';
 import { BasePageComponent } from '../../shared/base-page/base-page.component';
-import { CategoryProgressComponent, HeroSectionComponent, SectionIntroComponent } from '@lluc_llull/ui-lib';
-
-const COMPONENTS = [
-  HeroSectionComponent,
-  SectionIntroComponent,
-  CategoryProgressComponent
-];
 
 @Component({
-  selector: 'app-general',
+  selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ...COMPONENTS],
-  templateUrl: './home.component.html',
+  imports: PAGE_IMPORTS,
+  templateUrl: '../../shared/base-page/base-page.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
