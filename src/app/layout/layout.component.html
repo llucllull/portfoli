@@ -1,11 +1,13 @@
 @if (header$ | async; as headerComponent) {
-  @if (!screen.isXs()) {
-    <dynamic-renderer [components]="[headerComponent]"></dynamic-renderer>
-  }
-
-  @if (screen.isXs()) {
-    <dynamic-renderer [components]="[mobileHeader(headerComponent)]"></dynamic-renderer>
-  }
+  <div class="header-container">
+    @if (!screen.isXs()) {
+      <dynamic-renderer [components]="[headerComponent]"></dynamic-renderer>
+    }
+  
+    @if (screen.isXs()) {
+      <dynamic-renderer [components]="[mobileHeader(headerComponent)]"></dynamic-renderer>
+    }
+  </div>
 }
 
 <main>
