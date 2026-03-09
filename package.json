@@ -29,7 +29,11 @@
     "@lluc_llull/ui-lib": "^0.5.2",
     "@supabase/supabase-js": "^2.50.2",
     "express": "^4.18.2",
+    "lucide-angular": "^0.577.0",
     "rxjs": "~7.8.0",
+    "simple-icons": "^16.11.0",
+    "swiper": "^12.1.2",
+    "three": "^0.183.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
