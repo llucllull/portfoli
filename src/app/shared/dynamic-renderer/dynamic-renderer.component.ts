@@ -50,8 +50,19 @@ export class DynamicRendererComponent {
       const component = await loader();
       const ref = this.vcr.createComponent(component);
 
+      // inputs
       for (const key in c.props) {
         ref.setInput(key, c.props[key]);
+      }
+
+      // outputs
+      if (c.events) {
+        for (const key in c.events) {
+          const emitter = ref.instance[key];
+          if (emitter?.subscribe) {
+            emitter.subscribe(c.events[key]);
+          }
+        }
       }
     }
 

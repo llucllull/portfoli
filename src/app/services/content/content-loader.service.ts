@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { MapperService } from '@lluc_llull/ui-lib';
 import { forkJoin, tap } from 'rxjs';
 import { prefetchIdle } from '../../utils/prefetch-idle';
+import { LanguageService } from '../language/language.service';
 import { LayoutService } from '../layout/layout.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 import { ContentService } from './content.service';
@@ -16,6 +17,7 @@ export class ContentLoaderService {
   private layout = inject(LayoutService);
   private mapper = inject(MapperService);
   private store = inject(ContentStore);
+  private language = inject(LanguageService);
 
   loadInitialContent() {
     return forkJoin({
@@ -25,7 +27,7 @@ export class ContentLoaderService {
       social: this.content.getSocial(),
       layout: this.content.getLayout(),
     }).pipe(
-      tap(({ config, languages, navigation, layout  }) => {
+      tap(({ config, languages, navigation, layout }) => {
         this.siteConfig.setConfig(config);
         this.siteConfig.setLanguages(languages.languages);
         this.siteConfig.setDefaultLanguage(languages.default);
@@ -37,11 +39,15 @@ export class ContentLoaderService {
         }));
 
         const components = this.mapper.mapComponents(body);
-  
+
         const header = components.find((c) => c.name === 'header-clear');
         //footer pte
 
         if (header) {
+          header.events = {
+            langModal: () => this.language.openLanguagesModal(),
+          };
+
           this.layout.setHeader(header);
         }
 
