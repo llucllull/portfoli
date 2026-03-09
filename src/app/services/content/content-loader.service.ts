@@ -25,19 +25,19 @@ export class ContentLoaderService {
       social: this.content.getSocial(),
       layout: this.content.getLayout(),
     }).pipe(
-      tap(({ config, languages, navigation }) => {
+      tap(({ config, languages, navigation, layout  }) => {
         this.siteConfig.setConfig(config);
         this.siteConfig.setLanguages(languages.languages);
         this.siteConfig.setDefaultLanguage(languages.default);
 
-        const body = (navigation.body || []).map((c: any, index: number) => ({
+        const body = (layout.body || []).map((c: any, index: number) => ({
           name: c.component,
           order: index,
           props: c.props,
         }));
 
         const components = this.mapper.mapComponents(body);
-
+  
         const header = components.find((c) => c.name === 'header-clear');
         //footer pte
 
