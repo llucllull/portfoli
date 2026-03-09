@@ -1,9 +1,9 @@
 import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LangModalComponent, UiLibLangItemI } from '@lluc_llull/ui-lib';
-import { SiteConfigService } from '../site-config/site-config.service';
 import { Router } from '@angular/router';
+import { LangModalComponent } from '@lluc_llull/ui-lib';
+import { SiteConfigService } from '../site-config/site-config.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,9 +20,13 @@ export class LanguageService {
         langs: this.siteConfig.getLanguages(),
         currentLang: this.siteConfig.getLanguage(),
       },
+      enterAnimationDuration: '120ms',
+      exitAnimationDuration: '100ms',
+      panelClass: 'lang-modal',
+      backdropClass: 'lang-backdrop',
     });
 
-    dialogRef.afterClosed().subscribe((selected: UiLibLangItemI) => {
+    dialogRef.afterClosed().subscribe((selected) => {
       if (!selected) return;
 
       this.changeLanguage(selected.code);
@@ -32,10 +36,7 @@ export class LanguageService {
   changeLanguage(lang: string) {
     if (!isPlatformBrowser(this.platformId)) return;
 
-    this.siteConfig.setLanguage(lang);
-
-    const url = this.router.url;
-    const segments = url.split('/').filter(Boolean);
+    const segments = this.router.url.split('/').filter(Boolean);
 
     if (segments.length) {
       segments[0] = lang;
@@ -43,6 +44,12 @@ export class LanguageService {
       segments.push(lang);
     }
 
-    this.router.navigateByUrl('/' + segments.join('/'));
+    const url = '/' + segments.join('/');
+
+    // Navegar primero
+    this.router.navigateByUrl(url, { replaceUrl: true }).then(() => {
+      // luego actualizar idioma
+      this.siteConfig.setLanguage(lang);
+    });
   }
 }

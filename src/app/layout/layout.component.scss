@@ -19,3 +19,24 @@ main {
   z-index: 1000;
   height: 55px;
 }
+
+.lang-backdrop {
+  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,.25);
+  transition: opacity .12s ease;
+}
+
+.lang-modal {
+  animation: langModalIn .12s ease-out;
+}
+
+@keyframes langModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
