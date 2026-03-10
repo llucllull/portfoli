@@ -48,7 +48,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "optimization": false,
+              "optimization": true,
               "extractLicenses": false,
               "sourceMap": true
             }
@@ -58,14 +58,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portfoli:build"
+            "buildTarget": "portfoli:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portfoli:build:production"
+              "buildTarget": "portfoli:build:production"
             },
             "development": {
-              "browserTarget": "portfoli:build:development"
+              "buildTarget": "portfoli:build:development"
             }
           },
           "defaultConfiguration": "development"
