@@ -1,13 +1,9 @@
 @if (layout.header(); as headerComponent) {
   <div class="header-container">
     @if (screen.isXs()) {
-      <dynamic-renderer
-        [components]="[mobileHeader(headerComponent)]"
-      ></dynamic-renderer>
+      <dynamic-renderer [components]="[mobileHeader()]"> </dynamic-renderer>
     } @else {
-      <dynamic-renderer 
-        [components]="[headerComponent]"
-      ></dynamic-renderer>
+      <dynamic-renderer [components]="[headerComponent]"> </dynamic-renderer>
     }
   </div>
 }

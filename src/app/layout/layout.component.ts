@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  inject
+  computed,
+  inject,
 } from '@angular/core';
 import { BodyComponent, ScreenSizerService } from '@lluc_llull/ui-lib';
 import { LayoutService } from '../services/layout/layout.service';
@@ -24,10 +25,12 @@ export class LayoutComponent {
 
   currentLang = this.siteConfig.getLanguage();
 
-  mobileHeader(header: BodyComponent<any>): BodyComponent<any> {
+  mobileHeader = computed<BodyComponent<any>>(() => {
+    const header = this.layout.header();
+
     return {
-      ...header,
+      ...header!,
       name: 'header-mobile',
     };
-  }
+  });
 }
