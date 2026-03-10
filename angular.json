@@ -29,8 +29,7 @@
               "node_modules/@lluc_llull/ui-lib/styles/main.css",
               "src/styles.scss"
             ],
-            "scripts": [],
-            "prerender": true
+            "scripts": []
           },
           "configurations": {
             "production": {
