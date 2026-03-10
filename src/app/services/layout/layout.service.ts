@@ -6,57 +6,44 @@ import { BodyComponent } from '@lluc_llull/ui-lib';
   providedIn: 'root',
 })
 export class LayoutService {
-  private readonly header = signal<BodyComponent<any> | undefined>(undefined);
-  private readonly footer = signal<BodyComponent<any> | undefined>(undefined);
-  private readonly layoutLoaded = signal<boolean>(false);
 
-  // Observables para templates que usan async pipe
-  header$ = toObservable(this.header);
-  footer$ = toObservable(this.footer);
+  private _header = signal<BodyComponent<any> | undefined>(undefined);
+  private _footer = signal<BodyComponent<any> | undefined>(undefined);
+  private _layoutLoaded = signal(false);
 
-  // getters
-  get headerComponent() {
-    return this.header();
-  }
+  header = this._header.asReadonly();
+  footer = this._footer.asReadonly();
+  layoutLoaded = this._layoutLoaded.asReadonly();
 
-  get footerComponent() {
-    return this.footer();
-  }
-
-  get layoutReady() {
-    return this.layoutLoaded();
-  }
-
-  // setters
   setHeader(component: BodyComponent<any>) {
-    this.header.set(component);
+    this._header.set(component);
   }
 
   setFooter(component: BodyComponent<any>) {
-    this.footer.set(component);
+    this._footer.set(component);
   }
 
   markLayoutAsLoaded() {
-    this.layoutLoaded.set(true);
+    this._layoutLoaded.set(true);
   }
 
   resetLayout() {
-    this.header.set(undefined);
-    this.footer.set(undefined);
-    this.layoutLoaded.set(false);
+    this._header.set(undefined);
+    this._footer.set(undefined);
+    this._layoutLoaded.set(false);
   }
 
   updateHeaderLang(lang: string) {
-    const header = this.header();
-
+    const header = this._header();
     if (!header) return;
 
-    header.props = {
-      ...(header.props || {}),
-      lang,
-    };
-
-    // forzar re-render del signal
-    this.header.set({ ...header });
+    this._header.set({
+      ...header,
+      props: {
+        ...(header.props || {}),
+        lang,
+      },
+    });
   }
+
 }

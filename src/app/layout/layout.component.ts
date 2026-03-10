@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { BodyComponent, ScreenSizerService } from '@lluc_llull/ui-lib';
 import { LayoutService } from '../services/layout/layout.service';
 import { SiteConfigService } from '../services/site-config/site-config.service';
@@ -11,22 +16,21 @@ import { DynamicRendererComponent } from '../shared/dynamic-renderer/dynamic-ren
   imports: [CommonModule, DynamicRendererComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
   protected screen = inject(ScreenSizerService);
-  private layoutService = inject(LayoutService);
+  protected layout = inject(LayoutService);
   private siteConfig = inject(SiteConfigService);
-
-  header$ = this.layoutService.header$;
-  footer$ = this.layoutService.footer$;
 
   currentLang = this.siteConfig.getLanguage();
 
-  mobileHeader(header: BodyComponent<any>): BodyComponent<any> {
+  mobileHeader = computed<BodyComponent<any>>(() => {
+    const header = this.layout.header();
+
     return {
-      ...header,
+      ...header!,
       name: 'header-mobile',
     };
-  }
+  });
 }
