@@ -30,25 +30,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "prerender": {
-              "routes": [
-                "/",
-                "/es",
-                "/es/about",
-                "/es/contact",
-                "/es/projects",
-
-                "/en",
-                "/en/about",
-                "/en/contact",
-                "/en/projects",
-
-                "/ca",
-                "/ca/about",
-                "/ca/contact",
-                "/ca/projects"
-              ]
-            }
+            "prerender": true
           },
           "configurations": {
             "production": {
