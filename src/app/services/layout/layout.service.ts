@@ -45,4 +45,18 @@ export class LayoutService {
     this.footer.set(undefined);
     this.layoutLoaded.set(false);
   }
+
+  updateHeaderLang(lang: string) {
+    const header = this.header();
+
+    if (!header) return;
+
+    header.props = {
+      ...(header.props || {}),
+      lang,
+    };
+
+    // forzar re-render del signal
+    this.header.set({ ...header });
+  }
 }

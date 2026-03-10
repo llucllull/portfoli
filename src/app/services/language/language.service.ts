@@ -3,6 +3,7 @@ import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LangModalComponent } from '@lluc_llull/ui-lib';
+import { LayoutService } from '../layout/layout.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 
 @Injectable({
@@ -13,6 +14,7 @@ export class LanguageService {
   private router = inject(Router);
   private siteConfig = inject(SiteConfigService);
   private platformId = inject(PLATFORM_ID);
+  private layout = inject(LayoutService);
 
   openLanguagesModal() {
     const dialogRef = this.dialog.open(LangModalComponent, {
@@ -46,10 +48,11 @@ export class LanguageService {
 
     const url = '/' + segments.join('/');
 
-    // Navegar primero
     this.router.navigateByUrl(url, { replaceUrl: true }).then(() => {
-      // luego actualizar idioma
       this.siteConfig.setLanguage(lang);
+
+      // actualizar header
+      this.layout.updateHeaderLang(lang);
     });
   }
 }

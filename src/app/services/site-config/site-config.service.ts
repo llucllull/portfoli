@@ -1,18 +1,25 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class SiteConfigService {
-  private language = signal('es');
+  private router = inject(Router);
+  private language = signal<string | null>(null);
   private languages = signal<any[]>([]);
   private defaultLanguage = signal('es');
   private config = signal<any>(null);
 
-  setLanguage(lang: string) {
-    this.language.set(lang);
+  getCurrentLang(): string {
+    const segments = this.router.url.split('/').filter(Boolean);
+    return segments[0] || this.defaultLanguage();
   }
 
   getLanguage() {
-    return this.language() ?? this.defaultLanguage();
+    return this.language() ?? this.getCurrentLang();
+  }
+
+  setLanguage(lang: string) {
+    this.language.set(lang);
   }
 
   setLanguages(langs: any[]) {

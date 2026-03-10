@@ -32,16 +32,27 @@ export class ContentLoaderService {
         this.siteConfig.setLanguages(languages.languages);
         this.siteConfig.setDefaultLanguage(languages.default);
 
-        const body = (layout.body || []).map((c: any, index: number) => ({
-          name: c.component,
-          order: index,
-          props: c.props,
-        }));
+        const currentLang = this.siteConfig.getCurrentLang();
+        
+        this.siteConfig.setLanguage(currentLang);
+
+        const body = (layout.body || []).map((c: any, index: number) => {
+          const props = { ...(c.props || {}) };
+
+          if (c.component === 'header-clear') {
+            props.navigation = navigation;
+            props.lang = this.siteConfig.getCurrentLang();
+          }
+
+          return {
+            name: c.component,
+            order: index,
+            props,
+          };
+        });
 
         const components = this.mapper.mapComponents(body);
-
         const header = components.find((c) => c.name === 'header-clear');
-        //footer pte
 
         if (header) {
           header.events = {
