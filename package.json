@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
-    "@lluc_llull/ui-lib": "^0.14.0",
+    "@lluc_llull/ui-lib": "^0.14.1",
     "@supabase/supabase-js": "^2.50.2",
     "lucide-angular": "^0.577.0",
     "rxjs": "~7.8.0",
