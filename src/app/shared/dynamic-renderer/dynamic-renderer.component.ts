@@ -7,7 +7,10 @@ import {
 } from '@angular/core';
 
 import { BodyComponent } from '@lluc_llull/ui-lib';
-import { COMPONENT_REGISTRY } from './component-registry.service';
+import {
+  COMPONENT_CACHE,
+  COMPONENT_REGISTRY,
+} from './component-registry.service';
 
 @Component({
   selector: 'dynamic-renderer',
@@ -40,22 +43,26 @@ export class DynamicRendererComponent {
     this.vcr.clear();
 
     for (const c of comps) {
-      const loader = COMPONENT_REGISTRY[c.name];
+      let component = COMPONENT_CACHE[c.name];
 
-      if (!loader) {
-        console.warn(`Component "${c.name}" not registered`);
-        continue;
+      if (!component) {
+        const loader = COMPONENT_REGISTRY[c.name];
+
+        if (!loader) {
+          console.warn(`Component "${c.name}" not registered`);
+          continue;
+        }
+
+        component = await loader();
+        COMPONENT_CACHE[c.name] = component;
       }
 
-      const component = await loader();
       const ref = this.vcr.createComponent(component);
 
-      // inputs
       for (const key in c.props) {
         ref.setInput(key, c.props[key]);
       }
 
-      // outputs
       if (c.events) {
         for (const key in c.events) {
           const emitter = ref.instance[key];

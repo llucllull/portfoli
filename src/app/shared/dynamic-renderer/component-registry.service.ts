@@ -18,3 +18,13 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'category-progress': () =>
     import('@lluc_llull/ui-lib').then((m) => m.CategoryProgressComponent),
 };
+
+export const COMPONENT_CACHE: Record<string, Type<any>> = {};
+
+export async function preloadComponents() {
+  const entries = Object.entries(COMPONENT_REGISTRY);
+
+  for (const [key, loader] of entries) {
+    COMPONENT_CACHE[key] = await loader();
+  }
+}

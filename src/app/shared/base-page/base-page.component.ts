@@ -61,19 +61,6 @@ export class BasePageComponent {
       },
       { allowSignalWrites: true },
     );
-
-    effect(
-      () => {
-        const slug = this.slug();
-
-        if (!slug) return;
-        if (slug === this.lastSlug) return;
-
-        this.lastSlug = slug;
-        this.store.loadPage(slug);
-      },
-      { allowSignalWrites: true },
-    );
   }
 
   page = computed(() => {
