@@ -1,23 +1,25 @@
 import { Injectable, inject, signal } from '@angular/core';
+import { of, tap } from 'rxjs';
 import { ContentService } from './content.service';
+
 @Injectable({ providedIn: 'root' })
 export class ContentStore {
   private content = inject(ContentService);
   private pages = signal<Record<string, any>>({});
 
   loadPage(slug: string) {
-    if (this.pages()[slug]) return;
+    if (this.pages()[slug]) {
+      return of(this.pages()[slug]);
+    }
 
-    this.content.getPage(slug).subscribe((page) => {
-      this.pages.update((p) => {
-        if (p[slug]) return p;
-
-        return {
+    return this.content.getPage(slug).pipe(
+      tap((page) => {
+        this.pages.update((p) => ({
           ...p,
           [slug]: page,
-        };
-      });
-    });
+        }));
+      }),
+    );
   }
 
   page(slug: string) {
