@@ -1,0 +1,41 @@
+{
+	"template": "about",
+	"seo": {
+		"title": {
+			"es": "Sobre mí",
+			"ca": "Sobre mi",
+			"en": "About"
+		}
+	},
+	"body": [
+		{
+			"component": "section-intro",
+			"props": {
+				"texts": {
+					"title": {
+						"es": "Sobre mí",
+						"ca": "Sobre mi",
+						"en": "About me"
+					},
+					"text": {
+						"es": "Soy desarrollador web especializado en Angular y arquitecturas escalables.",
+						"ca": "Sóc desenvolupador web especialitzat en Angular i arquitectures escalables.",
+						"en": "I am a web developer specialized in Angular and scalable architectures."
+					}
+				}
+			}
+		},
+		{
+			"component": "skills-list",
+			"props": {
+				"skills": [
+					"Angular",
+					"TypeScript",
+					"Laravel",
+					"Node",
+					"Cloudflare"
+				]
+			}
+		}
+	]
+}

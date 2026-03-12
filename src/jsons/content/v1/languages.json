@@ -1,0 +1,29 @@
+{
+  "default": "es",
+  "languages": [
+    {
+      "code": "es",
+      "labels": {
+        "es": "Español",
+        "ca": "Espanyol",
+        "en": "Spanish"
+      }
+    },
+    {
+      "code": "ca",
+      "labels": {
+        "es": "Catalán",
+        "ca": "Català",
+        "en": "Catalan"
+      }
+    },
+    {
+      "code": "en",
+      "labels": {
+        "es": "Inglés",
+        "ca": "Anglès",
+        "en": "English"
+      }
+    }
+  ]
+}

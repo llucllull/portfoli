@@ -1,0 +1,68 @@
+{
+  "template": "home",
+  "seo": {
+    "title": {
+      "es": "Home",
+      "ca": "Home",
+      "en": "Home"
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Hola, soy Lluc Llull",
+            "ca": "Hola, sóc en Lluc Llull",
+            "en": "Hey, I'm Lluc Llull"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Y soy desarrollador web front-end",
+            "ca": "I sóc un desenvolupador web de front-end",
+            "en": "I'm a front-end web developer"
+          },
+          "highlight": {
+            "es": "Lluc Llull",
+            "ca": "Lluc Llull",
+            "en": "Lluc Llull"
+          }
+        },
+        "buttons": [
+          {
+            "page": "",
+            "url": "https://www.google.es",
+            "icon": "↗",
+            "label": {
+              "es": "ver mis proyectos",
+              "ca": "veure els meus projectes",
+              "en": "see my projects"
+            },
+            "link_type": "external"
+          },
+          {
+            "page": "about",
+            "url": "",
+            "icon": "↗",
+            "label": {
+              "es": "más sobre mi",
+              "ca": "més sobre mi",
+              "en": "more about me"
+            },
+            "link_type": "internal"
+          }
+        ]
+      }
+    }
+  ]
+}

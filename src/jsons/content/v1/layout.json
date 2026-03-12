@@ -1,0 +1,26 @@
+{
+  "body": [
+    {
+      "component": "header-clear",
+      "props": {
+        "logo": {
+			"alt": "Lluc Llull - Dark",
+			"src": "/logos/logo_black.svg"
+		},
+        "logoDark":  {
+			"alt": "Lluc Llull - Light",
+			"src": "/logos/logo_white.svg"
+		},
+        "lang": "es",
+        "navItems": "navigation",
+        "socialItems": "social"
+      }
+    },
+    {
+      "component": "footer-main",
+      "props": {
+        "links": "footerLinks"
+      }
+    }
+  ]
+}

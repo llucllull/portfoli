@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "lastUpdate": "2026-03-06",
+  "pages": [
+    "home",
+    "about",
+    "contact",
+	"404",
+	"projects"
+  ],
+  "projects": [
+    "puro-hotels"
+  ]
+}

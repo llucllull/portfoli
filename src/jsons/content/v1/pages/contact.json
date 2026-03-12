@@ -1,0 +1,40 @@
+{
+	"template": "contact",
+	"seo": {
+		"title": {
+			"es": "Contacto",
+			"ca": "Contacte",
+			"en": "Contact"
+		}
+	},
+	"body": [
+		{
+			"component": "section-intro",
+			"props": {
+				"texts": {
+					"pretitle": {
+						"es": "",
+						"ca": "",
+						"en": ""
+					},
+					"title": {
+						"es": "Hablemos",
+						"ca": "Parlem",
+						"en": "Let's talk"
+					},
+					"subtitle": {
+						"es": "",
+						"ca": "",
+						"en": ""
+					},
+					"text": {
+						"es": "Si quieres trabajar conmigo o tienes alguna pregunta puedes escribirme.",
+						"ca": "Si vols treballar amb mi o tens alguna pregunta pots escriure'm.",
+						"en": "If you want to work with me or have any question feel free to contact me."
+					}
+				},
+				"email": "hola@llucllull.dev"
+			}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "siteName": "Lluc Llull",
+  "siteUrl": "https://llucllull.dev",
+  "author": "Lluc Llull",
+  "defaultLanguage": "es",
+  "seo": {
+    "title": "Lluc Llull",
+    "description": "Front End Developer"
+  }
+}

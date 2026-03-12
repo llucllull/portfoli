@@ -1,0 +1,30 @@
+{
+	"template": "projects",
+	"seo": {
+		"title": {
+			"es": "Proyectos",
+			"ca": "Projectes",
+			"en": "Projects"
+		}
+	},
+	"body": [
+		{
+			"component": "projects-grid",
+			"props": {
+				"projects": [
+					{
+						"slug": "puro-hotels",
+						"title": "Puro Hotels",
+						"type": "work",
+						"year": 2025,
+						"tags": [
+							"Angular",
+							"SSR"
+						],
+						"image": "/assets/projects/puro.jpg"
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"template": "404",
+	"seo": {
+		"title": {
+			"es": "Página no encontrada",
+			"ca": "Pàgina no trobada",
+			"en": "Page not found"
+		}
+	},
+	"body": [
+		{
+			"component": "not-found",
+			"props": {
+				"texts": {
+					"title": {
+						"es": "404",
+						"ca": "404",
+						"en": "404"
+					},
+					"subtitle": {
+						"es": "Página no encontrada",
+						"ca": "Pàgina no trobada",
+						"en": "Page not found"
+					},
+					"text": {
+						"es": "La página que estás buscando no existe o ha sido movida.",
+						"ca": "La pàgina que busques no existeix o s'ha mogut.",
+						"en": "The page you are looking for does not exist or has been moved."
+					}
+				},
+				"buttons": [
+					{
+						"page": "home",
+						"icon": "↗",
+						"label": {
+							"es": "Volver al inicio",
+							"ca": "Tornar a l'inici",
+							"en": "Back to home"
+						},
+						"link_type": "internal"
+					}
+				]
+			}
+		}
+	]
+}

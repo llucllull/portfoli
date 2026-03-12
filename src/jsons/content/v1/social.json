@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "name": "github",
+      "url": "https://github.com/llucllull",
+      "icon": "github"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://linkedin.com/in/llucllull",
+      "icon": "linkedin"
+    },
+    {
+      "name": "email",
+      "url": "mailto:hola@llucllull.dev",
+      "icon": "mail"
+    }
+  ]
+}

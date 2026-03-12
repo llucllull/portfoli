@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "slug": "home",
+      "label": {
+        "es": "Inicio",
+        "ca": "Inici",
+        "en": "Home"
+      }
+    },
+    {
+      "slug": "about",
+      "label": {
+        "es": "Sobre mí",
+        "ca": "Sobre mi",
+        "en": "About"
+      }
+    },
+    {
+      "slug": "projects",
+      "label": {
+        "es": "Proyectos",
+        "ca": "Projectes",
+        "en": "Projects"
+      }
+    },
+    {
+      "slug": "contact",
+      "label": {
+        "es": "Contacto",
+        "ca": "Contacte",
+        "en": "Contact"
+      }
+    }
+  ],
+  "social": [
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/lluc-llull/",
+      "icon": "arrow-up-right",
+      "linkType": "external"
+    },
+    {
+      "label": "github",
+      "url": "https://github.com/llucllull",
+      "icon": "arrow-up-right",
+      "linkType": "external"
+    }
+  ]
+}
