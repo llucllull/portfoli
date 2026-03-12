@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { PAGE_IMPORTS } from '../../imports/page-imports';
+import { BasePageComponent } from '../../shared/base-page/base-page.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  imports: PAGE_IMPORTS,
+  templateUrl: '../../shared/base-page/base-page.component.html',
+  styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-
-}
+export class ContactComponent extends BasePageComponent {}

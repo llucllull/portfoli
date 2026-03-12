@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PAGE_IMPORTS } from '../../imports/page-imports';
 import { BasePageComponent } from '../../shared/base-page/base-page.component';
 
 @Component({
-  selector: 'app-404',
+  selector: 'app-home',
   standalone: true,
   imports: PAGE_IMPORTS,
   templateUrl: '../../shared/base-page/base-page.component.html',
-  styleUrl: './404.component.scss',
+  styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ErrorComponent extends BasePageComponent {}
+export class HomeComponent extends BasePageComponent {}

@@ -1,30 +1,11 @@
-@if (header$ | async; as headerComponent) {
-  @if (headerComponent?.props; as props) {
-    <div class="header-container">
-      @if (!screen.isXs()) {
-        <lib-header-clear
-          [logo]="props.logo"
-          [logoDark]="props.logoDark"
-          [lang]="props.lang"
-          [navItems]="props.navItems"
-          [socialItems]="props.socialItems"
-          [homeLink]="props.navItems[0]"
-          (langModal)="openLanguagesModal()"
-        ></lib-header-clear>
-      }
-      @if (screen.isXs()) {
-        <lib-header-mobile
-          [logo]="props.logo"
-          [logoDark]="props.logoDark"
-          [lang]="props.lang"
-          [navItems]="props.navItems"
-          [socialItems]="props.socialItems"
-          [homeLink]="props.navItems[0]"
-          (langModal)="openLanguagesModal()"
-        ></lib-header-mobile>
-      }
-    </div>
-  }
+@if (layout.header(); as headerComponent) {
+  <div class="header-container">
+    @if (screen.isXs()) {
+      <dynamic-renderer [components]="[mobileHeader()]"> </dynamic-renderer>
+    } @else {
+      <dynamic-renderer [components]="[headerComponent]"> </dynamic-renderer>
+    }
+  </div>
 }
 
 <main>

@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   contentBaseUrl: 'https://cdn.llucllull.dev/content/v1',
   assetsBaseUrl: 'https://cdn.llucllull.dev/assets/v1',
 };

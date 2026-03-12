@@ -2,141 +2,97 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  effect,
   inject,
-  OnInit,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BodyComponent, MapperService } from '@lluc_llull/ui-lib';
-import { combineLatest, Observable, of } from 'rxjs';
-import { catchError, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
-import { ApiService } from '../../services/api/api.service';
-import { RoutesService } from '../../services/routes/routes.service';
-import { SiteConfigService } from '../../services/site-config/site-config.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, Router } from '@angular/router';
 
-interface PageConfig {
-  id: number;
-  name: string;
-  template: string;
-  body: BodyComponent<any>[];
-}
+import { MapperService } from '@lluc_llull/ui-lib';
+import { ContentStore } from '../../services/content/content.store';
+import { SiteConfigService } from '../../services/site-config/site-config.service';
+import { resolveLang } from '../../utils/resolve-lang';
+import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
 
 @Component({
   selector: 'app-base-page',
   standalone: true,
-  imports: [CommonModule],
-  template: '',
-  styles: '',
+  imports: [CommonModule, DynamicRendererComponent],
+  templateUrl: './base-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BasePageComponent implements OnInit {
-  protected readonly siteConfig = inject(SiteConfigService);
-  protected readonly routesService = inject(RoutesService);
-  protected readonly apiService = inject(ApiService);
-  protected readonly route = inject(ActivatedRoute);
-  protected readonly mapperService = inject(MapperService);
+export class BasePageComponent {
+  protected route = inject(ActivatedRoute);
+  protected store = inject(ContentStore);
+  protected mapper = inject(MapperService);
+  protected siteConfig = inject(SiteConfigService);
 
-  pageConfig$!: Observable<PageConfig | null>;
+  private url = toSignal(this.route.url);
+  private params = toSignal(this.route.paramMap);
+  private lastSlug = '';
 
-  ngOnInit(): void {
-    this.pageConfig$ = combineLatest([
-      this.route.url,
-      this.siteConfig.getLanguage$().pipe(distinctUntilChanged())
-    ]).pipe(
-      switchMap(([urlSegments, currentLanguage]) => {
-        // Obtener el path actual de la URL
-        const currentPath = urlSegments.map(segment => segment.path).join('/');
-        
-        // Buscar la página que corresponde a este path
-        return this.apiService.getRoutes().pipe(
-          switchMap((routes) => {
-            const currentPage = routes.find(route => 
-              Object.values(route.routes).some(routePath => 
-                routePath.replace(/^\/|\/$/g, '') === currentPath
-              )
-            );
-            
-            const pageName = currentPage?.name || 'home';
-            
-            return this.apiService.getPageByName(pageName).pipe(
-              switchMap((pageResponse) => {
-                const page = (pageResponse as any)?.body
-                  ? (pageResponse as any).body
-                  : pageResponse;
-                const pageData = page?.[0];
+  private router = inject(Router);
 
+  slug = computed(() => {
+    const url = this.router.url;
 
-                if (!pageData) return of(null);
+    const parts = url.split('/').filter(Boolean);
 
-                return this.apiService.getPageComponents(pageData.id).pipe(
-                  switchMap((components) => {
-                    const componentIds = components.map((c) => c.id);
-                    const langId = currentLanguage?.id || 1;
-                    
-                    if (componentIds.length === 0) {
-                      return of({
-                        ...pageData,
-                        body: [],
-                      });
-                    }
-                    
-                    return this.apiService
-                      .getPageComponentTranslationsByComponentIds(componentIds, langId)
-                      .pipe(
-                        map((translations) => {
-                          const componentsWithProps = translations
-                            .sort((a, b) => (a.page_component?.order ?? 0) - (b.page_component?.order ?? 0))
-                            .map((translation) => {
-                              const name = translation.page_component?.component?.name;
-                              return {
-                                name,
-                                order: translation.page_component?.order ?? 0,
-                                props: translation?.props || {},
-                              };
-                            });
-                          const bodyComponents = this.mapperService.mapComponents(componentsWithProps);
-                          return {
-                            ...pageData,
-                            body: bodyComponents,
-                          };
-                        }),
-                        catchError((error) => {
-                          console.error('Error loading page components:', error);
-                          return of({
-                            ...pageData,
-                            body: [],
-                          });
-                        })
-                      );
-                  }),
-                  catchError((error) => {
-                    console.error('Error loading page components:', error);
-                    return of({
-                      ...pageData,
-                      body: [],
-                    });
-                  })
-                );
-              }),
-              catchError((error) => {
-                console.error('Error loading page:', error);
-                return of(null);
-              })
-            );
-          })
-        );
-      })
+    if (parts.length <= 1) return 'home';
+
+    return parts.slice(1).join('/');
+  });
+
+  constructor() {
+    effect(
+      () => {
+        const params = this.params();
+
+        if (!params) return;
+
+        const lang = params.get('lang');
+
+        const langs = this.siteConfig.getLanguages()?.map((l) => l.code) ?? [];
+
+        if (lang && langs.includes(lang)) {
+          this.siteConfig.setLanguage(lang);
+        }
+      },
+      { allowSignalWrites: true },
+    );
+
+    effect(
+      () => {
+        const slug = this.slug();
+
+        if (!slug) return;
+        if (slug === this.lastSlug) return;
+
+        this.lastSlug = slug;
+        this.store.loadPage(slug);
+      },
+      { allowSignalWrites: true },
     );
   }
 
-  getTitle(): string {
-    const currentConfig = this.siteConfig.getCurrentConfig();
-    const data = (currentConfig as any)?.body
-      ? (currentConfig as any).body
-      : currentConfig;
-    return data?.[0]?.name || 'Portfolio';
-  }
+  page = computed(() => {
+    const slug = this.slug();
+    const page = this.store.page(slug);
 
-  getComponentList(): any[] {
-    return [];
-  }
+    if (!page) return null;
+
+    const lang = this.siteConfig.getLanguage();
+
+    const body = page.body.map((c: any, index: number) => ({
+      name: c.component,
+      order: index,
+      props: resolveLang(c.props, lang),
+    }));
+
+    return {
+      ...page,
+      body: this.mapper.mapComponents(body),
+    };
+  });
 }

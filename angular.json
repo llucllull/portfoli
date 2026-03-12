@@ -31,9 +31,14 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "security": {
+              "allowedHosts": []
+            },
+            "prerender": {
+              "routesFile": "routes.txt"
+            },
             "ssr": {
-              "entry": "server.ts"
+              "entry": "src/server.ts"
             }
           },
           "configurations": {
@@ -41,8 +46,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "8mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -53,38 +58,24 @@
               "outputHashing": "all"
             },
             "development": {
-              "optimization": false,
+              "optimization": true,
               "extractLicenses": false,
               "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
         },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/portfoli-server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "fileReplacements": [
-              {
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.server.ts"
-              }
-            ]
-          }
-        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portfoli:build"
+            "buildTarget": "portfoli:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portfoli:build:production"
+              "buildTarget": "portfoli:build:production"
             },
             "development": {
-              "browserTarget": "portfoli:build:development"
+              "buildTarget": "portfoli:build:development"
             }
           },
           "defaultConfiguration": "development"
