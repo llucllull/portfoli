@@ -14,11 +14,14 @@ export class ContentService {
 
   private fetch(url: string) {
     if (!this.cache.has(url)) {
-      const request$ = this.http.get(url).pipe(shareReplay(1));
-
+      const request$ = this.http.get(url).pipe(
+        shareReplay({
+          bufferSize: 1,
+          refCount: false,
+        }),
+      );
       this.cache.set(url, request$);
     }
-
     return this.cache.get(url)!;
   }
 

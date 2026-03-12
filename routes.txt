@@ -1,0 +1,16 @@
+/
+/es
+/es/about
+/es/contact
+/es/projects
+/es/projects/puro-hotels
+/ca
+/ca/about
+/ca/contact
+/ca/projects
+/ca/projects/puro-hotels
+/en
+/en/about
+/en/contact
+/en/projects
+/en/projects/puro-hotels
