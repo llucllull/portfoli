@@ -56,7 +56,10 @@ export const routes: Routes = [
       {
         path: '**',
         loadComponent: () =>
-          import('./pages/404/404.component').then((m) => m.ErrorComponent),
+          import('./shared/base-page/base-page.component').then(
+            (m) => m.BasePageComponent,
+          ),
+        resolve: { page: pageResolver },
       },
     ],
   },

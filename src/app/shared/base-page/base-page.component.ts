@@ -65,7 +65,11 @@ export class BasePageComponent {
 
   page = computed(() => {
     const slug = this.slug();
-    const page = this.store.page(slug);
+    let page = this.store.page(slug);
+
+    if (!page) {
+      page = this.store.page('404');
+    }
 
     if (!page) return null;
 

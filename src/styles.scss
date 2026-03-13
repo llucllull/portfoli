@@ -9,6 +9,9 @@
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
+
+  //Border
+  --border-radius: 0px;
 }
 
 :root,
@@ -26,6 +29,11 @@
   --button-primary-text: #0a0a0a;
   --button-primary-bg-hover: #0a0a0a;
   --button-primary-text-hover: #C6E030;
+
+  --button-primary-outline-border: #0a0a0a;
+  --button-primary-outline-text: #0a0a0a;
+  --button-primary-outline-bg-hover: #0a0a0a;
+  --button-primary-outline-text-hover: #C6E030;
 
   --button-secondary-bg: #0a0a0a;
   --button-secondary-text: #f9f9f9;
@@ -64,6 +72,11 @@
   --button-primary-text: #C6E030;
   --button-primary-bg-hover: #C6E030;
   --button-primary-text-hover: #0a0a0a;
+
+  --button-primary-outline-border: #C6E030;
+  --button-primary-outline-text: #C6E030;
+  --button-primary-outline-bg-hover: #C6E030;
+  --button-primary-outline-text-hover: #0a0a0a;
 
   --button-secondary-bg: #C6E030;
   --button-secondary-text: #f9f9f9;

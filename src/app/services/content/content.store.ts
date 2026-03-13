@@ -5,17 +5,25 @@ export class ContentStore {
   private content = inject(ContentService);
   private pages = signal<Record<string, any>>({});
 
-  loadPage(slug: string) {
-    if (this.pages()[slug]) return;
+  loadPage(slug: string): Promise<void> {
+    return new Promise((resolve) => {
+      if (this.pages()[slug]) {
+        resolve();
+        return;
+      }
 
-    this.content.getPage(slug).subscribe((page) => {
-      this.pages.update((p) => {
-        if (p[slug]) return p;
-
-        return {
-          ...p,
-          [slug]: page,
-        };
+      this.content.getPage(slug).subscribe({
+        next: (page) => {
+          this.pages.update((p) => ({ ...p, [slug]: page }));
+          resolve();
+        },
+        error: () => {
+          if (slug !== '404') {
+            this.loadPage('404').then(resolve);
+          } else {
+            resolve();
+          }
+        },
       });
     });
   }

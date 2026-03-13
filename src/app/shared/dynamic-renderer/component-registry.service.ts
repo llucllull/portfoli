@@ -17,6 +17,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'category-progress': () =>
     import('@lluc_llull/ui-lib').then((m) => m.CategoryProgressComponent),
+
+  'not-found': () =>
+    import('@lluc_llull/ui-lib').then((m) => m.NotFoundComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
