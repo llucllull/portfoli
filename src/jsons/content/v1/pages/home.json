@@ -40,15 +40,15 @@
         },
         "buttons": [
           {
-            "page": "",
-            "url": "https://www.google.es",
+            "page": "projects",
+            "url": "",
             "icon": "↗",
             "label": {
               "es": "ver mis proyectos",
               "ca": "veure els meus projectes",
               "en": "see my projects"
             },
-            "link_type": "external"
+            "link_type": "internal"
           },
           {
             "page": "about",
