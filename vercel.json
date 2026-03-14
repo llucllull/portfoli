@@ -1,8 +1,11 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "redirects": [
+    {
+      "source": "/:lang(es|en|ca)",
+      "destination": "/:lang/",
+      "permanent": true
+    }
   ]
 }
