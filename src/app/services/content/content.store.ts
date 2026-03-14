@@ -14,7 +14,10 @@ export class ContentStore {
 
       this.content.getPage(slug).subscribe({
         next: (page) => {
-          this.pages.update((p) => ({ ...p, [slug]: page }));
+          this.pages.update((p) => ({
+            ...p,
+            [slug]: page,
+          }));
           resolve();
         },
         error: () => {
