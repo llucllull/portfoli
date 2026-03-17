@@ -9,7 +9,7 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MapperService } from '@lluc_llull/ui-lib';
+import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { ContentStore } from '../../services/content/content.store';
 import { SiteConfigService } from '../../services/site-config/site-config.service';
 import { resolveLang } from '../../utils/resolve-lang';

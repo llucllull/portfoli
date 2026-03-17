@@ -6,7 +6,7 @@ import {
   inject,
 } from '@angular/core';
 import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
-import { ScreenSizerService } from '@lluc_llull/ui-lib';
+import { ScreenSizerService } from '@lluc_llull/ui-lib/screen-sizer';
 import { LayoutService } from '../services/layout/layout.service';
 import { SiteConfigService } from '../services/site-config/site-config.service';
 import { DynamicRendererComponent } from '../shared/dynamic-renderer/dynamic-renderer.component';

@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { MapperService } from '@lluc_llull/ui-lib';
+import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { forkJoin, tap } from 'rxjs';
 import { prefetchIdle } from '../../utils/prefetch-idle';
 import { LanguageService } from '../language/language.service';
