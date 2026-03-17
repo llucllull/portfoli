@@ -6,7 +6,7 @@ import {
   input,
 } from '@angular/core';
 
-import { BodyComponent } from '@lluc_llull/ui-lib';
+import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
 import {
   COMPONENT_CACHE,
   COMPONENT_REGISTRY,
