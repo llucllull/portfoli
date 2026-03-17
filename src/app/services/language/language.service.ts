@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { LangModalComponent } from '@lluc_llull/ui-lib';
+import { LangModalComponent } from '@lluc_llull/ui-lib/modals';
 import { LayoutService } from '../layout/layout.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 
