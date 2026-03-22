@@ -1,9 +1,29 @@
+@font-face {
+  font-family: "amador-w01-regular";
+  src:
+    url("assets/fonts/amador-w01-regular.woff2") format("woff2"),
+    url("assets/fonts/amador-w01-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "podium-soft-demibold";
+  src:
+    url("assets/fonts/PODIUMSoft-DemiBold.woff2") format("woff2"),
+    url("assets/fonts/PODIUMSoft-DemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "ppneuemontreal-book";
+  src:
+    url("assets/fonts/ppneuemontreal-book.woff2") format("woff2"),
+    url("assets/fonts/ppneuemontreal-book.woff") format("woff");
+}
+
 :root {
   //Fonts
-  --font-titles: 'Bebas Neue', system-ui, sans-serif;
-  --font-base: 'Montserrat', sans-serif;
+  --font-title-home: "amador-w01-regular", sans-serif;
+  --font-titles: "podium-soft-demibold", sans-serif;
+  --font-base: "ppneuemontreal-book", sans-serif;
   --font-size-base: 16px;
-  
+
   //Spacings
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -20,36 +40,36 @@
 
   //Colors
   --color-primary: #0a0a0a;
-  --color-secondary: #C6E030;
+  --color-secondary: #c6e030;
   --color-text: #0a0a0a;
-  --color-bg: #C6E030;
+  --color-bg: #c6e030;
 
   //Buttons
-  --button-primary-bg: #C6E030;
+  --button-primary-bg: #c6e030;
   --button-primary-text: #0a0a0a;
   --button-primary-bg-hover: #0a0a0a;
-  --button-primary-text-hover: #C6E030;
+  --button-primary-text-hover: #c6e030;
 
   --button-primary-outline-border: #0a0a0a;
   --button-primary-outline-text: #0a0a0a;
   --button-primary-outline-bg-hover: #0a0a0a;
-  --button-primary-outline-text-hover: #C6E030;
+  --button-primary-outline-text-hover: #c6e030;
 
   --button-secondary-bg: #0a0a0a;
   --button-secondary-text: #f9f9f9;
   --button-secondary-bg-hover: #000000;
-  --button-secondary-text-hover: #C6E030;
+  --button-secondary-text-hover: #c6e030;
 
   --button-link-text: #0a0a0a;
   --button-link-text-hover: #0a0a0a;
 
   //Headers
-  --header-clear-bg: #C6E030;
-  --header-mobile-bg: #C6E030;
+  --header-clear-bg: #c6e030;
+  --header-mobile-bg: #c6e030;
   --header-logo-text: #0a0a0a;
 
   //Modals
-  --modal-bg: #C6E030;
+  --modal-bg: #c6e030;
   --close-btn: #0a0a0a;
   --item-text: #0a0a0a;
 
@@ -62,41 +82,41 @@
   color-scheme: dark;
 
   //Colors
-  --color-primary: #C6E030;
+  --color-primary: #c6e030;
   --color-secondary: #0a0a0a;
-  --color-text: #C6E030;
+  --color-text: #c6e030;
   --color-bg: #0a0a0a;
 
   //Buttons
   --button-primary-bg: #0a0a0a;
-  --button-primary-text: #C6E030;
-  --button-primary-bg-hover: #C6E030;
+  --button-primary-text: #c6e030;
+  --button-primary-bg-hover: #c6e030;
   --button-primary-text-hover: #0a0a0a;
 
-  --button-primary-outline-border: #C6E030;
-  --button-primary-outline-text: #C6E030;
-  --button-primary-outline-bg-hover: #C6E030;
+  --button-primary-outline-border: #c6e030;
+  --button-primary-outline-text: #c6e030;
+  --button-primary-outline-bg-hover: #c6e030;
   --button-primary-outline-text-hover: #0a0a0a;
 
-  --button-secondary-bg: #C6E030;
+  --button-secondary-bg: #c6e030;
   --button-secondary-text: #f9f9f9;
-  --button-secondary-bg-hover: #C6E030;
+  --button-secondary-bg-hover: #c6e030;
   --button-secondary-text-hover: #0a0a0a;
 
-  --button-link-text: #C6E030;
-  --button-link-text-hover: #C6E030;
+  --button-link-text: #c6e030;
+  --button-link-text-hover: #c6e030;
 
   //Headers
   --header-clear-bg: #0a0a0a;
   --header-mobile-bg: #0a0a0a;
-  --header-logo-text: #C6E030;
+  --header-logo-text: #c6e030;
 
   //Modals
   --modal-bg: #0a0a0a;
-  --close-btn: #C6E030;
-  --item-text: #C6E030;
+  --close-btn: #c6e030;
+  --item-text: #c6e030;
 
   //Progress bar
-  --progress-color: #C6E030;
+  --progress-color: #c6e030;
   --progress-bg: #cfcfcf;
 }
