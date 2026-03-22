@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentLoaderService } from './services/content/content-loader.service';
@@ -11,8 +11,7 @@ import { ContentLoaderService } from './services/content/content-loader.service'
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  private loader = inject(ContentLoaderService);
-
+  constructor(private loader: ContentLoaderService) {}
   ngOnInit(): void {
     this.loader.loadInitialContent().subscribe({
       error: (err) => console.error('Content loading error', err),

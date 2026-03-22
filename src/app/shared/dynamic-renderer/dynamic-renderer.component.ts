@@ -19,11 +19,9 @@ import {
 })
 export class DynamicRendererComponent {
   components = input<BodyComponent<any>[]>([]);
-
-  private vcr = inject(ViewContainerRef);
   private rendering = false;
 
-  constructor() {
+  constructor(private vcr: ViewContainerRef) {
     effect(() => {
       const comps = this.components();
 

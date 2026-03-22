@@ -1,9 +1,10 @@
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { ContentService } from './content.service';
 @Injectable({ providedIn: 'root' })
 export class ContentStore {
-  private content = inject(ContentService);
   private pages = signal<Record<string, any>>({});
+
+  constructor(private content: ContentService) {}
 
   loadPage(slug: string): Promise<void> {
     return new Promise((resolve) => {

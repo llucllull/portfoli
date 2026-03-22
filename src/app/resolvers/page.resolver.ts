@@ -1,12 +1,17 @@
-import { inject } from '@angular/core';
-import { ResolveFn } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { Resolve } from '@angular/router';
 import { ContentStore } from '../services/content/content.store';
 
-export const pageResolver: ResolveFn<boolean> = async (route) => {
-  const store = inject(ContentStore);
-  const slug = route.paramMap.get('slug') || route.routeConfig?.path || 'home';
+@Injectable({ providedIn: 'root' })
+export class pageResolver implements Resolve<boolean> {
+  constructor(private store: ContentStore) {}
 
-  await store.loadPage(slug);
+  async resolve(route: any): Promise<boolean> {
+    const slug =
+      route.paramMap.get('slug') || route.routeConfig?.path || 'home';
 
-  return true;
-};
+    await this.store.loadPage(slug);
+
+    return true;
+  }
+}

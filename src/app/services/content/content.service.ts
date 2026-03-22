@@ -1,6 +1,12 @@
 import { isPlatformServer } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, PLATFORM_ID, TransferState, inject, makeStateKey } from '@angular/core';
+import {
+  Inject,
+  Injectable,
+  PLATFORM_ID,
+  TransferState,
+  makeStateKey
+} from '@angular/core';
 import { Observable, shareReplay, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
@@ -8,12 +14,14 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class ContentService {
-  private http = inject(HttpClient);
-  private transferState = inject(TransferState);
-  private platformId = inject(PLATFORM_ID);
-
   private base = environment.contentBaseUrl;
   private cache = new Map<string, Observable<any>>();
+
+  constructor(
+    private http: HttpClient,
+    private transferState: TransferState,
+    @Inject(PLATFORM_ID) private readonly platformId: Object,
+  ) {}
 
   private fetch(url: string) {
     const key = makeStateKey<any>(url);
