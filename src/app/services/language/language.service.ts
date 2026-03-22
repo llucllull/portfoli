@@ -1,8 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
-import { inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { LangModalComponent } from '@lluc_llull/ui-lib';
+import { LangModalComponent } from '@lluc_llull/ui-lib/modals';
 import { LayoutService } from '../layout/layout.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 
@@ -10,12 +10,13 @@ import { SiteConfigService } from '../site-config/site-config.service';
   providedIn: 'root',
 })
 export class LanguageService {
-  private dialog = inject(MatDialog);
-  private router = inject(Router);
-  private siteConfig = inject(SiteConfigService);
-  private platformId = inject(PLATFORM_ID);
-  private layout = inject(LayoutService);
-
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+    private siteConfig: SiteConfigService,
+   @Inject(PLATFORM_ID) private readonly platformId: Object,
+    private layout: LayoutService,
+  ) {}
   openLanguagesModal() {
     const dialogRef = this.dialog.open(LangModalComponent, {
       data: {

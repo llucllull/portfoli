@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
-  inject,
+  computed
 } from '@angular/core';
-import { BodyComponent, ScreenSizerService } from '@lluc_llull/ui-lib';
+import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
+import { ScreenSizerService } from '@lluc_llull/ui-lib/screen-sizer';
 import { LayoutService } from '../services/layout/layout.service';
 import { SiteConfigService } from '../services/site-config/site-config.service';
 import { DynamicRendererComponent } from '../shared/dynamic-renderer/dynamic-renderer.component';
@@ -19,9 +19,11 @@ import { DynamicRendererComponent } from '../shared/dynamic-renderer/dynamic-ren
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent {
-  protected screen = inject(ScreenSizerService);
-  protected layout = inject(LayoutService);
-  private siteConfig = inject(SiteConfigService);
+  constructor(
+    protected screen: ScreenSizerService,
+    protected layout: LayoutService,
+    private siteConfig: SiteConfigService,
+  ) {}
 
   currentLang = this.siteConfig.getLanguage();
 

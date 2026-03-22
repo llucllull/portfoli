@@ -4,22 +4,22 @@ type ComponentLoader = () => Promise<Type<any>>;
 
 export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'header-clear': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.HeaderClearComponent),
+    import('@lluc_llull/ui-lib/headers').then((m) => m.HeaderClearComponent),
 
   'header-mobile': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.HeaderMobileComponent),
+    import('@lluc_llull/ui-lib/headers').then((m) => m.HeaderMobileComponent),
 
   'hero-section': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.HeroSectionComponent),
+    import('@lluc_llull/ui-lib/content').then((m) => m.HeroSectionComponent),
 
   'section-intro': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.SectionIntroComponent),
+    import('@lluc_llull/ui-lib/content').then((m) => m.SectionIntroComponent),
 
   'category-progress': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.CategoryProgressComponent),
+    import('@lluc_llull/ui-lib/content').then((m) => m.CategoryProgressComponent),
 
   'not-found': () =>
-    import('@lluc_llull/ui-lib').then((m) => m.NotFoundComponent),
+    import('@lluc_llull/ui-lib/feedback').then((m) => m.NotFoundComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};

@@ -4,15 +4,15 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
 
-import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib';
+import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib/mapper';
 import { routes } from './app.routes';
-import { environment } from '../environments/environment.prod';
+import { environment } from '../environments/environment';
 import { MatDialogModule } from '@angular/material/dialog';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(withFetch()),
+    provideHttpClient(),
     provideAnimationsAsync(),
     importProvidersFrom(MatDialogModule),
     MapperService,

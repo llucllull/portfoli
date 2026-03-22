@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { BodyComponent } from '@lluc_llull/ui-lib';
+import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
 
 @Injectable({
   providedIn: 'root',

@@ -9,7 +9,7 @@ import {
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MapperService } from '@lluc_llull/ui-lib';
+import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { ContentStore } from '../../services/content/content.store';
 import { SiteConfigService } from '../../services/site-config/site-config.service';
 import { resolveLang } from '../../utils/resolve-lang';
@@ -23,16 +23,9 @@ import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasePageComponent {
-  protected route = inject(ActivatedRoute);
-  protected store = inject(ContentStore);
-  protected mapper = inject(MapperService);
-  protected siteConfig = inject(SiteConfigService);
-
   private url = toSignal(this.route.url);
   private params = toSignal(this.route.paramMap);
   private lastSlug = '';
-
-  private router = inject(Router);
 
   slug = computed(() => {
     const url = this.router.url;
@@ -44,7 +37,13 @@ export class BasePageComponent {
     return parts.slice(1).join('/');
   });
 
-  constructor() {
+  constructor(
+    protected route: ActivatedRoute,
+    protected store: ContentStore,
+    protected mapper: MapperService,
+    protected siteConfig: SiteConfigService,
+    protected router: Router,
+  ) {
     effect(
       () => {
         const params = this.params();
@@ -59,7 +58,6 @@ export class BasePageComponent {
           this.siteConfig.setLanguage(lang);
         }
       },
-      { allowSignalWrites: true },
     );
   }
 

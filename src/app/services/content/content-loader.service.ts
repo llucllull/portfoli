@@ -1,5 +1,5 @@
-import { inject, Injectable } from '@angular/core';
-import { MapperService } from '@lluc_llull/ui-lib';
+import { Injectable } from '@angular/core';
+import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { forkJoin, tap } from 'rxjs';
 import { prefetchIdle } from '../../utils/prefetch-idle';
 import { LanguageService } from '../language/language.service';
@@ -12,12 +12,14 @@ import { ContentStore } from './content.store';
   providedIn: 'root',
 })
 export class ContentLoaderService {
-  private content = inject(ContentService);
-  private siteConfig = inject(SiteConfigService);
-  private layout = inject(LayoutService);
-  private mapper = inject(MapperService);
-  private store = inject(ContentStore);
-  private language = inject(LanguageService);
+  constructor(
+    private content: ContentService,
+    private siteConfig: SiteConfigService,
+    private layout: LayoutService,
+    private mapper: MapperService,
+    private store: ContentStore,
+    private language: LanguageService,
+  ) {}
 
   loadInitialContent() {
     return forkJoin({
@@ -33,7 +35,7 @@ export class ContentLoaderService {
         this.siteConfig.setDefaultLanguage(languages.default);
 
         const currentLang = this.siteConfig.getCurrentLang();
-        
+
         this.siteConfig.setLanguage(currentLang);
 
         const body = (layout.body || []).map((c: any, index: number) => {

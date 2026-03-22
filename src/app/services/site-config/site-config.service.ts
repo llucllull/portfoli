@@ -1,13 +1,14 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class SiteConfigService {
-  private router = inject(Router);
   private language = signal<string | null>(null);
   private languages = signal<any[]>([]);
   private defaultLanguage = signal('es');
   private config = signal<any>(null);
+
+  constructor(private router: Router) {}
 
   getCurrentLang(): string {
     const segments = this.router.url.split('/').filter(Boolean);
