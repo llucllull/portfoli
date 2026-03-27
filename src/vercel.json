@@ -10,8 +10,20 @@
   ],
   "rewrites": [
     {
+      "source": "/es/:path*",
+      "destination": "/browser/es/index.html"
+    },
+    {
+      "source": "/ca/:path*",
+      "destination": "/browser/ca/index.html"
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/browser/en/index.html"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/browser/index.html"
+      "destination": "/browser/es/index.html"
     }
   ]
 }
