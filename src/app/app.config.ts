@@ -1,4 +1,4 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import {
   provideClientHydration,
@@ -20,7 +20,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(withFetch()),
+    provideHttpClient(),
     provideAnimationsAsync(),
     importProvidersFrom(
       MatDialogModule,
