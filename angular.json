@@ -35,7 +35,8 @@
               "allowedHosts": []
             },
             "prerender": {
-              "routesFile": "routes.txt"
+              "routesFile": "routes.txt",
+              "discoverRoutes": false
             },
             "ssr": {
               "entry": "src/server.ts"
@@ -43,7 +44,14 @@
           },
           "configurations": {
             "production": {
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
+                "fonts": true
+              },
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,

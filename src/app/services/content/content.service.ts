@@ -7,7 +7,7 @@ import {
   TransferState,
   makeStateKey,
 } from '@angular/core';
-import { catchError, Observable, of, shareReplay, tap } from 'rxjs';
+import { catchError, first, Observable, of, shareReplay, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -34,6 +34,7 @@ export class ContentService {
 
     if (!this.cache.has(url)) {
       const request$ = this.http.get(url).pipe(
+        first(),
         tap((data) => {
           // Durante SSG guardamos el resultado para el navegador
           if (isPlatformServer(this.platformId)) {
@@ -46,10 +47,7 @@ export class ContentService {
           return of({});
         }),
 
-        shareReplay({
-          bufferSize: 1,
-          refCount: false,
-        }),
+        shareReplay(1)
       );
 
       this.cache.set(url, request$);
