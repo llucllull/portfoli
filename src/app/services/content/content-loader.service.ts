@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { forkJoin, tap } from 'rxjs';
 import { prefetchIdle } from '../../utils/prefetch-idle';
@@ -19,6 +20,7 @@ export class ContentLoaderService {
     private mapper: MapperService,
     private store: ContentStore,
     private language: LanguageService,
+    @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
   loadInitialContent() {
@@ -65,14 +67,16 @@ export class ContentLoaderService {
         }
 
         this.layout.markLayoutAsLoaded();
+        
+        if (isPlatformBrowser(this.platformId)) {
+          const slugs = (navigation?.items || [])
+            .map((item: any) => item.slug)
+            .filter((slug: string) => slug !== 'home');
 
-        const slugs = (navigation?.items || [])
-          .map((item: any) => item.slug)
-          .filter((slug: string) => slug !== 'home');
-
-        prefetchIdle(() => {
-          this.store.prefetchPages(slugs);
-        });
+          prefetchIdle(() => {
+            this.store.prefetchPages(slugs);
+          });
+        }
       }),
     );
   }
