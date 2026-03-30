@@ -3,7 +3,7 @@ import { ApplicationConfig, importProvidersFrom  } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PreloadAllModules, provideRouter, withPreloading } from '@angular/router';
-import { LucideAngularModule, icons } from 'lucide-angular';
+import { ArrowRight, ArrowUpRight, LucideAngularModule } from 'lucide-angular';
 
 import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib/mapper';
 import { routes } from './app.routes';
@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
     provideClientHydration(withEventReplay()),
-    importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
+    importProvidersFrom(MatDialogModule, LucideAngularModule.pick({ArrowRight, ArrowUpRight})),
     MapperService,
     {
       provide: CDN_BASE_URL,
