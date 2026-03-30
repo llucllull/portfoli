@@ -13,13 +13,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideAnimationsAsync(),
+    provideClientHydration(withEventReplay()),
     importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
     MapperService,
     {
       provide: CDN_BASE_URL,
       useValue: environment.assetsBaseUrl
-    }, provideClientHydration(withEventReplay())
+    },
   ],
 };
