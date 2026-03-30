@@ -3,8 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
-  inject,
+  effect
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -44,21 +43,19 @@ export class BasePageComponent {
     protected siteConfig: SiteConfigService,
     protected router: Router,
   ) {
-    effect(
-      () => {
-        const params = this.params();
+    effect(() => {
+      const params = this.params();
 
-        if (!params) return;
+      if (!params) return;
 
-        const lang = params.get('lang');
+      const lang = params.get('lang');
 
-        const langs = this.siteConfig.getLanguages()?.map((l) => l.code) ?? [];
+      const langs = this.siteConfig.getLanguages()?.map((l) => l.code) ?? [];
 
-        if (lang && langs.includes(lang)) {
-          this.siteConfig.setLanguage(lang);
-        }
-      },
-    );
+      if (lang && langs.includes(lang)) {
+        this.siteConfig.setLanguage(lang);
+      }
+    });
   }
 
   page = computed(() => {
@@ -73,7 +70,7 @@ export class BasePageComponent {
 
     const lang = this.siteConfig.getLanguage();
 
-    const body = page.body.map((c: any, index: number) => ({
+    const body = (page.body || []).map((c: any, index: number) => ({
       name: c.component,
       order: index,
       props: resolveLang(c.props, lang),
