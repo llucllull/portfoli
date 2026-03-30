@@ -31,8 +31,8 @@ export class ContentLoaderService {
     }).pipe(
       tap(({ config, languages, navigation, layout }) => {
         this.siteConfig.setConfig(config);
-        this.siteConfig.setLanguages(languages.languages);
-        this.siteConfig.setDefaultLanguage(languages.default);
+        this.siteConfig.setLanguages(languages?.languages || []);
+        this.siteConfig.setDefaultLanguage(languages?.default);
 
         const currentLang = this.siteConfig.getCurrentLang();
 
@@ -66,7 +66,7 @@ export class ContentLoaderService {
 
         this.layout.markLayoutAsLoaded();
 
-        const slugs = navigation.items
+        const slugs = (navigation?.items || [])
           .map((item: any) => item.slug)
           .filter((slug: string) => slug !== 'home');
 
