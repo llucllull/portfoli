@@ -1,10 +1,5 @@
-import { isPlatformServer } from '@angular/common';
-import { PLATFORM_ID, inject } from '@angular/core';
-
 export function getSSGRoutes(): string[] {
-  const platformId = inject(PLATFORM_ID);
-
-  if (!isPlatformServer(platformId)) return [];
+  if (typeof process === 'undefined') return [];
 
   try {
     const fs = require('fs');
@@ -17,8 +12,7 @@ export function getSSGRoutes(): string[] {
       .split('\n')
       .map((r: string) => r.trim())
       .filter(Boolean);
-  } catch (e) {
-    console.error('❌ Error reading routes.txt', e);
+  } catch {
     return [];
   }
 }
