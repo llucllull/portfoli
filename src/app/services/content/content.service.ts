@@ -3,11 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import {
   Inject,
   Injectable,
+  makeStateKey,
   PLATFORM_ID,
   TransferState,
-  makeStateKey,
 } from '@angular/core';
-import { catchError, first, Observable, of, shareReplay, tap } from 'rxjs';
+import {
+  catchError,
+  first,
+  Observable,
+  of,
+  shareReplay,
+  tap,
+  timeout,
+} from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -34,6 +42,7 @@ export class ContentService {
 
     if (!this.cache.has(url)) {
       const request$ = this.http.get(url).pipe(
+        timeout(5000),
         first(),
         tap((data) => {
           // Durante SSG guardamos el resultado para el navegador
@@ -47,7 +56,7 @@ export class ContentService {
           return of({});
         }),
 
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: false }),
       );
 
       this.cache.set(url, request$);
