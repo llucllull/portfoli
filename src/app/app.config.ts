@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(),
     importProvidersFrom(MatDialogModule, LucideAngularModule.pick({ArrowRight, ArrowUpRight})),
     MapperService,
     {
