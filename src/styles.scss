@@ -81,6 +81,10 @@
   //Progress bar
   --progress-color: #0a0a0a;
   --progress-bg: #0a0a0a11;
+
+  //Tags
+  --tag-color: #0a0a0a;
+  --tag-bg: #0a0a0a11;
 }
 
 :root[data-theme="dark"] {
@@ -129,4 +133,8 @@
   //Progress bar
   --progress-color: #c6e030;
   --progress-bg: #c5e03046;
+
+  //Tags
+  --tag-color: #c6e030;
+  --tag-bg: #c5e03046;
 }

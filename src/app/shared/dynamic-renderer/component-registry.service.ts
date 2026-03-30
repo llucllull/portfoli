@@ -20,6 +20,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'not-found': () =>
     import('@lluc_llull/ui-lib/feedback').then((m) => m.NotFoundComponent),
+
+  'split-previewer': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.SplitPreviewerComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
