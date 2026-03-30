@@ -1,6 +1,6 @@
 @if (layout.header(); as headerComponent) {
   <div class="header-container">
-    @if (screen.isXs()) {
+    @if (isBrowser && screen.isXs()) {
       <dynamic-renderer [components]="[mobileHeader()]"> </dynamic-renderer>
     } @else {
       <dynamic-renderer [components]="[headerComponent]"> </dynamic-renderer>

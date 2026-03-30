@@ -1,9 +1,5 @@
-import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed
-} from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID } from '@angular/core';
 import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
 import { ScreenSizerService } from '@lluc_llull/ui-lib/screen-sizer';
 import { LayoutService } from '../services/layout/layout.service';
@@ -26,7 +22,7 @@ export class LayoutComponent {
   ) {}
 
   currentLang = this.siteConfig.getLanguage();
-
+  platformId = inject(PLATFORM_ID);
   mobileHeader = computed<BodyComponent<any>>(() => {
     const header = this.layout.header();
 
@@ -35,4 +31,8 @@ export class LayoutComponent {
       name: 'header-mobile',
     };
   });
+
+  get isBrowser(): boolean {
+    return isPlatformBrowser(this.platformId);
+  }
 }
