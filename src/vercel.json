@@ -1,29 +1,40 @@
 {
+  "version": 2,
   "cleanUrls": true,
-  "trailingSlash": true,
-  "redirects": [
+  "trailingSlash": false,
+  "headers": [
     {
-      "source": "/:lang(es|en|ca)",
-      "destination": "/:lang/",
-      "permanent": true
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).(woff2|woff|ttf)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ],
+  "redirects": [{ "source": "/", "destination": "/es", "permanent": false }],
   "rewrites": [
     {
       "source": "/es/:path*",
-      "destination": "/browser/es/index.html"
+      "destination": "/es/:path*/index.html"
     },
     {
       "source": "/ca/:path*",
-      "destination": "/browser/ca/index.html"
+      "destination": "/ca/:path*/index.html"
     },
     {
       "source": "/en/:path*",
-      "destination": "/browser/en/index.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/browser/es/index.html"
+      "destination": "/en/:path*/index.html"
     }
   ]
 }
