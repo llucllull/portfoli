@@ -5,9 +5,9 @@ import {
   Injectable,
   PLATFORM_ID,
   TransferState,
-  makeStateKey
+  makeStateKey,
 } from '@angular/core';
-import { Observable, shareReplay, tap } from 'rxjs';
+import { catchError, Observable, of, shareReplay, tap } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
@@ -26,23 +26,24 @@ export class ContentService {
   private fetch(url: string) {
     const key = makeStateKey<any>(url);
 
-    // si el navegador ya tiene los datos prerender
     if (this.transferState.hasKey(key)) {
       const data = this.transferState.get(key, null);
       this.transferState.remove(key);
-      return new Observable((observer) => {
-        observer.next(data);
-        observer.complete();
-      });
+      return of(data);
     }
 
     if (!this.cache.has(url)) {
       const request$ = this.http.get(url).pipe(
         tap((data) => {
-          // durante SSG guardamos el resultado
+          // Durante SSG guardamos el resultado para el navegador
           if (isPlatformServer(this.platformId)) {
             this.transferState.set(key, data);
           }
+        }),
+
+        catchError((error) => {
+          console.error(`⚠️ Error en Fetch (${url}):`, error.status);
+          return of({});
         }),
 
         shareReplay({
