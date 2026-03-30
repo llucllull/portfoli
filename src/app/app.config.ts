@@ -15,7 +15,10 @@ import {
   provideRouter,
   withPreloading,
 } from '@angular/router';
-import { ArrowRight, ArrowUpRight, LucideAngularModule } from 'lucide-angular';
+import {
+  icons,
+  LucideAngularModule
+} from 'lucide-angular';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib/mapper';
@@ -34,10 +37,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(),
     provideAnimationsAsync(),
-    importProvidersFrom(
-      MatDialogModule,
-      LucideAngularModule.pick({ ArrowRight, ArrowUpRight }),
-    ),
+    importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
     MapperService,
     {
       provide: CDN_BASE_URL,
