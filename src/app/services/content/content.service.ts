@@ -90,7 +90,7 @@ export class ContentService {
   }
 
   getProjects() {
-    return this.fetch(`${this.base}/projects/projects.json`);
+    return this.fetch(`${this.base}/pages/projects.json`);
   }
 
   getProject(project: string) {

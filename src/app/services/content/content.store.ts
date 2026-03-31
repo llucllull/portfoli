@@ -13,7 +13,9 @@ export class ContentStore {
         return;
       }
 
-      this.content.getPage(slug).subscribe({
+      const request$ = this.resolveRequest(slug);
+
+      request$.subscribe({
         next: (page) => {
           this.pages.update((p) => ({
             ...p,
@@ -40,12 +42,21 @@ export class ContentStore {
     for (const slug of slugs) {
       if (this.pages()[slug]) continue;
 
-      this.content.getPage(slug).subscribe((page) => {
+      const request$ = this.resolveRequest(slug);
+
+      request$.subscribe((page) => {
         this.pages.update((p) => ({
           ...p,
           [slug]: page,
         }));
       });
     }
+  }
+
+  private resolveRequest(slug: string) {
+    if (slug.startsWith('projects/')) {
+      return this.content.getProject(slug.split('/')[1]);
+    }
+    return this.content.getPage(slug);
   }
 }
