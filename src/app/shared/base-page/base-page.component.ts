@@ -3,7 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect
+  effect,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,14 +22,15 @@ import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasePageComponent {
-  private url = toSignal(this.route.url);
-  private params = toSignal(this.route.paramMap);
-  private lastSlug = '';
+  private url = toSignal(this.route.url, { initialValue: [] });
+  private params = toSignal(this.route.paramMap, { initialValue: null });
 
   slug = computed(() => {
-    const url = this.router.url;
+    const url = this.url();
 
-    const parts = url.split('/').filter(Boolean);
+    if (!url || url.length === 0) return 'home';
+
+    const parts = url.map((u) => u.path).filter(Boolean);
 
     if (parts.length <= 1) return 'home';
 
@@ -66,7 +67,11 @@ export class BasePageComponent {
       page = this.store.page('404');
     }
 
-    if (!page) return null;
+    if (!page) {
+      return {
+        body: [],
+      };
+    }
 
     const lang = this.siteConfig.getLanguage();
 
