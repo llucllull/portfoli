@@ -22,15 +22,14 @@ import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.c
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasePageComponent {
-  private url = toSignal(this.route.url, { initialValue: [] });
-  private params = toSignal(this.route.paramMap, { initialValue: null });
+  private url = toSignal(this.route.url);
+  private params = toSignal(this.route.paramMap);
+  private lastSlug = '';
 
   slug = computed(() => {
-    const url = this.url();
+    const url = this.router.url;
 
-    if (!url || url.length === 0) return 'home';
-
-    const parts = url.map((u) => u.path).filter(Boolean);
+    const parts = url.split('/').filter(Boolean);
 
     if (parts.length <= 1) return 'home';
 
