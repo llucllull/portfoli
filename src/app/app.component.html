@@ -1,3 +1,5 @@
-<app-layout>
-  <router-outlet></router-outlet>
-</app-layout>
+@if (hydrated()) {
+  <app-layout>
+    <router-outlet></router-outlet>
+  </app-layout>
+}

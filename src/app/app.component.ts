@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { ContentLoaderService } from './services/content/content-loader.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +10,12 @@ import { ContentLoaderService } from './services/content/content-loader.service'
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  constructor(private loader: ContentLoaderService) {}
-  ngOnInit(): void {
-    this.loader.loadInitialContent().subscribe({
-      error: (err) => console.error('Content loading error', err),
+  hydrated = signal(false);
+
+  ngOnInit() {
+    // 🔥 clave: esperar a que Angular termine hydration
+    requestAnimationFrame(() => {
+      this.hydrated.set(true);
     });
   }
 }
