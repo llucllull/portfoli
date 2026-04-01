@@ -1,9 +1,7 @@
 import { provideHttpClient } from '@angular/common/http';
 import {
   ApplicationConfig,
-  importProvidersFrom,
-  inject,
-  provideAppInitializer,
+  importProvidersFrom
 } from '@angular/core';
 import {
   provideClientHydration,
@@ -15,25 +13,15 @@ import {
   provideRouter,
   withPreloading,
 } from '@angular/router';
-import {
-  icons,
-  LucideAngularModule
-} from 'lucide-angular';
+import { icons, LucideAngularModule } from 'lucide-angular';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib/mapper';
-import { firstValueFrom } from 'rxjs';
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
-import { ContentLoaderService } from './services/content/content-loader.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideAppInitializer(async () => {
-      const loader = inject(ContentLoaderService);
-
-      await firstValueFrom(loader.loadInitialContent());
-    }),
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(),
     provideAnimationsAsync(),
