@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentLoaderService } from './services/content/content-loader.service';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,16 @@ import { ContentLoaderService } from './services/content/content-loader.service'
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  constructor(private loader: ContentLoaderService) {}
+  constructor(
+    private loader: ContentLoaderService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+  ) {}
+
   ngOnInit(): void {
-    this.loader.loadInitialContent().subscribe({
-      error: (err) => console.error('Content loading error', err),
-    });
+    if (isPlatformServer(this.platformId)) {
+      this.loader.loadInitialContent().subscribe({
+        error: (err) => console.error('Content loading error', err),
+      });
+    }
   }
 }
