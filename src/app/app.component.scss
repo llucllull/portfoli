@@ -1,8 +1,0 @@
-.pre-hydration {
-  opacity: 0;
-}
-
-:not(.pre-hydration) {
-  transition: opacity 0.15s ease;
-  opacity: 1;
-}
