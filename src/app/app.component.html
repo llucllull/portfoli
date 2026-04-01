@@ -1,5 +1,5 @@
-@if (hydrated()) {
+<div [class.pre-hydration]="!hydrated()">
   <app-layout>
-    <router-outlet></router-outlet>
+    <router-outlet />
   </app-layout>
-}
+</div>

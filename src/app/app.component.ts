@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   hydrated = signal(false);
 
   ngOnInit() {
-    // 🔥 clave: esperar a que Angular termine hydration
     requestAnimationFrame(() => {
       this.hydrated.set(true);
     });
