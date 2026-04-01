@@ -36,6 +36,40 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    @font-face {
+      font-family: "amador-w01-regular";
+      font-display: block;
+      src: url("/assets/fonts/amador-w01-regular.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "podium-soft-demibold";
+      font-display: block;
+      src: url("/assets/fonts/PODIUMSoft-DemiBold.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "ppneuemontreal-book";
+      font-display: block;
+      src: url("/assets/fonts/ppneuemontreal-book.woff2") format("woff2");
+    }
+
+    :root {
+      --font-title-home: "amador-w01-regular", sans-serif;
+      --font-titles: "podium-soft-demibold", sans-serif;
+      --font-base: "ppneuemontreal-book", sans-serif;
+    }
+    body {
+      font-family: var(--font-base);
+    }
+    h1 {
+      font-family: var(--font-title-home);
+    }
+    h2,
+    h3,
+    .title {
+      font-family: var(--font-titles);
+    }
+  </style>
   <body>
     <app-root></app-root>
   </body>
