@@ -68,44 +68,44 @@ export class ContentLoaderService {
         return of(baseData);
       }),
       tap(({ config, languages, navigation, layout }) => {
-        if (isPlatformServer(this.platformId)) {
-          this.siteConfig.setConfig(config);
-          this.siteConfig.setLanguages(languages?.languages || []);
-          this.siteConfig.setDefaultLanguage(languages?.default);
+        const isBrowser = isPlatformBrowser(this.platformId);
 
-          const currentLang = this.siteConfig.getCurrentLang();
-          this.siteConfig.setLanguage(currentLang);
+        this.siteConfig.setConfig(config);
+        this.siteConfig.setLanguages(languages?.languages || []);
+        this.siteConfig.setDefaultLanguage(languages?.default);
 
-          const body = (layout.body || []).map((c: any, index: number) => {
-            const props = { ...(c.props || {}) };
+        const currentLang = this.siteConfig.getCurrentLang();
+        this.siteConfig.setLanguage(currentLang);
 
-            if (c.component === 'header-clear') {
-              props.navigation = navigation;
-              props.lang = this.siteConfig.getCurrentLang();
-            }
+        const body = (layout.body || []).map((c: any, index: number) => {
+          const props = { ...(c.props || {}) };
 
-            return {
-              name: c.component,
-              order: index,
-              props,
-            };
-          });
-
-          const components = this.mapper.mapComponents(body);
-          const header = components.find((c) => c.name === 'header-clear');
-
-          if (header) {
-            header.events = {
-              langModal: () => this.language.openLanguagesModal(),
-            };
-
-            this.layout.setHeader(header);
+          if (c.component === 'header-clear') {
+            props.navigation = navigation;
+            props.lang = currentLang;
           }
 
-          this.layout.markLayoutAsLoaded();
+          return {
+            name: c.component,
+            order: index,
+            props,
+          };
+        });
+
+        const components = this.mapper.mapComponents(body);
+        const header = components.find((c) => c.name === 'header-clear');
+
+        if (header) {
+          header.events = {
+            langModal: () => this.language.openLanguagesModal(),
+          };
+
+          this.layout.setHeader(header);
         }
 
-        if (isPlatformBrowser(this.platformId)) {
+        this.layout.markLayoutAsLoaded();
+
+        if (isBrowser) {
           const slugs = (navigation?.items || [])
             .map((item: any) => item.slug)
             .filter((slug: string) => slug !== 'home');
