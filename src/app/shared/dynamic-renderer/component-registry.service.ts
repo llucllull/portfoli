@@ -23,6 +23,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'split-previewer': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.SplitPreviewerComponent),
+
+  'contact-minimal': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.ContactMinimalComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
