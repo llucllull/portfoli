@@ -16,6 +16,9 @@ import {
   selector: 'dynamic-renderer',
   standalone: true,
   template: '',
+  styles: `:host {
+    display: contents;
+  }`,
 })
 export class DynamicRendererComponent {
   components = input<BodyComponent<any>[]>([]);
