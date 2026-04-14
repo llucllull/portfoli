@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentLoaderService } from './services/content/content-loader.service';
@@ -16,5 +16,10 @@ export class AppComponent implements OnInit {
     this.loader.loadInitialContent().subscribe({
       error: (err) => console.error('Content loading error', err),
     });
+  }
+
+  @HostListener('window:keydown.g')
+  toggleGrid() {
+    document.body.classList.toggle('show-grid');
   }
 }

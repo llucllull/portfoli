@@ -141,3 +141,7 @@
   --tag-color: #c6e030;
   --tag-bg: #c5e03046;
 }
+
+router-outlet {
+  display: none;
+}
