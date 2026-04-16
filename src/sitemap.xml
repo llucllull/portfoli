@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+
+  <url>
+    <loc>https://llucllull.dev/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/es</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/es/about</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/about" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/about" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/es/contact</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/contact" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/es/projects</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/es/projects/puro-hotels</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects/puro-hotels" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/ca</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/ca/about</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/about" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/about" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/ca/contact</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/contact" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/ca/projects</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/ca/projects/puro-hotels</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects/puro-hotels" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/en</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/en/about</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/about" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/about" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/en/contact</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/contact" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/en/projects</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects" />
+  </url>
+
+  <url>
+    <loc>https://llucllull.dev/en/projects/puro-hotels</loc>
+    <lastmod>2026-04-16</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://llucllull.dev/es/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://llucllull.dev/en/projects/puro-hotels" />
+    <xhtml:link rel="alternate" hreflang="ca" href="https://llucllull.dev/ca/projects/puro-hotels" />
+  </url>
+</urlset>
