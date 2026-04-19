@@ -1,9 +1,11 @@
+import { isPlatformServer } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import {
   Inject,
   Injectable,
+  makeStateKey,
   PLATFORM_ID,
-  TransferState
+  TransferState,
 } from '@angular/core';
 import {
   catchError,
@@ -11,7 +13,8 @@ import {
   Observable,
   of,
   shareReplay,
-  timeout
+  tap,
+  timeout,
 } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
@@ -20,8 +23,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ContentService {
   private base = environment.contentBaseUrl;
-  private cache = new Map<string, { obs: Observable<any>; time: number }>();
-  private TTL = 1000 * 60 * 5;
+  private cache = new Map<string, Observable<any>>();
 
   constructor(
     private http: HttpClient,
@@ -30,31 +32,37 @@ export class ContentService {
   ) {}
 
   private fetch(url: string) {
-    const now = Date.now();
+    const key = makeStateKey<any>(url);
 
-    const cached = this.cache.get(url);
-
-    if (cached && now - cached.time < this.TTL) {
-      return cached.obs;
+    if (this.transferState.hasKey(key)) {
+      const data = this.transferState.get(key, null);
+      this.transferState.remove(key);
+      return of(data);
     }
 
-    const finalUrl = `${url}?v=${Math.floor(now / this.TTL)}`;
+    if (!this.cache.has(url)) {
+      const request$ = this.http.get(url).pipe(
+        timeout(5000),
+        first(),
+        tap((data) => {
+          // Durante SSG guardamos el resultado para el navegador
+          if (isPlatformServer(this.platformId)) {
+            this.transferState.set(key, data);
+          }
+        }),
 
-    const request$ = this.http.get(finalUrl).pipe(
-      timeout(5000),
-      first(),
+        catchError((error) => {
+          console.error(`⚠️ Error en Fetch (${url}):`, error.status);
+          return of({});
+        }),
 
-      catchError((error) => {
-        console.error(`⚠️ Error en Fetch (${url}):`, error.status);
-        return of({});
-      }),
+        shareReplay({ bufferSize: 1, refCount: false }),
+      );
 
-      shareReplay(1),
-    );
+      this.cache.set(url, request$);
+    }
 
-    this.cache.set(url, { obs: request$, time: now });
-
-    return request$;
+    return this.cache.get(url)!;
   }
 
   getConfig() {
