@@ -28,7 +28,7 @@
     "@angular/platform-server": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@angular/ssr": "^19.2.22",
-    "@lluc_llull/ui-lib": "^0.22.8",
+    "@lluc_llull/ui-lib": "^0.22.9",
     "@supabase/supabase-js": "^2.50.2",
     "express": "^4.18.2",
     "lucide-angular": "^0.577.0",
