@@ -63,15 +63,14 @@ export class BasePageComponent {
     effect(() => {
       const pageData = this.page();
       const config = this.siteConfig.getConfig();
-
-      console.log(' Page data received:', pageData);
-      console.log(' SEO data:', pageData?.seo);
+      const lang = this.siteConfig.getLanguage();
 
       if (pageData?.seo) {
         this.seoService.setSeoData(
           pageData.seo,
           config?.seo?.title,
           config?.seo?.description,
+          lang,
         );
       }
     });
