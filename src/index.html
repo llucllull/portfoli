@@ -12,6 +12,18 @@
     <link rel="icon" href="assets/favicons/favicon.ico" sizes="any" />
 
     <link rel="preconnect" href="https://cdn.llucllull.dev" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      href="/assets/fonts/ppneuemontreal-book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
     <link
       rel="preload"
       href="/assets/fonts/amador-w01-regular.woff2"
@@ -28,28 +40,28 @@
       crossorigin="anonymous"
     />
 
+    <!-- Preload critical styles -->
+    <link rel="preload" href="styles.scss" as="style" />
     <link
       rel="preload"
-      href="/assets/fonts/ppneuemontreal-book.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
+      href="@angular/material/prebuilt-themes/purple-green.css"
+      as="style"
     />
   </head>
   <style>
     @font-face {
       font-family: "amador-w01-regular";
-      font-display: block;
+      font-display: swap;
       src: url("/assets/fonts/amador-w01-regular.woff2") format("woff2");
     }
     @font-face {
       font-family: "podium-soft-demibold";
-      font-display: block;
+      font-display: swap;
       src: url("/assets/fonts/PODIUMSoft-DemiBold.woff2") format("woff2");
     }
     @font-face {
       font-family: "ppneuemontreal-book";
-      font-display: block;
+      font-display: swap;
       src: url("/assets/fonts/ppneuemontreal-book.woff2") format("woff2");
     }
 
@@ -57,6 +69,19 @@
       --font-title-home: "amador-w01-regular", sans-serif;
       --font-titles: "podium-soft-demibold", sans-serif;
       --font-base: "ppneuemontreal-book", sans-serif;
+    }
+
+    /* Critical CSS to prevent FOUC */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #c6e030;
+      color: #0a0a0a;
+      font-family: var(--font-base);
+    }
+
+    app-root {
+      display: block;
     }
   </style>
   <body>
