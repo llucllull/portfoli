@@ -13,9 +13,11 @@ import {
 import { icons, LucideAngularModule } from 'lucide-angular';
 
 import { MatDialogModule } from '@angular/material/dialog';
+import { Meta, Title } from '@angular/platform-browser';
 import { CDN_BASE_URL, MapperService } from '@lluc_llull/ui-lib/mapper';
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
+import { SeoService } from './services/seo/seo.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -24,6 +26,9 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
     MapperService,
+    SeoService,
+    Title,
+    Meta,
     {
       provide: CDN_BASE_URL,
       useValue: environment.assetsBaseUrl,

@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { MapperService } from '@lluc_llull/ui-lib/mapper';
 import { ContentStore } from '../../services/content/content.store';
+import { SeoService } from '../../services/seo/seo.service';
 import { SiteConfigService } from '../../services/site-config/site-config.service';
 import { resolveLang } from '../../utils/resolve-lang';
 import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.component';
@@ -42,6 +43,7 @@ export class BasePageComponent {
     protected mapper: MapperService,
     protected siteConfig: SiteConfigService,
     protected router: Router,
+    private seoService: SeoService,
   ) {
     effect(() => {
       const params = this.params();
@@ -54,6 +56,23 @@ export class BasePageComponent {
 
       if (lang && langs.includes(lang)) {
         this.siteConfig.setLanguage(lang);
+      }
+    });
+
+    // SEO Effect
+    effect(() => {
+      const pageData = this.page();
+      const config = this.siteConfig.getConfig();
+
+      console.log(' Page data received:', pageData);
+      console.log(' SEO data:', pageData?.seo);
+
+      if (pageData?.seo) {
+        this.seoService.setSeoData(
+          pageData.seo,
+          config?.seo?.title,
+          config?.seo?.description,
+        );
       }
     });
   }
