@@ -22,7 +22,6 @@ import { preloadComponents } from './shared/dynamic-renderer/component-registry.
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideAppInitializer(() => preloadComponents()), 
     provideRouter(routes, withPreloading(PreloadAllModules)),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
