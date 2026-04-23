@@ -28,6 +28,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'contact-minimal': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.ContactMinimalComponent),
+  
+  'media-split': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.MediaSplitComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
