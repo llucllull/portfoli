@@ -32,13 +32,14 @@ export class DynamicRendererComponent {
     effect(() => {
       const comps = this.components();
       if (!comps?.length) return; // Nunca limpiar si llega vacío
-      if (this.rendered) return; // No re-renderizar si ya existe DOM
+      // Limpiar componentes anteriores antes de re-renderizar
+      this.vcr.clear();
+      this.rendered = false;
       this.render(comps);
     });
   }
 
   private async render(comps: BodyComponent<any>[]) {
-    if (this.rendered) return;
     this.rendered = true; // Se queda en true para siempre
 
     for (let i = 0; i < comps.length; i++) {
