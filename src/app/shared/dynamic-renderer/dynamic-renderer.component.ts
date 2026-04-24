@@ -1,5 +1,12 @@
-import { Component, ViewContainerRef, effect, input } from '@angular/core';
-
+import { isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  PLATFORM_ID,
+  ViewContainerRef,
+  effect,
+  inject,
+  input,
+} from '@angular/core';
 import { BodyComponent } from '@lluc_llull/ui-lib/interfaces';
 import {
   COMPONENT_CACHE,
@@ -18,34 +25,30 @@ import {
 })
 export class DynamicRendererComponent {
   components = input<BodyComponent<any>[]>([]);
-  private rendering = false;
+  private rendered = false;
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private vcr: ViewContainerRef) {
     effect(() => {
       const comps = this.components();
-
-      if (!comps?.length) {
-        this.vcr.clear();
-        return;
-      }
-
+      if (!comps?.length) return; // Nunca limpiar si llega vacío
+      // Limpiar componentes anteriores antes de re-renderizar
+      this.vcr.clear();
+      this.rendered = false;
       this.render(comps);
     });
   }
 
   private async render(comps: BodyComponent<any>[]) {
-    if (this.rendering) return;
+    this.rendered = true; // Se queda en true para siempre
 
-    this.rendering = true;
-    this.vcr.clear();
+    for (let i = 0; i < comps.length; i++) {
+      const c = comps[i];
+      const isFirst = i === 0;
 
-    // Use requestIdleCallback for non-critical components
-    const renderComponent = async (
-      c: BodyComponent<any>,
-      priority: 'high' | 'low' = 'high',
-    ) => {
-      if (priority === 'low' && 'requestIdleCallback' in window) {
-        return new Promise<void>((resolve) => {
+      // requestIdleCallback solo en browser y solo para componentes no críticos
+      if (!isFirst && this.isBrowser && 'requestIdleCallback' in window) {
+        await new Promise<void>((resolve) => {
           requestIdleCallback(async () => {
             await this.createComponent(c);
             resolve();
@@ -54,15 +57,7 @@ export class DynamicRendererComponent {
       } else {
         await this.createComponent(c);
       }
-    };
-
-    // Render first component immediately, others with idle callback
-    for (let i = 0; i < comps.length; i++) {
-      const priority = i === 0 ? 'high' : 'low';
-      await renderComponent(comps[i], priority);
     }
-
-    this.rendering = false;
   }
 
   private async createComponent(c: BodyComponent<any>) {
@@ -70,12 +65,10 @@ export class DynamicRendererComponent {
 
     if (!component) {
       const loader = COMPONENT_REGISTRY[c.name];
-
       if (!loader) {
         console.warn(`Component "${c.name}" not registered`);
         return;
       }
-
       component = await loader();
       COMPONENT_CACHE[c.name] = component;
     }

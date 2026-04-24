@@ -16,7 +16,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
     import('@lluc_llull/ui-lib/content').then((m) => m.SectionIntroComponent),
 
   'category-progress': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.CategoryProgressComponent),
+    import('@lluc_llull/ui-lib/content').then(
+      (m) => m.CategoryProgressComponent,
+    ),
 
   'not-found': () =>
     import('@lluc_llull/ui-lib/feedback').then((m) => m.NotFoundComponent),
@@ -26,14 +28,17 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'contact-minimal': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.ContactMinimalComponent),
+  
+  'media-split': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.MediaSplitComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
 
 export async function preloadComponents() {
-  const entries = Object.entries(COMPONENT_REGISTRY);
-
-  for (const [key, loader] of entries) {
-    COMPONENT_CACHE[key] = await loader();
-  }
+  await Promise.all(
+    Object.entries(COMPONENT_REGISTRY).map(async ([key, loader]) => {
+      COMPONENT_CACHE[key] = await loader();
+    }),
+  );
 }

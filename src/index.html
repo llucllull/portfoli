@@ -40,13 +40,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Preload critical styles -->
-    <link rel="preload" href="styles.scss" as="style" />
-    <link
-      rel="preload"
-      href="@angular/material/prebuilt-themes/purple-green.css"
-      as="style"
-    />
   </head>
   <style>
     @font-face {
@@ -70,36 +63,14 @@
       --font-titles: "podium-soft-demibold", sans-serif;
       --font-base: "ppneuemontreal-book", sans-serif;
     }
-
-    /* Critical CSS to prevent FOUC */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #c6e030;
-      color: #0a0a0a;
-      font-family: var(--font-base);
-    }
-
-    app-root {
-      display: block;
-    }
   </style>
   <body>
     <app-root></app-root>
 
     <div class="debug-grid-overlay">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div>
+      <div></div><div></div><div></div><div></div>
     </div>
   </body>
 </html>
