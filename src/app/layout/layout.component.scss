@@ -7,7 +7,10 @@
 
 main {
   min-height: calc(100vh - 40rem);
-  padding-block: 80px;
+  padding-block: 80px 0;
+  @media (max-width: 1024px) {
+    padding-block: 50px;
+  }
 }
 
 .header-container {
