@@ -11,6 +11,12 @@ main {
   @media (max-width: 1024px) {
     padding-block: 50px;
   }
+  &:has(.hero-section--image) {
+    padding-block: 0;
+    @media (max-width: 1024px) {
+      padding-block: 0px;
+    }
+  }
 }
 
 .header-container {
