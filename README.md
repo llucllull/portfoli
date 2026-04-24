@@ -9,6 +9,10 @@
 
 A brutalist portfolio website forged with **Angular 19**. Static Site Generation meets dynamic content in a symphony of raw efficiency. No bullshit, just results.
 
+## 🌐 LIVE DEMO
+
+**Visit the live portfolio at: [llucllull.dev](https://llucllull.dev)**
+
 ---
 
 ## CORE FEATURES
