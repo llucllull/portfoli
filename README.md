@@ -1,14 +1,4 @@
-# ███████╗ ██████╗ ██████╗ ████████╗███████╗ ██████╗ ██╗ ██╗
-
-# ██╔═══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔═══██╗██║ ██║
-
-# ██████╔╝██║ ██║██████╔╝ ██║ █████╗ ██║ ██║██║ ██║
-
-# ██╔═══╝ ██║ ██║██╔══██╗ ██║ ██╔══╝ ██║ ██║██║ ██║
-
-# ██║ ╚██████╔╝██║ ██║ ██║ ███████╗╚██████╔╝███████╗███████╗
-
-# ╚═╝ ╚═════╝ ╚═╝ ╚═╝ ╚═╝ ╚══════╝ ╚═════╝ ╚══════╝╚══════╝
+# PORTFOLI
 
 [![Angular](https://img.shields.io/badge/Angular-19.0.0-red.svg?style=for-the-badge&logo=angular)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -192,13 +182,13 @@ src/
 │   └── scripts/                    # BUILD SCRIPTS
 ├── assets/                         # STATIC ASSETS
 ├── environments/                   # ENVIRONMENT CONFIGS
-├── jsons/                          # 📄 CONTENT DATA (CMS)
-└── *.ts                            # ⚙️ CONFIGURATION FILES
+├── jsons/                          # CONTENT DATA (CMS)
+└── *.ts                            # CONFIGURATION FILES
 ```
 
 ---
 
-## 📜 COMMANDS
+## COMMANDS
 
 | Command                      | Description        | Use Case               |
 | ---------------------------- | ------------------ | ---------------------- |
@@ -211,7 +201,7 @@ src/
 
 ---
 
-## 🤝 CONTRIBUTING
+## CONTRIBUTING
 
 **JOIN THE BATTLE • CONTRIBUTE • DOMINATE**
 
@@ -223,9 +213,8 @@ src/
 
 ---
 
-## 📄 LICENSE
+## LICENSE
 
 **MIT LICENSE** - Use it. Break it. Make it better.
 
 ---
-
