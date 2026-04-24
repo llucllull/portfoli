@@ -31,6 +31,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   
   'media-split': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.MediaSplitComponent),
+
+  'stacked-rows': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.StackedRowsComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
