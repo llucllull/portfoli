@@ -1,8 +1,9 @@
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import {
   provideClientHydration,
   withEventReplay,
+  withIncrementalHydration,
 } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
@@ -21,7 +22,8 @@ import { SeoService } from './services/seo/seo.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withPreloading(PreloadAllModules)),
+    provideExperimentalZonelessChangeDetection(),
+    provideRouter(routes),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
     importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
@@ -33,6 +35,6 @@ export const appConfig: ApplicationConfig = {
       provide: CDN_BASE_URL,
       useValue: environment.assetsBaseUrl,
     },
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(withEventReplay(), withIncrementalHydration()),
   ],
 };

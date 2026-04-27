@@ -1,25 +1,3 @@
-@font-face {
-  font-family: "amador-w01-regular";
-  font-display: swap;
-  src:
-    url("/assets/fonts/amador-w01-regular.woff2") format("woff2"),
-    url("/assets/fonts/amador-w01-regular.woff") format("woff");
-}
-@font-face {
-  font-family: "podium-soft-demibold";
-  font-display: swap;
-  src:
-    url("/assets/fonts/PODIUMSoft-DemiBold.woff2") format("woff2"),
-    url("/assets/fonts/PODIUMSoft-DemiBold.woff") format("woff");
-}
-@font-face {
-  font-family: "ppneuemontreal-book";
-  font-display: swap;
-  src:
-    url("/assets/fonts/ppneuemontreal-book.woff2") format("woff2"),
-    url("/assets/fonts/ppneuemontreal-book.woff") format("woff");
-}
-
 :root {
   //Fonts
   --font-title-home: "amador-w01-regular", sans-serif;
