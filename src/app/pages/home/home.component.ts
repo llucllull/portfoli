@@ -9,5 +9,8 @@ import { BasePageComponent } from '../../shared/base-page/base-page.component';
   templateUrl: '../../shared/base-page/base-page.component.html',
   styleUrl: './home.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    style: 'display: contents;'
+  }
 })
 export class HomeComponent extends BasePageComponent {}

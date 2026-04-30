@@ -7,6 +7,8 @@ import { BasePageComponent } from '../../shared/base-page/base-page.component';
   standalone: true,
   imports: PAGE_IMPORTS,
   templateUrl: '../../shared/base-page/base-page.component.html',
-  styleUrl: './contact.component.scss',
+  host: {
+    style: 'display: contents;'
+  }
 })
 export class ContactComponent extends BasePageComponent {}

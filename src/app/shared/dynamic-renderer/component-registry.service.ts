@@ -35,6 +35,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'mosaic-parallax': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.MosaicParallaxComponent),
+
+  'content-document': () =>
+    import('@lluc_llull/ui-lib/content').then((m) => m.ContentDocumentComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};

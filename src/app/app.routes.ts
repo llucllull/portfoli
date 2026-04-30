@@ -53,6 +53,15 @@ export const routes: Routes = [
       },
 
       {
+        path: 'legal',
+        loadComponent: () =>
+          import('./pages/legal/legal.component').then(
+            (m) => m.LegalComponent,
+          ),
+        resolve: { page: pageResolver },
+      },
+
+      {
         path: '**',
         loadComponent: () =>
           import('./shared/base-page/base-page.component').then(
