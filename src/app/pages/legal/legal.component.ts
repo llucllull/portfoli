@@ -3,7 +3,7 @@ import { PAGE_IMPORTS } from '../../imports/page-imports';
 import { BasePageComponent } from '../../shared/base-page/base-page.component';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-legal',
   standalone: true,
   imports: PAGE_IMPORTS,
   templateUrl: '../../shared/base-page/base-page.component.html',
@@ -11,4 +11,4 @@ import { BasePageComponent } from '../../shared/base-page/base-page.component';
     style: 'display: contents;'
   }
 })
-export class ProjectsComponent extends BasePageComponent {}
+export class LegalComponent extends BasePageComponent {}
