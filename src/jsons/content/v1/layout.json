@@ -13,7 +13,20 @@
 		},
         "lang": "es",
         "navItems": "navigation",
-        "socialItems": "social"
+        "socialItems": "social",
+		"buttons": [
+			{
+				"page": "home",
+				"url": "",
+				"icon": "",
+				"label": {
+				  "es": "home",
+				  "ca": "home",
+				  "en": "home"
+				},
+				"link_type": "internal"
+			}
+		]
       }
     },
     {

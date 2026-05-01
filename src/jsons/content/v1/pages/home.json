@@ -2,9 +2,14 @@
   "template": "home",
   "seo": {
     "title": {
-      "es": "Home",
-      "ca": "Home",
-      "en": "Home"
+      "es": "Lluc Llull | Desarrollador Front End",
+      "ca": "Lluc Llull | Desenvolupador Front End",
+      "en": "Lluc Llull | Front End Developer"
+    },
+	"description": {
+      "es": "Ingeniero de software especializado en crear aplicaciones web escalables y experiencias digitales de alto rendimiento. ¡Explora mi mundo de código!",
+      "ca": "Enginyer de programari especialitzat en crear aplicacions web escalables i experiències digitals d'alt rendiment. Explora el meu codi!",
+      "en": "Software Engineer focused on building scalable web applications and high-performance digital experiences. Explore my world of code!"
     }
   },
   "body": [
@@ -42,7 +47,7 @@
           {
             "page": "projects",
             "url": "",
-            "icon": "↗",
+            "icon": "arrow-right",
             "label": {
               "es": "ver mis proyectos",
               "ca": "veure els meus projectes",
@@ -53,7 +58,7 @@
           {
             "page": "about",
             "url": "",
-            "icon": "↗",
+            "icon": "arrow-right",
             "label": {
               "es": "más sobre mi",
               "ca": "més sobre mi",
@@ -61,7 +66,10 @@
             },
             "link_type": "internal"
           }
-        ]
+        ],
+		"variant": "text",
+		"multimedia": {
+		}
       }
     }
   ]

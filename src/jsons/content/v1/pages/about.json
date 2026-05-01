@@ -1,41 +1,234 @@
 {
-	"template": "about",
-	"seo": {
-		"title": {
-			"es": "Sobre mí",
-			"ca": "Sobre mi",
-			"en": "About"
-		}
-	},
-	"body": [
-		{
-			"component": "section-intro",
-			"props": {
-				"texts": {
-					"title": {
-						"es": "Sobre mí",
-						"ca": "Sobre mi",
-						"en": "About me"
-					},
-					"text": {
-						"es": "Soy desarrollador web especializado en Angular y arquitecturas escalables.",
-						"ca": "Sóc desenvolupador web especialitzat en Angular i arquitectures escalables.",
-						"en": "I am a web developer specialized in Angular and scalable architectures."
-					}
-				}
-			}
-		},
-		{
-			"component": "skills-list",
-			"props": {
-				"skills": [
-					"Angular",
-					"TypeScript",
-					"Laravel",
-					"Node",
-					"Cloudflare"
-				]
-			}
-		}
-	]
+  "template": "about",
+  "seo": {
+    "title": {
+      "es": "Sobre mí | Lluc Llull - CV y Perfil de Software Engineer",
+      "ca": "Sobre mi | Lluc Llull - CV i Perfil de Software Engineer",
+      "en": "About Me | Lluc Llull - Resume & Software Engineer Profile"
+    },
+    "description": {
+      "es": "Conoce a Lluc Llull, Ingeniero de Software. Descarga mi CV actualizado y descubre mi stack tecnológico y mi enfoque en el desarrollo de productos digitales.",
+      "ca": "Coneix en Lluc Llull, Enginyer de Programari. Descarrega el meu CV actualitzat i descobreix el meu stack tecnològic i la meva visió en el desenvolupament digital.",
+      "en": "Get to know Lluc Llull, Software Engineer. Download my updated CV/Resume and explore my tech stack and approach to building digital products."
+    }
+  },
+  "body": [
+    {
+      "component": "media-split",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Sobre mí",
+            "ca": "Sobre mi",
+            "en": "About me"
+          },
+          "text": {
+            "es": "Soy Lluc Llull, ingeniero de software de Sant Llorenç (Mallorca). Mi mentalidad proactiva y la disciplina que cultivo en el entrenamiento físico definen mi ética de trabajo: constancia, energía y una actitud resolutiva ante retos complejos.<br><br>Como especialista Frontend, transformo interfaces complejas en experiencias fluidas mediante arquitecturas robustas en Angular. Me enfoco en el código limpio, la creación de componentes reutilizables y la entrega de productos digitales escalables de alta calidad.",
+            "ca": "Sóc en Lluc Llull, enginyer de programari de Sant Llorenç (Mallorca). La meva mentalitat proactiva i la disciplina que cultivo en l'entrenament físic defineixen la meva ètica de treball: constància, energia i una actitud resolutiva davant reptes complexos.<br><br>Com a especialista Frontend, transformo interfícies complexes en experiències fluides mitjançant arquitectures robustes en Angular. Em centro en el codi net, la creació de components reutilitzables i l'entrega de productes digitals escalables d'alta qualitat.",
+            "en": "I'm Lluc Llull, a software engineer from Sant Llorenç (Mallorca). My proactive mindset and the discipline I build through physical training define my work ethic: consistency, drive, and a problem-solving approach to complex challenges.<br><br>As a Frontend specialist, I transform complex interfaces into seamless experiences using robust Angular architectures. I focus on clean code, reusable components, and delivering high-quality, scalable digital products."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "src": "/images/pages/about/about01.webp",
+              "alt": "About Lluc 1"
+            },
+            {
+              "src": "/images/pages/about/about02.webp",
+              "alt": "About Lluc 2"
+            },
+            {
+              "src": "/images/pages/about/about03.webp",
+              "alt": "About Lluc 3"
+            },
+            {
+              "src": "/images/pages/about/about04.webp",
+              "alt": "About Lluc 4"
+            },
+            {
+              "src": "/images/pages/about/about05.webp",
+              "alt": "About Lluc 5"
+            },
+            {
+              "src": "/images/pages/about/about06.webp",
+              "alt": "About Lluc 6"
+            },
+            {
+              "src": "/images/pages/about/about07.webp",
+              "alt": "About Lluc 7"
+            },
+            {
+              "src": "/images/pages/about/about08.webp",
+              "alt": "About Lluc 8"
+            },
+            {
+              "src": "/images/pages/about/about09.webp",
+              "alt": "About Lluc 9"
+            },
+            {
+              "src": "/images/pages/about/about10.webp",
+              "alt": "About Lluc 10"
+            },
+            {
+              "src": "/images/pages/about/about11.webp",
+              "alt": "About Lluc 11"
+            },
+            {
+              "src": "/images/pages/about/about12.webp",
+              "alt": "About Lluc 12"
+            },
+            {
+              "src": "/images/pages/about/about13.webp",
+              "alt": "About Lluc 13"
+            },
+            {
+              "src": "/images/pages/about/about14.webp",
+              "alt": "About Lluc 14"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "stacked-rows",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Servicios",
+            "ca": "Serveis",
+            "en": "Services"
+          },
+          "text": {
+            "es": "Soluciones de desarrollo a medida mediante el uso de tecnologías de vanguardia para crear interfaces eficientes y escalables.",
+            "ca": "Solucions de desenvolupament a mida mitjançant l'ús de tecnologies d'avantguarda per crear interfícies eficients i escalables.",
+            "en": "Bespoke development solutions using cutting-edge technologies to create efficient and scalable interfaces."
+          }
+        },
+        "items": [
+          {
+            "title": {
+				"es": "Desarrollo web",
+				"ca": "Desenvolupament web",
+				"en": "Web development"
+			  },
+			"text": {
+				"es": "Desarrollo de aplicaciones web robustas con Angular, enfocadas en la escalabilidad y el rendimiento, garantizando una arquitectura limpia que se adapta a las necesidades complejas del negocio actual.",
+				"ca": "Desenvolupament d'aplicacions web robustes amb Angular, enfocades en l'escalabilitat i el rendiment, garantint una arquitectura neta que s'adapta a les necessitats complexes del negoci actual.",
+				"en": "Crafting robust web applications with Angular, focusing on scalability and performance, ensuring a clean architecture that adapts to the complex needs of today's digital business landscape."
+			  }
+          },
+          {
+            "title": {
+				"es": "Rendimiento y optimización",
+				"ca": "Rendiment i optimització",
+				"en": "Performance & optimization"
+			  },
+			"text": {
+				"es": "Optimización avanzada de aplicaciones mediante técnicas de carga perezosa, gestión eficiente del estado y auditorías de Core Web Vitals para asegurar la máxima velocidad y retención de usuarios.",
+				"ca": "Optimització avançada d'aplicacions mitjançant tècniques de càrrega perezosa, gestió eficient de l'estat i auditories de Core Web Vitals per assegurar la màxima velocitat i retenció d'usuaris.",
+				"en": "Advanced application optimization through lazy loading, efficient state management, and Core Web Vitals auditing to ensure maximum speed and superior user retention rates."
+			  }
+          },
+          {
+            "title": {
+				"es": "Mantenimiento y soporte",
+				"ca": "Manteniment i suport",
+				"en": "Maintenance & support"
+			  },
+			"text": {
+				"es": "Servicios de soporte técnico y actualización continua de dependencias, garantizando que tu plataforma permanezca segura, operativa y alineada con las últimas evoluciones tecnológicas del sector.",
+				"ca": "Serveis de suport tècnic i actualització contínua de dependències, garantint que la teva plataforma romangui segura, operativa i alineada amb les últimes evolucions tecnològiques del sector.",
+				"en": "Technical support and continuous dependency updates, ensuring your platform remains secure, fully operational, and aligned with the latest technological evolutions in the industry."
+			  }
+          }
+        ]
+      }
+    },
+    {
+      "component": "mosaic-parallax",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Enfoque actual",
+			"ca": "Enfocament actual",
+			"en": "Current focus"
+          },
+          "text": {
+           "es": "Más allá de mi stack principal, dedico tiempo semanal a explorar tecnologías emergentes y metodologías que optimizan mi flujo de trabajo. En esto estoy enfocado ahora mismo:",
+		   "ca": "Més enllà del meu stack principal, dedico temps setmanal a explorar tecnologies emergents i metodologies que optimitzen el meu flux de treball. En això estic enfocat ara mateix:",
+		   "en": "Beyond my core stack, I spend time every week exploring emerging technologies and methodologies to optimize my workflow. This is what I'm focusing on right now:"
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "src": "/images/pages/about/arquitectura.webp",
+              "alt": "SYSTEM_ARCHITECTURE",
+              "texts": {
+                "title": {
+                  "es": "Arquitecturas Escalables",
+				  "ca": "Arquitectures Escalables",
+				  "en": "Scalable Architectures"
+                },
+                "text": {
+                  "es": "Implementando patrones de diseño avanzados y gestión de estado reactivo en entornos reales de alta complejidad.",
+				  "ca": "Implementant patrons de disseny avançats i gestió d'estat reactiu en entorns reals d'alta complexitat.",
+				  "en": "Implementing advanced design patterns and reactive state management in high-complexity real-world environments."
+                }
+              }
+            },
+            {
+              "src": "/images/pages/about/refactoring.webp",
+              "alt": "CODE_REFACTORING",
+              "texts": {
+                "title": {
+                  "es": "Refactoring & Clean Code",
+                  "ca": "Refactoring & Clean Code",
+                  "en": "Refactoring & Clean Code"
+                },
+                "text": {
+                  "es": "Revisando patrones clásicos de Martin Fowler para asegurar que mis soluciones no solo funcionen, sino que sean mantenibles a largo plazo.",
+				  "ca": "Revisant patrons clàssics de Martin Fowler per assegurar que les meves solucions no només funcionin, sinó que siguin mantenibles a llarg termini.",
+				  "en": "Reviewing Martin Fowler's classic patterns to ensure my solutions not only work but remain maintainable in the long run."
+                }
+              }
+            },
+            {
+              "src": "/images/pages/about/AstroJS.webp",
+              "alt": "ASTRO_IMPLEMENTATION",
+              "texts": {
+                "title": {
+                  "es": "Aprendiendo Astro",
+                  "ca": "Aprenent Astro",
+                  "en": "Learning Astro"
+                },
+                "text": {
+                  "es": "Explorando la arquitectura de islas y el rendimiento extremo para construir la próxima generación de sitios web estáticos.",
+				  "ca": "Explorant l'arquitectura d'illes i el rendiment extrem per construir la pròxima generació de llocs web estàtics.",
+				  "en": "Exploring island architecture and extreme performance to build the next generation of static websites."
+                }
+              }
+            },
+            {
+              "src": "/images/pages/about/atleta.webp",
+              "alt": "HYBRID_TRAINING",
+              "texts": {
+                "title": {
+                  "es": "Atleta Híbrido",
+				  "ca": "Atleta Híbrid",
+				  "en": "Hybrid Athlete"
+                },
+                "text": {
+                  "es": "Enfoque en el entrenamiento de fuerza y carrera. La disciplina de combinar el gimnasio con el asfalto me aporta la energía y claridad mental necesarias para programar mejor.",
+				  "ca": "Enfocament en l'entrenament de força i carrera. La disciplina de combinar el gimnàs amb l'asfalt em proporciona l'energia i claredat mental necessàries per programar millor.",
+				  "en": "Focusing on strength training and running. The discipline of combining the gym with the road provides the energy and mental clarity I need to code better."
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
 }

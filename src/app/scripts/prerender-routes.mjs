@@ -14,16 +14,21 @@ const langsData = readJson("languages.json");
 const projectsData = readJson("pages/projects.json");
 
 const langs = langsData.languages.map(l => l.code);
-const projects = projectsData.body[0].props.projects.map(p => p.slug);
+const projectsItems = projectsData.body[0].props.items;
+const projects = projectsItems.map(p => 
+  p.title.en.toLowerCase().replace(/\s+/g, '-')
+);
 
 const routes = ["/"];
 
 for (const lang of langs) {
+  // Añadimos las rutas base y la nueva de legal
   routes.push(
     `/${lang}`,
     `/${lang}/about`,
     `/${lang}/contact`,
-    `/${lang}/projects`
+    `/${lang}/projects`,
+    `/${lang}/legal`
   );
 
   for (const slug of projects) {

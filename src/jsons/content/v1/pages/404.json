@@ -1,46 +1,51 @@
 {
-	"template": "404",
-	"seo": {
-		"title": {
-			"es": "Página no encontrada",
-			"ca": "Pàgina no trobada",
-			"en": "Page not found"
-		}
-	},
-	"body": [
-		{
-			"component": "not-found",
-			"props": {
-				"texts": {
-					"title": {
-						"es": "404",
-						"ca": "404",
-						"en": "404"
-					},
-					"subtitle": {
-						"es": "Página no encontrada",
-						"ca": "Pàgina no trobada",
-						"en": "Page not found"
-					},
-					"text": {
-						"es": "La página que estás buscando no existe o ha sido movida.",
-						"ca": "La pàgina que busques no existeix o s'ha mogut.",
-						"en": "The page you are looking for does not exist or has been moved."
-					}
-				},
-				"buttons": [
-					{
-						"page": "home",
-						"icon": "↗",
-						"label": {
-							"es": "Volver al inicio",
-							"ca": "Tornar a l'inici",
-							"en": "Back to home"
-						},
-						"link_type": "internal"
-					}
-				]
-			}
-		}
-	]
+  "template": "404",
+  "seo": {
+    "title": {
+      "es": "Error 404 | Página no encontrada - llucllull.dev",
+      "ca": "Error 404 | Pàgina no trobada - llucllull.dev",
+      "en": "Error 404 | Page Not Found - llucllull.dev"
+    },
+	"description": {
+      "es": "Lo sentimos, esta página no existe. Pero no te preocupes, puedes volver al inicio y seguir explorando mi portfolio.",
+      "ca": "Ho sentim, aquesta pàgina no existeix. Pots tornar a l'inici per seguir navegant pel meu portfolio.",
+      "en": "Oops! This page doesn't exist. You can head back to the homepage to keep browsing my portfolio."
+    }
+  },
+  "body": [
+    {
+      "component": "not-found",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Oops!",
+            "ca": "Oops!",
+            "en": "Oops!"
+          },
+          "subtitle": {
+            "es": "La página que buscas no existe",
+            "ca": "La pàgina que cerques no existeix",
+            "en": "The page you are looking for not exist"
+          },
+          "highlight": {
+            "es": "404",
+            "ca": "404",
+            "en": "404"
+          }
+        },
+        "buttons": [
+          {
+            "page": "home",
+            "icon": "move-right",
+            "label": {
+              "es": "Volver al inicio",
+              "ca": "Tornar a l'inici",
+              "en": "Back to home"
+            },
+            "link_type": "internal"
+          }
+        ]
+      }
+    }
+  ]
 }

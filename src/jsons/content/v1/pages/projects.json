@@ -1,30 +1,224 @@
 {
-	"template": "projects",
-	"seo": {
-		"title": {
-			"es": "Proyectos",
-			"ca": "Projectes",
-			"en": "Projects"
-		}
-	},
-	"body": [
-		{
-			"component": "projects-grid",
-			"props": {
-				"projects": [
-					{
-						"slug": "puro-hotels",
-						"title": "Puro Hotels",
-						"type": "work",
-						"year": 2025,
-						"tags": [
-							"Angular",
-							"SSR"
-						],
-						"image": "/assets/projects/puro.jpg"
-					}
-				]
-			}
-		}
-	]
+  "template": "projects",
+  "seo": {
+    "title": {
+      "es": "Proyectos y Portfolio | Lluc Llull - Soluciones Digitales",
+      "ca": "Projectes i Portfolio | Lluc Llull - Solucions Digitals",
+      "en": "Projects & Portfolio | Lluc Llull - Digital Solutions"
+    },
+    "description": {
+      "es": "Galería de proyectos destacados en desarrollo web y software. Desde arquitecturas complejas hasta interfaces minimalistas.",
+      "ca": "Recull de projectes destacats en desenvolupament web. Solucions tecnològiques des de la idea fins a la implementació.",
+      "en": "A showcase of my featured work in web development and software design. From complex backends to sleek frontends."
+    }
+  },
+  "body": [
+    {
+      "component": "split-previewer",
+      "props": {
+        "direction": "right",
+        "texts": {
+          "title": {
+            "es": "Proyectos",
+            "ca": "Projectes",
+            "en": "Projects"
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Proyectos",
+            "src": "/images/pages/projects.avif"
+          }
+        },
+        "items": [
+          {
+            "title": {
+              "es": "Puro Group",
+              "ca": "Puro Group",
+              "en": "Puro Group"
+            },
+            "description": {
+              "es": "Rediseño y desarrollo de la plataforma digital para el ecosistema de lujo de Puro Group. Una experiencia de alta fidelidad centrada en el rendimiento y la escalabilidad, desarrollada formando parte del equipo de ClickToTravel.",
+              "ca": "Redisseny i desenvolupament de la plataforma digital per a l'ecosistema de luxe de Puro Group. Una experiència d'alta fidelitat centrada en el rendiment i l'escalabilitat, desenvolupada formant part de l'equip de ClickToTravel",
+              "en": "Redesign and development of the digital platform for the Puro Group luxury ecosystem. A high-fidelity experience focused on performance and scalability, developed as part of the ClickToTravel development team."
+            },
+            "tags": [
+              "Angular 17",
+              "SSR",
+              "Signals + Standalone",
+              "Enterprise Architecture",
+              "Bitbucket"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Puro Group",
+                "src": "/images/projects/puro-group/projects-puro.png"
+              }
+            },
+            "buttons": []
+          },
+          {
+            "title": {
+              "es": "Lluc Llull",
+              "ca": "Lluc Llull",
+              "en": "Lluc Llull"
+            },
+            "description": {
+              "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 19 y SSG para garantizar una navegación instantánea.",
+              "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 19 i SSG per garantir una navegació instantània.",
+              "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 19 and SSG to ensure instantaneous navigation."
+            },
+            "tags": [
+              "Angular 19",
+              "Signals + Standalone",
+              "i18n Multi-language",
+              "SSG",
+              "Vercel",
+              "Cloudflare R2"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Lluc Llull",
+                "src": "/images/projects/portfoli/projects-portfoli.png"
+              }
+            },
+            "buttons": []
+          },
+          {
+            "title": {
+              "es": "UI Kit",
+              "ca": "UI Kit",
+              "en": "UI Kit"
+            },
+            "description": {
+              "es": "Sistema de diseño modular y librería de componentes UI desarrollada con Angular. Una arquitectura exalable y documentada en Storybook para garantizar consistencia visual en múltiples proyectos.",
+              "ca": "Sistema de disseny modular i llibreria de components UI desenvolupada amb Angular. Una arquitectura escalable i documentada a Storybook per garantir consistència visual en múltiples projectes.",
+              "en": "Modular design system and UI component library developed with Angular. A scalable architecture documented in Storybook to guarantee visual consistency across multiple projects."
+            },
+            "tags": [
+              "Angular 19",
+              "Signals + Standalone",
+              "Storybook",
+              "Github Actions (CI/CD)",
+              "Angular Material",
+              "Jasmine/Karma"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "UI Kit",
+                "src": "/images/projects/ui-kit/projects-ui-kit.png"
+              }
+            },
+            "buttons": []
+          },
+          {
+            "title": {
+              "es": "Arima",
+              "ca": "Arima",
+              "en": "Arima"
+            },
+            "description": {
+              "es": "Desarrollo de la plataforma digital para Arima Hotel, referente en arquitectura Passivhaus y sostenibilidad. Una interfaz fluida que traslada el concepto de lujo orgánico y bienestar al entorno web, realizada durante mi etapa en ClickToTravel.",
+              "ca": "Desenvolupament de la plataforma digital per a Arima Hotel, referent en arquitectura Passivhaus i sostenibilitat. Una interfície fluida que trasllada el concepte de luxe orgànic i benestar a l'entorn web, realitzada durant la meva etapa a ClickToTravel.",
+              "en": "Development of the digital platform for Arima Hotel, a benchmark in Passivhaus architecture and sustainability. A fluid interface that brings the concept of organic luxury and well-being to the web environment, created during my time at ClickToTravel."
+            },
+            "tags": [
+              "Angular 17",
+              "SSR",
+              "Signals + Standalone",
+              "SEO Optimized",
+              "Bitbucket"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Arima",
+                "src": "/images/projects/arima/projects-arima.png"
+              }
+            },
+            "buttons": []
+          },
+          {
+            "title": {
+              "es": "Blanco",
+              "ca": "Blanco",
+              "en": "Blanco"
+            },
+            "description": {
+              "es": "Ecosistema digital para Blanco Hotel Formentera, integrando un motor de reservas de alto rendimiento. Una interfaz minimalista que refleja el espíritu mediterráneo, desarrollada como parte del equipo de ClickToTravel.",
+              "ca": "Ecosistema digital per a Blanco Hotel Formentera, integrant un motor de reserves d'alt rendiment. Una interfície minimalista que reflecteix l'esperit mediterrani, desenvolupada com a part de l'equip de ClickToTravel.",
+              "en": "Digital ecosystem for Blanco Hotel Formentera, integrating a high-performance booking engine. A minimalist interface reflecting the Mediterranean spirit, developed as part of the ClickToTravel team."
+            },
+            "tags": [
+              "Angular 17",
+              "SSR",
+              "Booking Engine Integration",
+              "Signals + Standalone",
+              "Bitbucket"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Blanco",
+                "src": "/images/projects/blanco/projects-blanco.png"
+              }
+            },
+            "buttons": []
+          },
+		      {
+            "title": {
+              "es": "Numad Studios",
+              "ca": "Numad Studios",
+              "en": "Numad Studios"
+            },
+            "description": {
+              "es": "Plataforma digital para Numad Studios en San Sebastián, un concepto de alojamiento híbrido para nòmadas digitales y estudiantes. Una interfaz técnica y funcional que integra criterios de sostenibilidad Passivhaus, desarrollada como parte del equipo de ClickToTravel.",
+              "ca": "Plataforma digital per a Numad Studios a Sant Sebastià, un concepte d'allotjament híbrid per a nòmades digitals i estudiants. Una interfície tècnica i funcional que integra criteris de sostenibilitat Passivhaus, desenvolupada com a part de l'equip de ClickToTravel.",
+              "en": "Digital platform for Numad Studios in San Sebastian, a hybrid accommodation concept for digital nomads and students. A technical and functional interface integrating Passivhaus sustainability criteria, developed as part of the ClickToTravel team."
+            },
+            "tags": [
+              "Angular 17",
+              "SSR",
+              "Booking Engine Integration",
+              "Signals + Standalone",
+              "Passivhaus Digital Branding",
+              "Bitbucket"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Numad Studios",
+                "src": "/images/projects/numad/projects-numad.png"
+              }
+            },
+            "buttons": []
+          },
+          {
+            "title": {
+              "es": "Tent Hotels",
+              "ca": "Tent Hotels",
+              "en": "Tent Hotels"
+            },
+            "description": {
+              "es": "Desarrollo de la plataforma multihotel para tent Hotels, redefiniendo el concepto vacacional con un enfoque 'Camp-Life' urbano. Una arquitectura escalable que gestiona múltiples establecimientos bajo una experiencia de usuario dinámica y optimizada, realizada integrando el equipo de ClickToTravel.",
+              "ca": "Desenvolupament de la plataforma multihotel per a tent Hotels, redefinint el concepte vacacional amb un enfocament 'Camp-Life' urbà. Una arquitectura escalable que gestiona múltiples establiments sota una experiència d'usuari dinàmica i optimitzada, realitzada integrant l'equip de ClickToTravel.",
+              "en": "Development of the multi-hotel platform for tent Hotels, redefining the holiday concept with an urban 'Camp-Life' approach. A scalable architecture managing multiple properties under a dynamic and optimized user experience, created as part of the ClickToTravel team."
+            },
+            "tags": [
+              "Angular 17",
+              "Mobile First",
+              "Signals + Standalone",
+              "Multi-property Architecture",
+              "REST API Integration",
+              "Bitbucket"
+            ],
+            "multimedia": {
+              "image": {
+                "alt": "Tent Hotels",
+                "src": "/images/projects/tent/projects-tent.png"
+              }
+            },
+            "buttons": []
+          }
+        ]
+      }
+    }
+  ]
 }

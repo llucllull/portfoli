@@ -1,0 +1,103 @@
+{
+  "template": "legal",
+  "seo": {
+    "title": {
+      "es": "Aviso Legal - llucllull.dev",
+      "ca": "Avís Legal - llucllull.dev",
+      "en": "Legal Notice - llucllull.dev"
+    },
+    "description": {
+      "es": "Términos de uso, propiedad intelectual y responsabilidades del sitio web llucllull.dev.",
+      "ca": "Termes d'ús, propietat intel·lectual i responsabilitats del lloc web llucllull.dev.",
+      "en": "Terms of use, intellectual property, and responsibilities for the llucllull.dev website."
+    }
+  },
+  "body": [
+    {
+	  "component": "content-document",
+	  "props": {
+		"texts": {
+		  "title": {
+			"es": "AVISO LEGAL Y CONDICIONES GENERALES DE USO",
+			"ca": "AVÍS LEGAL I CONDICIONS GENERALS D'ÚS",
+			"en": "LEGAL NOTICE AND GENERAL CONDITIONS OF USE"
+		  }
+		},
+		"items": [
+		  {
+			"title": {
+			  "es": "1. INFORMACIÓN GENERAL",
+			  "ca": "1. INFORMACIÓ GENERAL",
+			  "en": "1. GENERAL INFORMATION"
+			},
+			"text": {
+			  "es": "En cumplimiento con el deber de información dispuesto en la Ley 34/2002 de Servicios de la Sociedad de la Información y el Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan a continuación los siguientes datos de información general de este sitio web:<br><br>La titularidad de este sitio web, www.llucllull.dev la ostenta: Lluc Llull Galmés, con NIF: 41618706-E.<br><br>Dirección: C/ Creu, 45, 07530, Sant Llorenç des Cardassar<br><br>Teléfono: 629427301<br><br>Email: hola@llucllull.dev",
+			  "ca": "En compliment amb el deure d'informació disposat en la Llei 34/2002 de Serveis de la Societat de la Informació i el Comerç Electrònic (LSSI-CE) d'11 de juliol, es faciliten a continuació les següents dades d'informació general d'aquest lloc web:<br><br>La titularitat d'aquest lloc web, www.llucllull.dev, l'exerceix: Lluc Llull Galmés, amb NIF: 41618706-E.<br><br>Adreça: C/ Creu, 45, 07530, Sant Llorenç des Cardassar<br><br>Telèfon: 629427301<br><br>Email: hola@llucllull.dev",
+			  "en": "In compliance with the information duty set forth in Law 34/2002 on Services of the Information Society and Electronic Commerce (LSSI-CE) of July 11, the following general information data of this website are provided:<br><br>The ownership of this website, www.llucllull.dev, is held by: Lluc Llull Galmés, with NIF: 41618706-E.<br><br>Address: C/ Creu, 45, 07530, Sant Llorenç des Cardassar<br><br>Phone: 629427301<br><br>Email: hola@llucllull.dev"
+			}
+		  },
+		  {
+			"title": {
+			  "es": "2. TÉRMINOS Y CONDICIONES GENERALES DE USO",
+			  "ca": "2. TERMES I CONDICIONS GENERALS D'ÚS",
+			  "en": "2. GENERAL TERMS AND CONDITIONS OF USE"
+			},
+			"text": {
+			  "es": "El objeto de las presentes Condiciones es regular el acceso y la utilización del Sitio Web. El acceso al Sitio Web por el Usuario tiene carácter libre y, por regla general, es gratuito. El Usuario asume su responsabilidad para realizar un uso correcto del Sitio Web de conformidad con la Ley, la moral y el orden público.",
+			  "ca": "L'objecte de les presents Condicions és regular l'accés i la utilització del Lloc Web. L'accés al Lloc Web per l'Usuari té caràcter lliure i, per regla general, és gratuït. L'Usuari assumeix la seva responsabilitat per realitzar un ús correcte del Lloc Web de conformitat amb la Llei, la moral i l'ordre públic.",
+			  "en": "The purpose of these Conditions is to regulate the access and use of the Website. Access to the Website by the User is free and, as a general rule, complimentary. The User assumes responsibility for the correct use of the Website in accordance with the Law, morality, and public order."
+			}
+		  },
+		  {
+			"title": {
+			  "es": "3. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD",
+			  "ca": "3. EXCLUSIÓ DE GARANTIES I RESPONSABILITAT",
+			  "en": "3. EXCLUSION OF WARRANTIES AND LIABILITY"
+			},
+			"text": {
+			  "es": "Lluc Llull no garantiza la continuidad, disponibilidad y utilidad del Sitio Web. Lluc Llull no se responsabiliza ni garantiza que el acceso a este Sitio Web no vaya a ser ininterrumpido o que esté libre de error, ni se hace responsable de los daños que pudiesen ocasionarse a los usuarios por un uso inadecuado de este Sitio Web.",
+			  "ca": "Lluc Llull no garanteix la continuïtat, disponibilitat i utilitat del Lloc Web. Lluc Llull no es responsabilitza ni garanteix que l'accés a aquest Lloc Web no sigui interromput o que estigui lliure d'error, ni es fa responsable dels danys que poguessin ocasionar-se als usuaris per un ús inadequat d'aquest Lloc Web.",
+			  "en": "Lluc Llull does not guarantee the continuity, availability, and usefulness of the Website. Lluc Llull is not responsible for nor guarantees that access to this Website will be uninterrupted or error-free, nor is it responsible for any damages that may be caused to users by improper use of this Website."
+			}
+		  },
+		  {
+			"title": {
+			  "es": "4. POLÍTICA DE ENLACES",
+			  "ca": "4. POLÍTICA D'ENLLAÇOS",
+			  "en": "4. LINKS POLICY"
+			},
+			"text": {
+			  "es": "Lluc Llull no asume ninguna responsabilidad por los daños y perjuicios que pudieran producirse por el acceso o uso de los contenidos y servicios de sitios web no gestionados por Lluc Llull que aparezcan enlazados en este Sitio Web.",
+			  "ca": "Lluc Llull no assumeix cap responsabilitat pels danys i perjudicis que poguessin produir-se per l'accés o ús dels continguts i serveis de llocs web no gestionats per Lluc Llull que apareguin enllaçats en aquest Lloc Web.",
+			  "en": "Lluc Llull assumes no responsibility for damages that may occur due to the access or use of content and services of websites not managed by Lluc Llull that appear linked on this Website."
+			}
+		  },
+		  {
+			"title": {
+			  "es": "5. PROPIEDAD INTELECTUAL E INDUSTRIAL",
+			  "ca": "5. PROPIETAT INTELECTUAL I INDUSTRIAL",
+			  "en": "5. INTELLECTUAL AND INDUSTRIAL PROPERTY"
+			},
+			"text": {
+			  "es": "Lluc Llull es titular de todos los derechos de propiedad intelectual e industrial del Sitio Web. Quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública de la totalidad o parte de los contenidos de esta página web con fines comerciales sin la autorización expresa de Lluc Llull.",
+			  "ca": "Lluc Llull és titular de tots els drets de propietat intel·lectual i industrial del Lloc Web. Queden expressament prohibides la reproducció, la distribució i la comunicació pública de la totalitat o part dels continguts d'aquesta pàgina web amb fins comercials sense l'autorització expressa de Lluc Llull.",
+			  "en": "Lluc Llull is the owner of all intellectual and industrial property rights of the Website. The reproduction, distribution, and public communication of all or part of the contents of this website for commercial purposes without the express authorization of Lluc Llull are expressly prohibited."
+			}
+		  },
+		  {
+			"title": {
+			  "es": "6. LEGISLACIÓN APLICABLE Y JURISDICCIÓN",
+			  "ca": "6. LEGISLACIÓ APLICABLE I JURISDICCIÓ",
+			  "en": "6. APPLICABLE LEGISLATION AND JURISDICTION"
+			},
+			"text": {
+			  "es": "La relación entre el Usuario y Lluc Llull se regirá por la normativa vigente y de aplicación en el territorio español. De surgir cualquier controversia, las partes someterán sus conflictos a la jurisdicción ordinaria de los jueces y tribunales que correspondan conforme a derecho.",
+			  "ca": "La relació entre l'Usuari i Lluc Llull es regirà per la normativa vigent i d'aplicació en el territori espanyol. En cas de sorgir qualsevol controvèrsia, les parts sotmetran els seus conflictes a la jurisdicció ordinària dels jutges i tribunals que corresponguin conforme a dret.",
+			  "en": "The relationship between the User and Lluc Llull shall be governed by current regulations applicable in Spanish territory. Should any controversy arise, the parties shall submit their conflicts to the ordinary jurisdiction of the judges and courts that correspond according to law."
+			}
+		  }
+		]
+	  }
+	}
+  ]
+}

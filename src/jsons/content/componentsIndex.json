@@ -1,0 +1,455 @@
+{
+  "componentsIndex": {
+    "split-previewer": {
+      "component": "split-previewer",
+      "props": {
+        "direction": "right",
+        "texts": {
+          "title": {
+            "es": "Proyectos",
+            "ca": "Projectes",
+            "en": "Projects"
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Proyectos",
+            "src": "/images/pages/projects.avif"
+          }
+        },
+        "items": [
+          {
+            "title": {
+              "es": "Project name",
+              "ca": "Project name",
+              "en": "Project name"
+            },
+            "description": {
+              "es": "Descripción del proyecto...",
+              "ca": "Descripció del projecte...",
+              "en": "Project description..."
+            },
+            "tags": ["Angular", "SSR", "Signals"],
+            "multimedia": {
+              "image": {
+                "alt": "Project",
+                "src": "/images/projects/example.png"
+              }
+            },
+            "buttons": []
+          }
+        ]
+      }
+    },
+
+    "section-intro": {
+      "component": "section-intro",
+      "props": {
+        "texts": {
+          "pretitle": { "es": "", "ca": "", "en": "" },
+          "title": {
+            "es": "Título sección",
+            "ca": "Títol secció",
+            "en": "Section title"
+          },
+          "subtitle": { "es": "", "ca": "", "en": "" },
+          "text": {
+            "es": "Texto introductorio...",
+            "ca": "Text introductori...",
+            "en": "Intro text..."
+          }
+        }
+      }
+    },
+
+    "not-found": {
+      "component": "not-found",
+      "props": {
+        "texts": {
+          "title": { "es": "Oops!", "ca": "Oops!", "en": "Oops!" },
+          "subtitle": {
+            "es": "La página no existe",
+            "ca": "La pàgina no existeix",
+            "en": "Page not found"
+          },
+          "highlight": { "es": "404", "ca": "404", "en": "404" }
+        },
+        "buttons": [
+          {
+            "page": "home",
+            "icon": "move-right",
+            "label": {
+              "es": "Volver",
+              "ca": "Tornar",
+              "en": "Back"
+            },
+            "link_type": "internal"
+          }
+        ]
+      }
+    },
+
+    "contact-minimal": {
+      "component": "contact-minimal",
+      "props": {
+        "texts": {
+          "contactsTitle": {
+            "es": "Contacto",
+            "ca": "Contacte",
+            "en": "Contact"
+          },
+          "socialsTitle": {
+            "es": "Socials",
+            "ca": "Socials",
+            "en": "Socials"
+          }
+        },
+        "items": [
+          {
+            "buttons": [
+              {
+                "url": "mailto:test@test.com",
+                "label": {
+                  "es": "email@test.com",
+                  "ca": "email@test.com",
+                  "en": "email@test.com"
+                },
+                "link_type": "external"
+              }
+            ]
+          },
+          {
+            "buttons": [
+              {
+                "label": "linkedin",
+                "url": "https://linkedin.com",
+                "link_type": "external"
+              }
+            ]
+          }
+        ],
+        "multimedia": {
+          "image": {
+            "alt": "Contacto",
+            "src": "/images/pages/contact.avif"
+          }
+        }
+      }
+    },
+
+    "category-progress": {
+      "component": "category-progress",
+      "props": {
+        "texts": {
+          "pretitle": { "es": "", "ca": "", "en": "" },
+          "title": { "es": "", "ca": "", "en": "" }
+        },
+        "items": [
+          {
+            "title": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "items": [
+              {
+                "name": {
+                  "es": "Skill",
+                  "ca": "Skill",
+                  "en": "Skill"
+                },
+                "progress": 50
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    "hero-section": {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": { "es": "", "ca": "", "en": "" },
+          "title": {
+            "es": "Título principal",
+            "ca": "Títol principal",
+            "en": "Main title"
+          },
+          "subtitle": { "es": "", "ca": "", "en": "" },
+          "text": {
+            "es": "Texto principal",
+            "ca": "Text principal",
+            "en": "Main text"
+          },
+          "highlight": {
+            "es": "Highlight",
+            "ca": "Highlight",
+            "en": "Highlight"
+          }
+        },
+        "buttons": [
+          {
+            "page": "home",
+            "icon": "arrow-right",
+            "label": {
+              "es": "Ir",
+              "ca": "Anar",
+              "en": "Go"
+            },
+            "link_type": "internal"
+          }
+        ],
+        "variant": "text",
+        "multimedia": {}
+      }
+    },
+
+    "media-split": {
+      "component": "media-split",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Sobre mí",
+            "ca": "Sobre mi",
+            "en": "About me"
+          },
+          "text": {
+            "es": "Hola, me llamo Lluc Llull. Soy desarrollador Front-end especializado en Angular y en la creación de arquitecturas escalables. Me apasiona el código limpio y la lógica eficiente.",
+            "ca": "Hola, em dic Lluc Llull. Sóc desenvolupador Front-end especialitzat en Angular i en la creació d'arquitectures escalables. Em fascina el codi net i la lògica eficient.",
+            "en": "Hey, my name is Lluc Llull. I'm a Front-end Developer specialized in Angular and building scalable architectures. I’m passionate about clean code and efficient logic."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "alt": "About image 1"
+            },
+            {
+              "src": "/images/projects/arima/projects-arima.png",
+              "alt": "About image 2"
+            }
+          ]
+        }
+      }
+    },
+
+    "stacked-rows": {
+      "component": "stacked-rows",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Servicios",
+            "ca": "Serveis",
+            "en": "Services"
+          },
+          "text": {
+            "es": "Soluciones de desarrollo a medida mediante el uso de tecnologías de vanguardia.",
+            "ca": "Solucions de desenvolupament a mida amb tecnologies d'avantguarda.",
+            "en": "Custom development solutions using cutting-edge technologies."
+          }
+        },
+        "items": [
+          {
+            "title": {
+              "es": "Servicio 1",
+              "ca": "Servei 1",
+              "en": "Service 1"
+            },
+            "text": {
+              "es": "Descripción dummy del servicio 1. Este texto sirve como placeholder para validar el layout.",
+              "ca": "Descripció dummy del servei 1.",
+              "en": "Dummy description for service 1."
+            }
+          },
+          {
+            "title": {
+              "es": "Servicio 2",
+              "ca": "Servei 2",
+              "en": "Service 2"
+            },
+            "text": {
+              "es": "Descripción dummy del servicio 2. Aquí puedes probar saltos de línea y longitud de contenido.",
+              "ca": "Descripció dummy del servei 2.",
+              "en": "Dummy description for service 2."
+            }
+          },
+          {
+            "title": {
+              "es": "Servicio 3",
+              "ca": "Servei 3",
+              "en": "Service 3"
+            },
+            "text": {
+              "es": "Descripción dummy del servicio 3. Ideal para comprobar consistencia visual entre items.",
+              "ca": "Descripció dummy del servei 3.",
+              "en": "Dummy description for service 3."
+            }
+          }
+        ]
+      }
+    },
+
+    "mosaic-parallax": {
+      "component": "mosaic-parallax",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Título de sección",
+            "ca": "Títol de secció",
+            "en": "Section title"
+          },
+          "text": {
+            "es": "Este es un texto introductorio dummy para validar el layout del componente mosaic-parallax.",
+            "ca": "Aquest és un text introductori dummy per validar el layout del component mosaic-parallax.",
+            "en": "This is a dummy intro text to validate the mosaic-parallax component layout."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "src": "/images/dummy/image-1.webp",
+              "alt": "DUMMY_IMAGE_1",
+              "texts": {
+                "title": {
+                  "es": "Elemento 1",
+                  "ca": "Element 1",
+                  "en": "Item 1"
+                },
+                "text": {
+                  "es": "Descripción dummy del elemento 1 para probar el comportamiento visual.",
+                  "ca": "Descripció dummy de l'element 1.",
+                  "en": "Dummy description for item 1."
+                }
+              }
+            },
+            {
+              "src": "/images/dummy/image-2.webp",
+              "alt": "DUMMY_IMAGE_2",
+              "texts": {
+                "title": {
+                  "es": "Elemento 2",
+                  "ca": "Element 2",
+                  "en": "Item 2"
+                },
+                "text": {
+                  "es": "Texto de prueba para validar spacing, tipografía y animaciones.",
+                  "ca": "Text de prova per validar spacing i tipografia.",
+                  "en": "Test text to validate spacing, typography and animations."
+                }
+              }
+            },
+            {
+              "src": "/images/dummy/image-3.webp",
+              "alt": "DUMMY_IMAGE_3",
+              "texts": {
+                "title": {
+                  "es": "Elemento 3",
+                  "ca": "Element 3",
+                  "en": "Item 3"
+                },
+                "text": {
+                  "es": "Contenido de ejemplo para comprobar consistencia entre múltiples items.",
+                  "ca": "Contingut d'exemple per comprovar consistència.",
+                  "en": "Example content to check consistency across items."
+                }
+              }
+            },
+            {
+              "src": "/images/dummy/image-4.webp",
+              "alt": "DUMMY_IMAGE_4",
+              "texts": {
+                "title": {
+                  "es": "Elemento 4",
+                  "ca": "Element 4",
+                  "en": "Item 4"
+                },
+                "text": {
+                  "es": "Último elemento dummy para probar comportamiento completo del componente.",
+                  "ca": "Últim element dummy per provar el component.",
+                  "en": "Final dummy item to test full component behavior."
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+
+    "content-document": {
+      "component": "content-document",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "TÍTULO DEL DOCUMENTO",
+            "ca": "TÍTOL DEL DOCUMENT",
+            "en": "DOCUMENT TITLE"
+          }
+        },
+        "items": [
+          {
+            "title": {
+              "es": "1. SECCIÓN UNO",
+              "ca": "1. SECCIÓ U",
+              "en": "1. SECTION ONE"
+            },
+            "text": {
+              "es": "Este es un texto dummy de ejemplo para la primera sección del documento.<br><br>Sirve para comprobar saltos de línea, formato de párrafos y comportamiento general del layout.",
+              "ca": "Aquest és un text dummy d'exemple per a la primera secció del document.<br><br>Serveix per comprovar salts de línia i el layout.",
+              "en": "This is a dummy text example for the first section of the document.<br><br>It is used to validate line breaks and layout behavior."
+            }
+          },
+          {
+            "title": {
+              "es": "2. SECCIÓN DOS",
+              "ca": "2. SECCIÓ DOS",
+              "en": "2. SECTION TWO"
+            },
+            "text": {
+              "es": "Texto de prueba para validar contenido más largo dentro del documento. Puedes añadir múltiples frases para simular contenido real.",
+              "ca": "Text de prova per validar contingut més llarg dins del document.",
+              "en": "Test text to validate longer content inside the document."
+            }
+          },
+          {
+            "title": {
+              "es": "3. SECCIÓN TRES",
+              "ca": "3. SECCIÓ TRES",
+              "en": "3. SECTION THREE"
+            },
+            "text": {
+              "es": "Contenido dummy adicional para verificar consistencia visual entre distintas secciones del documento.",
+              "ca": "Contingut dummy addicional per verificar consistència visual.",
+              "en": "Additional dummy content to verify visual consistency across sections."
+            }
+          },
+          {
+            "title": {
+              "es": "4. SECCIÓN CUATRO",
+              "ca": "4. SECCIÓ QUATRE",
+              "en": "4. SECTION FOUR"
+            },
+            "text": {
+              "es": "Este bloque sirve para probar comportamiento en documentos largos y scroll continuo.",
+              "ca": "Aquest bloc serveix per provar el comportament en documents llargs.",
+              "en": "This block helps test behavior in long documents and scrolling."
+            }
+          },
+          {
+            "title": {
+              "es": "5. SECCIÓN CINCO",
+              "ca": "5. SECCIÓ CINC",
+              "en": "5. SECTION FIVE"
+            },
+            "text": {
+              "es": "Última sección dummy para comprobar el final del documento y espaciados.",
+              "ca": "Última secció dummy per comprovar el final del document.",
+              "en": "Final dummy section to test document ending and spacing."
+            }
+          }
+        ]
+      }
+    }
+  }
+}

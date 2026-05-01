@@ -1,40 +1,111 @@
 {
-	"template": "contact",
-	"seo": {
-		"title": {
-			"es": "Contacto",
-			"ca": "Contacte",
-			"en": "Contact"
-		}
-	},
-	"body": [
-		{
-			"component": "section-intro",
-			"props": {
-				"texts": {
-					"pretitle": {
-						"es": "",
-						"ca": "",
-						"en": ""
-					},
-					"title": {
-						"es": "Hablemos",
-						"ca": "Parlem",
-						"en": "Let's talk"
-					},
-					"subtitle": {
-						"es": "",
-						"ca": "",
-						"en": ""
-					},
-					"text": {
-						"es": "Si quieres trabajar conmigo o tienes alguna pregunta puedes escribirme.",
-						"ca": "Si vols treballar amb mi o tens alguna pregunta pots escriure'm.",
-						"en": "If you want to work with me or have any question feel free to contact me."
-					}
-				},
-				"email": "hola@llucllull.dev"
-			}
-		}
-	]
+  "template": "contact",
+  "seo": {
+    "title": {
+      "es": "Contacto | Lluc Llull - ¿Hablamos de tu próximo proyecto?",
+      "ca": "Contacte | Lluc Llull - Parlem del teu proper projecte?",
+      "en": "Contact | Lluc Llull - Let's build something together!"
+    },
+	"description": {
+      "es": "¿Tienes una idea o necesitas un desarrollador? Ponte en contacto conmigo para colaboraciones, proyectos o simplemente para saludar.",
+      "ca": "Tens una idea o busques un desenvolupador? Contacta amb mi per a col·laboracions, projectes o per fer un cafè virtual.",
+      "en": "Have a project in mind or looking for a developer? Reach out for collaborations, freelance work, or just to say hi."
+    }
+  },
+  "body": [
+    {
+      "component": "section-intro",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Hablemos",
+            "ca": "Parlem",
+            "en": "Let's talk"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Si quieres trabajar conmigo o tienes alguna pregunta puedes escribirme.",
+            "ca": "Si vols treballar amb mi o tens alguna pregunta pots escriure'm.",
+            "en": "If you want to work with me or have any question feel free to contact me."
+          }
+        }
+      }
+    },
+    {
+      "component": "contact-minimal",
+      "props": {
+        "texts": {
+          "contactsTitle": {
+            "es": "Contacto",
+            "ca": "Contacte",
+            "en": "Contact"
+          },
+          "socialsTitle": {
+            "es": "Socials",
+            "ca": "Socials",
+            "en": "Socials"
+          }
+        },
+        "items": [
+          {
+            "buttons": [
+              {
+                "page": "",
+                "url": "mailto:hola@llucllull.dev",
+                "icon": "",
+                "label": {
+                  "es": "hola@llucllull.dev",
+                  "ca": "hola@llucllull.dev",
+                  "en": "hola@llucllull.dev"
+                },
+                "link_type": "external"
+              },
+              {
+                "page": "",
+                "url": "tel:34629427301",
+                "icon": "",
+                "label": {
+                  "es": "+34 629 427 301",
+                  "ca": "+34 629 427 301",
+                  "en": "+34 629 427 301"
+                },
+                "link_type": "external"
+              }
+            ]
+          },
+          {
+            "buttons": [
+              {
+                "label": "linkedin",
+                "url": "https://www.linkedin.com/in/lluc-llull/",
+                "icon": "",
+                "linkType": "external"
+              },
+              {
+                "label": "github",
+                "url": "https://github.com/llucllull",
+                "icon": "",
+                "linkType": "external"
+              }
+            ]
+          }
+        ],
+        "multimedia": {
+          "image": {
+            "alt": "Contacto",
+            "src": "/images/pages/contact.avif"
+          }
+        }
+      }
+    }
+  ]
 }
