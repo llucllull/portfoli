@@ -30,9 +30,138 @@
       }
     },
     {
-      "component": "footer-main",
+      "component": "columns-footer",
       "props": {
-        "links": "footerLinks"
+        "column1": {
+			"title": {
+				"es": "Social",
+				"ca": "Social",
+				"en": "Social"
+			},
+			"buttons": [
+				{
+				"label":{
+					"es": "linkedin",
+					"ca": "linkedin",
+					"en": "linkedin"
+				},
+				"url": "https://www.linkedin.com/in/lluc-llull/",
+				"icon": "arrow-up-right",
+				"linkType": "external"
+				},
+				{
+				"label":{
+					"es": "github",
+					"ca": "github",
+					"en": "github"
+				},
+				"url": "https://github.com/llucllull",
+				"icon": "arrow-up-right",
+				"linkType": "external"
+				}
+			]
+		},
+		"column2": {
+			"title": {
+				"es": "Páginas",
+				"ca": "Pàgines",
+				"en": "Pages"
+			},
+			"buttons": [
+				{
+            	"page": "home",
+				"label":{
+					"es": "Home",
+					"ca": "Home",
+					"en": "Home"
+				},
+				"url": "",
+				"icon": "",
+				"linkType": "internal"
+				},
+				{
+				"page": "about",
+				"label":{
+					"es": "Sobre mi",
+					"ca": "Sobre mi",
+					"en": "About me"
+				},
+				"url": "",
+				"icon": "",
+				"linkType": "internal"
+				},
+				{
+            	"page": "projects",
+				"label":{
+					"es": "Proyectos",
+					"ca": "Projectes",
+					"en": "Projects"
+				},
+				"url": "",
+				"icon": "",
+				"linkType": "internal"
+				},
+				{
+				"page": "contact",
+				"label":{
+					"es": "Contacto",
+					"ca": "Contacte",
+					"en": "Contact"
+				},
+				"url": "",
+				"icon": "",
+				"linkType": "internal"
+				}
+			]
+		},
+		"column3": {
+			"title": {
+				"es": "Contacto",
+				"ca": "Contacte",
+				"en": "Contact"
+			},
+			"buttons": [
+				{
+				"label":{
+					"es": "+34 629 427 301",
+					"ca": "+34 629 427 301",
+					"en": "+34 629 427 301"
+				},
+				"url": "tel:+34629427301",
+				"icon": "",
+				"linkType": "external"
+				},
+				{
+				"label":{
+					"es": "hola@llucllull.dev",
+					"ca": "hola@llucllull.dev",
+					"en": "hola@llucllull.dev"
+				},
+				"url": "mailto:hola@llucllull.dev",
+				"icon": "",
+				"linkType": "external"
+				}
+			]
+		},
+		"copyright": {
+			"texts": {
+				"year": {
+					"es": "© 2026",
+					"ca": "© 2026",
+					"en": "© 2026"
+				},
+				"name": {
+					"es": "Lluc Llull",
+					"ca": "Lluc Llull",
+					"en": "Lluc Llull"
+				},
+				"rights": {
+					"es": "Todos los derechos reservados.",
+					"ca": "Tots els drets reservats.",
+					"en": "All rights reserved."
+				}
+			}
+		}
       }
     }
   ]
