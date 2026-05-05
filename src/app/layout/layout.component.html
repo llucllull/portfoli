@@ -11,3 +11,7 @@
 <main class="main-grid">
   <ng-content></ng-content>
 </main>
+
+@if (layout.footer(); as footerComponent) {
+  <dynamic-renderer [components]="[footerComponent]"> </dynamic-renderer>
+}

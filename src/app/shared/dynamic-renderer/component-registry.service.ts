@@ -9,6 +9,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'header-mobile': () =>
     import('@lluc_llull/ui-lib/headers').then((m) => m.HeaderMobileComponent),
 
+  'columns-footer': () =>
+    import('@lluc_llull/ui-lib/footers').then((m) => m.ColumnsFooterComponent),
+
   'hero-section': () =>
     import('@lluc_llull/ui-lib/content').then((m) => m.HeroSectionComponent),
 
