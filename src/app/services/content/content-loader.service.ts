@@ -12,6 +12,7 @@ import {
   toArray,
 } from 'rxjs';
 import { prefetchIdle } from '../../utils/prefetch-idle';
+import { resolveLang } from '../../utils/resolve-lang';
 import { getSSGRoutes } from '../../utils/ssg-routes';
 import { LanguageService } from '../language/language.service';
 import { LayoutService } from '../layout/layout.service';
@@ -77,12 +78,20 @@ export class ContentLoaderService {
         const currentLang = this.siteConfig.getCurrentLang();
         this.siteConfig.setLanguage(currentLang);
 
+        const rawFooterProps = (layout.body || []).find(
+          (c: any) => c.component === 'columns-footer',
+        )?.props;
+
         const body = (layout.body || []).map((c: any, index: number) => {
-          const props = { ...(c.props || {}) };
+          let props = { ...(c.props || {}) };
 
           if (c.component === 'header-clear') {
             props.navigation = navigation;
             props.lang = currentLang;
+          }
+
+          if (c.component === 'columns-footer') {
+            props = { ...resolveLang(props, currentLang), lang: currentLang };
           }
 
           return {
@@ -94,6 +103,7 @@ export class ContentLoaderService {
 
         const components = this.mapper.mapComponents(body);
         const header = components.find((c) => c.name === 'header-clear');
+        const footer = components.find((c) => c.name === 'columns-footer');
 
         if (header) {
           header.events = {
@@ -101,6 +111,10 @@ export class ContentLoaderService {
           };
 
           this.layout.setHeader(header);
+        }
+
+        if (footer) {
+          this.layout.setFooter(footer, rawFooterProps);
         }
 
         this.layout.markLayoutAsLoaded();

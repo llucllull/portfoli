@@ -14,7 +14,7 @@ export class LanguageService {
     private dialog: MatDialog,
     private router: Router,
     private siteConfig: SiteConfigService,
-   @Inject(PLATFORM_ID) private readonly platformId: Object,
+    @Inject(PLATFORM_ID) private readonly platformId: Object,
     private layout: LayoutService,
   ) {}
   openLanguagesModal() {
@@ -52,8 +52,9 @@ export class LanguageService {
     this.router.navigateByUrl(url, { replaceUrl: true }).then(() => {
       this.siteConfig.setLanguage(lang);
 
-      // actualizar header
+      // actualizar header y footer
       this.layout.updateHeaderLang(lang);
+      this.layout.updateFooterLang(lang);
     });
   }
 }
