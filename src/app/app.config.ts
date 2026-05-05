@@ -1,5 +1,9 @@
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import {
   provideClientHydration,
   withEventReplay,
@@ -7,9 +11,8 @@ import {
 } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
-  PreloadAllModules,
   provideRouter,
-  withPreloading,
+  withInMemoryScrolling
 } from '@angular/router';
 import { icons, LucideAngularModule } from 'lucide-angular';
 
@@ -23,7 +26,12 @@ import { SeoService } from './services/seo/seo.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'top',
+      }),
+    ),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
     importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
