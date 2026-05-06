@@ -19,7 +19,7 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  //Colors
+  //Main
   --color-primary: #0a0a0a;
   --color-primary-raw: 10, 10, 10;
   --color-primary-10: rgba(var(--color-primary-raw), 0.1);
@@ -42,8 +42,82 @@
   --color-secondary-70: rgba(var(--color-secondary-raw), 0.7);
   --color-secondary-80: rgba(var(--color-secondary-raw), 0.8);
   --color-secondary-90: rgba(var(--color-secondary-raw), 0.9);
-  --color-text: #0a0a0a;
-  --color-bg: #c6e030;
+
+  // Headers
+  --header-bg: transparent;
+  --header-bg-fixed-dark: #0a0a0a;
+  --header-bg-fixed-light: #c6e030;
+  --header-mobile-bg: #c6e030;
+  --header-logo-text: #0a0a0a;
+  --header-link: #0a0a0a;
+  --header-link-hover: #c6e030;
+
+  //Footers
+  --footer-bg: #0a0a0a;
+  --footer-text: #f5f5f5;
+  --footer-text-hover: #c6e030;
+  --footer-links: #f5f5f5;
+  --footer-links-hover: #c6e030;
+  --footer-arrows: #0a0a0a;
+  --footer-arrows-hover: #f5f5f5;
+  --footer-arrows-bg: #f5f5f5;
+  --footer-arrows-bg-hover: #c6e030;
+
+  //Content
+  --content-bg: #c6e030;
+  --content-bg-light: #f5f5f5;
+  --content-bg-dark: #0a0a0a;
+  --content-overlay: rgba(0, 0, 0, 0.4);
+
+  // Texts
+  --text-primary: #0a0a0a;
+  --text-primary-raw: 10, 10, 10;
+  --text-primary-10: rgba(var(--text-primary-raw), 0.1);
+  --text-primary-20: rgba(var(--text-primary-raw), 0.2);
+  --text-primary-30: rgba(var(--text-primary-raw), 0.3);
+  --text-primary-40: rgba(var(--text-primary-raw), 0.4);
+  --text-primary-50: rgba(var(--text-primary-raw), 0.5);
+  --text-primary-60: rgba(var(--text-primary-raw), 0.6);
+  --text-primary-70: rgba(var(--text-primary-raw), 0.7);
+  --text-primary-80: rgba(var(--text-primary-raw), 0.8);
+  --text-primary-90: rgba(var(--text-primary-raw), 0.9);
+  --text-secondary: rgba(10, 10, 10, 0.6);
+  --text-secondary-raw: 10, 10, 10;
+  --text-secondary-10: rgba(var(--text-secondary-raw), 0.1);
+  --text-secondary-20: rgba(var(--text-secondary-raw), 0.2);
+  --text-secondary-30: rgba(var(--text-secondary-raw), 0.3);
+  --text-secondary-40: rgba(var(--text-secondary-raw), 0.4);
+  --text-secondary-50: rgba(var(--text-secondary-raw), 0.5);
+  --text-secondary-60: rgba(var(--text-secondary-raw), 0.6);
+  --text-secondary-70: rgba(var(--text-secondary-raw), 0.7);
+  --text-secondary-80: rgba(var(--text-secondary-raw), 0.8);
+  --text-secondary-90: rgba(var(--text-secondary-raw), 0.9);
+  --text-disabled: rgba(10, 10, 10, 0.3);
+  --text-inverse: #f5f5f0;
+
+  //Surfaces
+  --surface-primary: #ebebе6;
+  --surface-secondary: #e0e0da;
+  --surface-tertiary: #d4d4ce;
+
+  //Modals
+  --modal-bg: #c6e030;
+  --close-btn: var(--text-primary);
+  --item-text: var(--text-primary);
+
+  //Borders
+  --border-primary: #d4d4ce;
+  --border-secondary: #c8c8c2;
+  --border-focus: #0a0a0a;
+  --divider: rgba(10, 10, 10, 0.1);
+
+  //Progress bar
+  --progress-color: #0a0a0a;
+  --progress-bg: rgba(10, 10, 10, 0.08);
+
+  //Tags
+  --tag-color: #0a0a0a;
+  --tag-bg: rgba(10, 10, 10, 0.08);
 
   //Buttons
   --button-primary-bg: #c6e030;
@@ -56,42 +130,24 @@
   --button-primary-outline-bg-hover: #0a0a0a;
   --button-primary-outline-text-hover: #c6e030;
 
-  --button-secondary-bg: #0a0a0a;
-  --button-secondary-text: #f9f9f9;
-  --button-secondary-bg-hover: #000000;
-  --button-secondary-text-hover: #c6e030;
+  --button-secondary-bg: var(--surface-secondary);
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-bg-hover: var(--surface-tertiary);
+  --button-secondary-text-hover: var(--text-primary);
 
-  --button-link-text: #0a0a0a;
-  --button-link-text-hover: #0a0a0a;
+  --button-link-text: var(--text-primary);
+  --button-link-text-hover: var(--text-primary);
 
   --button-header-bg: #c6e030;
   --button-header-text: #0a0a0a;
-  --button-header-bg-hover: #0a0a0a11;
+  --button-header-bg-hover: rgba(10, 10, 10, 0.07);
   --button-header-text-hover: #0a0a0a;
-
-  //Headers
-  --header-clear-bg: #c6e030;
-  --header-mobile-bg: #c6e030;
-  --header-logo-text: #0a0a0a;
-
-  //Modals
-  --modal-bg: #c6e030;
-  --close-btn: #0a0a0a;
-  --item-text: #0a0a0a;
-
-  //Progress bar
-  --progress-color: #0a0a0a;
-  --progress-bg: #0a0a0a11;
-
-  //Tags
-  --tag-color: #0a0a0a;
-  --tag-bg: #0a0a0a11;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  //Colors
+  //Main
   --color-primary: #c6e030;
   --color-primary-raw: 198, 224, 48;
   --color-primary-10: rgba(var(--color-primary-raw), 0.1);
@@ -114,8 +170,82 @@
   --color-secondary-70: rgba(var(--color-secondary-raw), 0.7);
   --color-secondary-80: rgba(var(--color-secondary-raw), 0.8);
   --color-secondary-90: rgba(var(--color-secondary-raw), 0.9);
-  --color-text: #c6e030;
-  --color-bg: #0a0a0a;
+
+  // Headers
+  --header-bg: transparent;
+  --header-bg-fixed-dark: #0a0a0a;
+  --header-bg-fixed-light: #0a0a0a;
+  --header-mobile-bg: #0a0a0a;
+  --header-logo-text: #c6e030;
+  --header-link: #c6e030;
+  --header-link-hover: #d4f04a;
+
+  //Footers
+  --footer-bg: #050505;
+  --footer-text: #c6e030;
+  --footer-text-hover: #d4f04a;
+  --footer-links: #c6e030;
+  --footer-links-hover: #d4f04a;
+  --footer-arrows: #0a0a0a;
+  --footer-arrows-hover: #0a0a0a;
+  --footer-arrows-bg: #c6e030;
+  --footer-arrows-bg-hover: #d4f04a;
+
+  //Content
+  --content-bg: #0a0a0a;
+  --content-bg-light: #0a0a0a;
+  --content-bg-dark: #f5f5f5;
+  --content-overlay: rgba(0, 0, 0, 0.6);
+
+  // Texts
+  --text-primary: #c6e030;
+  --text-primary-raw: 198, 224, 48;
+  --text-primary-10: rgba(var(--text-primary-raw), 0.1);
+  --text-primary-20: rgba(var(--text-primary-raw), 0.2);
+  --text-primary-30: rgba(var(--text-primary-raw), 0.3);
+  --text-primary-40: rgba(var(--text-primary-raw), 0.4);
+  --text-primary-50: rgba(var(--text-primary-raw), 0.5);
+  --text-primary-60: rgba(var(--text-primary-raw), 0.6);
+  --text-primary-70: rgba(var(--text-primary-raw), 0.7);
+  --text-primary-80: rgba(var(--text-primary-raw), 0.8);
+  --text-primary-90: rgba(var(--text-primary-raw), 0.9);
+  --text-secondary: rgba(198, 224, 48, 0.6);
+  --text-secondary-raw: 198, 224, 48;
+  --text-secondary-10: rgba(var(--text-secondary-raw), 0.1);
+  --text-secondary-20: rgba(var(--text-secondary-raw), 0.2);
+  --text-secondary-30: rgba(var(--text-secondary-raw), 0.3);
+  --text-secondary-40: rgba(var(--text-secondary-raw), 0.4);
+  --text-secondary-50: rgba(var(--text-secondary-raw), 0.5);
+  --text-secondary-60: rgba(var(--text-secondary-raw), 0.6);
+  --text-secondary-70: rgba(var(--text-secondary-raw), 0.7);
+  --text-secondary-80: rgba(var(--text-secondary-raw), 0.8);
+  --text-secondary-90: rgba(var(--text-secondary-raw), 0.9);
+  --text-disabled: rgba(198, 224, 48, 0.3);
+  --text-inverse: #0a0a0a;
+
+  //Surfaces
+  --surface-primary: #141414;
+  --surface-secondary: #1a1a1a;
+  --surface-tertiary: #222222;
+
+  //Modals
+  --modal-bg: #0a0a0a;
+  --close-btn: var(--text-primary);
+  --item-text: var(--text-primary);
+
+  //Borders
+  --border-primary: #1a1a1a;
+  --border-secondary: #222222;
+  --border-focus: #c6e030;
+  --divider: rgba(198, 224, 48, 0.1);
+
+  //Progress bar
+  --progress-color: #c6e030;
+  --progress-bg: rgba(198, 224, 48, 0.15);
+
+  //Tags
+  --tag-color: #0a0a0a;
+  --tag-bg: #c6e030;
 
   //Buttons
   --button-primary-bg: #0a0a0a;
@@ -128,36 +258,18 @@
   --button-primary-outline-bg-hover: #c6e030;
   --button-primary-outline-text-hover: #0a0a0a;
 
-  --button-secondary-bg: #c6e030;
-  --button-secondary-text: #f9f9f9;
-  --button-secondary-bg-hover: #c6e030;
-  --button-secondary-text-hover: #0a0a0a;
+  --button-secondary-bg: var(--surface-secondary);
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-bg-hover: var(--surface-tertiary);
+  --button-secondary-text-hover: var(--text-primary);
 
-  --button-link-text: #c6e030;
-  --button-link-text-hover: #c6e030;
+  --button-link-text: var(--text-primary);
+  --button-link-text-hover: #d4f04a;
 
   --button-header-bg: #0a0a0a;
   --button-header-text: #c6e030;
-  --button-header-bg-hover: #c5e03046;
+  --button-header-bg-hover: rgba(198, 224, 48, 0.07);
   --button-header-text-hover: #c6e030;
-
-  //Headers
-  --header-clear-bg: #0a0a0a;
-  --header-mobile-bg: #0a0a0a;
-  --header-logo-text: #c6e030;
-
-  //Modals
-  --modal-bg: #0a0a0a;
-  --close-btn: #c6e030;
-  --item-text: #c6e030;
-
-  //Progress bar
-  --progress-color: #c6e030;
-  --progress-bg: #c5e03046;
-
-  //Tags
-  --tag-color: #c6e030;
-  --tag-bg: #c5e03046;
 }
 
 router-outlet {
