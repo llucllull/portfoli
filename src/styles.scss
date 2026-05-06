@@ -81,8 +81,8 @@
   --text-primary-70: rgba(var(--text-primary-raw), 0.7);
   --text-primary-80: rgba(var(--text-primary-raw), 0.8);
   --text-primary-90: rgba(var(--text-primary-raw), 0.9);
-  --text-secondary: rgba(10, 10, 10, 0.6);
-  --text-secondary-raw: 10, 10, 10;
+  --text-secondary: #c6e030;
+  --text-secondary-raw: 198, 224, 48;
   --text-secondary-10: rgba(var(--text-secondary-raw), 0.1);
   --text-secondary-20: rgba(var(--text-secondary-raw), 0.2);
   --text-secondary-30: rgba(var(--text-secondary-raw), 0.3);
@@ -106,8 +106,8 @@
   --item-text: var(--text-primary);
 
   //Borders
-  --border-primary: #d4d4ce;
-  --border-secondary: #c8c8c2;
+  --border-primary: #0a0a0a;
+  --border-secondary: #c6e030;
   --border-focus: #0a0a0a;
   --divider: rgba(10, 10, 10, 0.1);
 
@@ -234,8 +234,8 @@
   --item-text: var(--text-primary);
 
   //Borders
-  --border-primary: #1a1a1a;
-  --border-secondary: #222222;
+  --border-primary: #c6e030;
+  --border-secondary: #f5f5f5;
   --border-focus: #c6e030;
   --divider: rgba(198, 224, 48, 0.1);
 
