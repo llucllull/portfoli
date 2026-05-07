@@ -4,43 +4,43 @@ type ComponentLoader = () => Promise<Type<any>>;
 
 export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'header-clear': () =>
-    import('@lluc_llull/ui-lib/headers').then((m) => m.HeaderClearComponent),
+    import('@lluc_llull/ui-lib/headers/header-clear').then((m) => m.HeaderClearComponent),
 
   'header-mobile': () =>
-    import('@lluc_llull/ui-lib/headers').then((m) => m.HeaderMobileComponent),
+    import('@lluc_llull/ui-lib/headers/header-mobile').then((m) => m.HeaderMobileComponent),
 
   'columns-footer': () =>
-    import('@lluc_llull/ui-lib/footers').then((m) => m.ColumnsFooterComponent),
+    import('@lluc_llull/ui-lib/footers/columns-footer').then((m) => m.ColumnsFooterComponent),
 
   'hero-section': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.HeroSectionComponent),
+    import('@lluc_llull/ui-lib/content/hero-section').then((m) => m.HeroSectionComponent),
 
   'section-intro': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.SectionIntroComponent),
+    import('@lluc_llull/ui-lib/content/section-intro').then((m) => m.SectionIntroComponent),
 
   'category-progress': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.CategoryProgressComponent),
+    import('@lluc_llull/ui-lib/content/category-progress').then((m) => m.CategoryProgressComponent),
 
   'not-found': () =>
-    import('@lluc_llull/ui-lib/feedback').then((m) => m.NotFoundComponent),
+    import('@lluc_llull/ui-lib/feedback/404').then((m) => m.NotFoundComponent),
 
   'split-previewer': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.SplitPreviewerComponent),
+    import('@lluc_llull/ui-lib/content/split-previewer').then((m) => m.SplitPreviewerComponent),
 
   'contact-minimal': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.ContactMinimalComponent),
+    import('@lluc_llull/ui-lib/content/contact-minimal').then((m) => m.ContactMinimalComponent),
 
   'media-split': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.MediaSplitComponent),
+    import('@lluc_llull/ui-lib/content/media-split').then((m) => m.MediaSplitComponent),
 
   'stacked-rows': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.StackedRowsComponent),
+    import('@lluc_llull/ui-lib/content/stacked-rows').then((m) => m.StackedRowsComponent),
 
   'mosaic-parallax': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.MosaicParallaxComponent),
+    import('@lluc_llull/ui-lib/content/mosaic-parallax').then((m) => m.MosaicParallaxComponent),
 
   'content-document': () =>
-    import('@lluc_llull/ui-lib/content').then((m) => m.ContentDocumentComponent),
+    import('@lluc_llull/ui-lib/content/content-document').then((m) => m.ContentDocumentComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
