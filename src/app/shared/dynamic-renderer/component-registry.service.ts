@@ -41,6 +41,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'content-document': () =>
     import('@lluc_llull/ui-lib/content/content-document').then((m) => m.ContentDocumentComponent),
+
+  'split-showcase': () =>
+    import('@lluc_llull/ui-lib/content/split-showcase').then((m) => m.SplitShowcaseComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
