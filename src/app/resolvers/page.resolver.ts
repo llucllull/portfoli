@@ -7,7 +7,14 @@ export class pageResolver implements Resolve<boolean> {
   constructor(private store: ContentStore) {}
 
   async resolve(route: any): Promise<boolean> {
-    let slug = route.paramMap.get('slug') || route.routeConfig?.path || 'home';
+    const path = route.routeConfig?.path || 'home';
+    let slug = route.paramMap.get('slug');
+
+    if (path === 'projects/:slug' && slug) {
+      slug = `projects/${slug}`;
+    }
+
+    slug = slug || path || 'home';
 
     // Si Angular cayó en la ruta comodín, forzamos el slug a '404'
     if (slug === '**') {

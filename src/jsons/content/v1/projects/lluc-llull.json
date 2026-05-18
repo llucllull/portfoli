@@ -1,0 +1,173 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "Lluc Llull - Portfolio Minimalista y de Alto Rendimiento",
+      "ca": "Lluc Llull - Portfoli Minimalista i d'Alt Rendiment",
+      "en": "Lluc Llull - Minimalist & High-Performance Portfolio"
+    },
+    "description": {
+      "es": "Explora el portafolio personal de Lluc Llull. Un espacio experimental de minimalismo visual y alto rendimiento desarrollado con Angular 19, Signals y SSG.",
+      "ca": "Explora el portfoli personal de Lluc Llull. Un espai experimental de minimalisme visual i alt rendiment desenvolupat amb Angular 19, Signals i SSG.",
+      "en": "Explore the personal portfolio of Lluc Llull. An experimental space focused on visual minimalism and high performance built with Angular 19, Signals, and SSG."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": { 
+            "es": "", 
+            "ca": "", 
+            "en": "" 
+          },
+          "title": {
+            "es": "Lluc Llull - Portfolio",
+            "ca": "Lluc Llull - Portfoli",
+            "en": "Lluc Llull - Portfolio"
+          },
+          "subtitle": { 
+            "es": "", 
+            "ca": "", 
+            "en": "" 
+          },
+          "text": {
+            "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 19 y SSG para garantizar una navegación instantánea.",
+            "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 19 i SSG per garantir una navegació instantània.",
+            "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 19 and SSG to ensure instantaneous navigation."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Lluc Llull",
+            "src": "/images/projects/portfoli/projects-portfoli.png",
+            "public_id": "projects-portfoli_ecool2"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Lluc Llull Portfolio",
+            "ca": "Lluc Llull Portfoli",
+            "en": "Lluc Llull Portfolio"
+          },
+          "subtitle": {
+            "es": "Un oasis de rendimiento, código limpio y estilo.",
+            "ca": "Un oasi de rendiment, codi net i estil.",
+            "en": "An oasis of performance, clean code, and style."
+          },
+          "description": {
+            "es": "El reto principal consistió en unificar un diseño extremadamente limpio con una infraestructura técnica impecable. Se priorizó la experiencia de usuario eliminando tiempos de carga innecesarios mediante técnicas modernas de renderizado estático.",
+            "ca": "El repte principal va consistir a unificar un disseny extremadament net amb una infraestructura tècnica impecable. Es va prioritzar l'experiència d'usuari eliminant temps de càrrega innecessaris mitjançant tècniques modernes de renderització estàtica.",
+            "en": "The main challenge was to unify an extremely clean design with an impeccable technical infrastructure. User experience was prioritized by eliminating unnecessary loading times through modern static rendering techniques."
+          }
+        },
+        "meta": [
+          {
+            "label": { "es": "Categoría", "ca": "Categoria", "en": "Category" },
+            "value": "Personal Portfolio / Experimental Lab"
+          },
+          {
+            "label": { "es": "Tecnologías", "ca": "Tecnologies", "en": "Techstack" },
+            "value": "Angular 19 | Signals | Standalone | SSG | Vercel | Cloudflare R2"
+          },
+          {
+            "label": { "es": "Año", "ca": "Any", "en": "Year" },
+            "value": "2026"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "image": {
+            "alt": "Lluc Llull",
+            "src": "/images/projects/portfoli/projects-portfoli.png",
+            "public_id": "projects-portfoli_ecool2"
+          }
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "Navegación instantánea impulsada por una arquitectura moderna basada en Signals y compilación estática.",
+            "ca": "Navegació instantània impulsada per una arquitectura moderna basada en Signals i compilació estàtica.",
+            "en": "Instantaneous navigation powered by a modern architecture built upon Signals and static generation."
+          },
+          "secondaryText": {
+            "es": "Gracias al despliegue optimizado en Vercel y el almacenamiento de recursos estáticos en Cloudflare R2, el portafolio logra métricas perfectas en Core Web Vitals, redefiniendo la velocidad de carga.",
+            "ca": "Gràcies al desplegament optimitzat a Vercel i l'emmagatzematge de recursos estàtics a Cloudflare R2, el portfoli aconsegueix mètriques perfectes a Core Web Vitals, redefinint la velocitat de càrrega.",
+            "en": "Thanks to optimized deployment on Vercel and asset storage on Cloudflare R2, the portfolio achieves flawless Core Web Vitals metrics, redefining loading speeds."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Lluc Llull",
+            "src": "/images/projects/portfoli/projects-portfoli.png",
+            "public_id": "projects-portfoli_ecool2"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "La implementación nativa de i18n Multi-language asegura un alcance internacional fluido, adaptando la experiencia completa al idioma del usuario de forma nativa sin penalizar el rendimiento global.",
+            "ca": "La implementació nativa d'i18n Multi-language assegura un abast internacional fluid, adaptant l'experiència completa a l'idioma de l'usuari de forma nativa sense penalitzar el rendiment global.",
+            "en": "The native i18n Multi-language implementation ensures a fluid international reach, seamlessly adapting the full experience to the user's language without penalizing global performance."
+          },
+          "rightColumn": {
+            "es": "El ecosistema de Angular 19 con componentes Standalone potencia un desarrollo modular y limpio. Cada píxel responde a una intención de minimalismo visual que elimina distracciones para centrarse en el contenido.",
+            "ca": "L'ecosistema d'Angular 19 amb components Standalone potencia un desenvolupament modular i net. Cada píxel respon a una intenció de minimalisme visual que elimina distraccions per centrar-se en el contingut.",
+            "en": "The Angular 19 ecosystem with Standalone components drives a modular and clean development structure. Every pixel reflects a visual minimalism designed to eliminate distractions and center focus on content."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Lluc Llull",
+            "src": "/images/projects/portfoli/projects-portfoli.png",
+            "public_id": "projects-portfoli_ecool2"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "Un diseño editorial digital concebido para exponer ideas, experimentos y código de la forma más pura y eficiente posible.",
+            "ca": "Un disseny editorial digital concebut per exposar idees, experiments i codi de la forma més pura i eficient possible.",
+            "en": "A digital editorial layout conceived to showcase ideas, experiments, and code in the purest and most efficient way possible."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Lluc Llull",
+            "src": "/images/projects/portfoli/projects-portfoli.png",
+            "public_id": "projects-portfoli_ecool2"
+          }
+        }
+      }
+    }
+  ]
+}
