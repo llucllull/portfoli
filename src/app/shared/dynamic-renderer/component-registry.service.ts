@@ -44,6 +44,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'split-showcase': () =>
     import('@lluc_llull/ui-lib/content/split-showcase').then((m) => m.SplitShowcaseComponent),
+
+  'asymmetric-media': () =>
+    import('@lluc_llull/ui-lib/content/asymmetric-media').then((m) => m.AsymmetricMediaComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
