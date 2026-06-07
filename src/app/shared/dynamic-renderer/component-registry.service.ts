@@ -50,6 +50,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'media-intro': () =>
     import('@lluc_llull/ui-lib/content/media-intro').then((m) => m.MediaIntroComponent),
+
+  'columns-media-stacked': () =>
+    import('@lluc_llull/ui-lib/content/columns-media-stacked').then((m) => m.ColumnsMediaStackedComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
