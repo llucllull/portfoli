@@ -51,8 +51,8 @@ importers:
         specifier: ^1.22.0
         version: 1.22.0
       '@lluc_llull/ui-lib':
-        specifier: ^0.30.1
-        version: 0.30.1(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(@cloudinary/ng@2.1.6(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(swiper@12.1.4)(three@0.183.2)
+        specifier: ^0.30.2
+        version: 0.30.2(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(@cloudinary/ng@2.1.6(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(swiper@12.1.4)(three@0.183.2)
       '@supabase/supabase-js':
         specifier: ^2.50.2
         version: 2.105.4
@@ -1508,8 +1508,8 @@ packages:
     peerDependencies:
       '@inquirer/prompts': '>= 3 < 8'
 
-  '@lluc_llull/ui-lib@0.30.1':
-    resolution: {integrity: sha512-keWMJ/azJvark/jnrjgwiljSid1V1GAkLMZkG8ilALU3FwLwoljaHIzfx06zKheynddi1H0s/WmadU3vlCRb7Q==}
+  '@lluc_llull/ui-lib@0.30.2':
+    resolution: {integrity: sha512-5eBR50ZgVMFz5JI+ljs9QMipNDuJIK1aSUIoDVO7J2sM+8AShQ0X6Q+tn04FbWabdbMndXcgZtTuDd7mHPOQPw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@angular/common': ^19.0.0
@@ -6304,7 +6304,7 @@ snapshots:
       '@inquirer/prompts': 7.3.2(@types/node@18.19.130)
       '@inquirer/type': 1.5.5
 
-  '@lluc_llull/ui-lib@0.30.1(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(@cloudinary/ng@2.1.6(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(swiper@12.1.4)(three@0.183.2)':
+  '@lluc_llull/ui-lib@0.30.2(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(@cloudinary/ng@2.1.6(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1)))(swiper@12.1.4)(three@0.183.2)':
     dependencies:
       '@angular/common': 19.2.22(@angular/core@19.2.22(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2)
       '@angular/core': 19.2.22(rxjs@7.8.2)(zone.js@0.15.1)
