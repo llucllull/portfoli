@@ -47,6 +47,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'asymmetric-media': () =>
     import('@lluc_llull/ui-lib/content/asymmetric-media').then((m) => m.AsymmetricMediaComponent),
+
+  'media-intro': () =>
+    import('@lluc_llull/ui-lib/content/media-intro').then((m) => m.MediaIntroComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};
