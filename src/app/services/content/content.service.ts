@@ -52,7 +52,10 @@ export class ContentService {
         }),
 
         catchError((error) => {
-          console.error(`⚠️ Error en Fetch (${url}):`, error.status);
+          console.error(`⚠️ Error en Fetch (${url}):`, error); // objeto completo
+          console.error('Status:', error.status);
+          console.error('Message:', error.message);
+          console.error('Name:', error.name); // 'TimeoutError' si es timeout
           return of({});
         }),
 
