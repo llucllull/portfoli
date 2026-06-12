@@ -30,7 +30,7 @@
     "@angular/ssr": "^19.2.22",
     "@cloudinary/ng": "^2.1.6",
     "@cloudinary/url-gen": "^1.22.0",
-    "@lluc_llull/ui-lib": "^0.33.4",
+    "@lluc_llull/ui-lib": "^0.33.5",
     "@supabase/supabase-js": "^2.50.2",
     "express": "^4.18.2",
     "lucide-angular": "^0.577.0",
