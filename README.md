@@ -1,13 +1,13 @@
 # PORTFOLI
 
-[![Angular](https://img.shields.io/badge/Angular-19.0.0-red.svg?style=for-the-badge&logo=angular)](https://angular.io/)
+[![Angular](https://img.shields.io/badge/Angular-22.0.0-red.svg?style=for-the-badge&logo=angular)](https://angular.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black.svg?style=for-the-badge&logo=vercel)](https://vercel.com)
 
 > **RAW POWER • CLEAN CODE • MAXIMUM PERFORMANCE**
 
-A brutalist portfolio website forged with **Angular 19**. Static Site Generation meets dynamic content in a symphony of raw efficiency. No bullshit, just results.
+A brutalist portfolio website forged with **Angular 22**. Static Site Generation meets dynamic content in a symphony of raw efficiency. No bullshit, just results.
 
 ## 🌐 LIVE DEMO
 
@@ -32,7 +32,7 @@ A brutalist portfolio website forged with **Angular 19**. Static Site Generation
 
 **BUILT FOR SCALE • DESIGNED FOR SPEED • CODED FOR MAINTAINABILITY**
 
-This portfolio is a **technological fortress** built with Angular 19's Static Site Generation through prerendering. Every component serves a purpose. Every service has a mission. Every line of code is a weapon.
+This portfolio is a **technological fortress** built with Angular 22's Static Site Generation through prerendering. Every component serves a purpose. Every service has a mission. Every line of code is a weapon.
 
 ### CONTENT MANAGEMENT SYSTEM (CMS)
 
@@ -113,7 +113,7 @@ REGISTRY • RENDERER • TYPE-SAFE • CONTENT-DRIVEN
 
 | Category       | Technology                    | Purpose                       |
 | -------------- | ----------------------------- | ----------------------------- |
-| **Framework**  | Angular 19                    | Core application framework    |
+| **Framework**  | Angular 22                    | Core application framework    |
 | **Language**   | TypeScript                    | Type-safe development         |
 | **Styling**    | SCSS + Angular Material       | Modern, responsive design     |
 | **Build**      | Angular CLI                   | Development and build tooling |

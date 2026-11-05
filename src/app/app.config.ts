@@ -2,7 +2,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import {
   provideClientHydration,
@@ -25,7 +25,7 @@ import { SeoService } from './services/seo/seo.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideRouter(
       routes,
       withInMemoryScrolling({

@@ -64,12 +64,12 @@
               "en": "Lluc Llull"
             },
             "description": {
-              "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 19 y SSG para garantizar una navegación instantánea.",
-              "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 19 i SSG per garantir una navegació instantània.",
-              "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 19 and SSG to ensure instantaneous navigation."
+              "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 22 y SSG para garantizar una navegación instantánea.",
+              "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 22 i SSG per garantir una navegació instantània.",
+              "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 22 and SSG to ensure instantaneous navigation."
             },
             "tags": [
-              "Angular 19",
+              "Angular 22",
               "Signals + Standalone",
               "i18n Multi-language",
               "SSG",
@@ -96,7 +96,7 @@
               "en": "Modular design system and UI component library developed with Angular. A scalable architecture documented in Storybook to guarantee visual consistency across multiple projects."
             },
             "tags": [
-              "Angular 19",
+              "Angular 22",
               "Signals + Standalone",
               "Storybook",
               "Github Actions (CI/CD)",

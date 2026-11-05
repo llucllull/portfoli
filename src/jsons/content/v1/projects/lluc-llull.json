@@ -7,9 +7,9 @@
       "en": "Lluc Llull - Minimalist & High-Performance Portfolio"
     },
     "description": {
-      "es": "Explora el portafolio personal de Lluc Llull. Un espacio experimental de minimalismo visual y alto rendimiento desarrollado con Angular 19, Signals y SSG.",
-      "ca": "Explora el portfoli personal de Lluc Llull. Un espai experimental de minimalisme visual i alt rendiment desenvolupat amb Angular 19, Signals i SSG.",
-      "en": "Explore the personal portfolio of Lluc Llull. An experimental space focused on visual minimalism and high performance built with Angular 19, Signals, and SSG."
+      "es": "Explora el portafolio personal de Lluc Llull. Un espacio experimental de minimalismo visual y alto rendimiento desarrollado con Angular 22, Signals y SSG.",
+      "ca": "Explora el portfoli personal de Lluc Llull. Un espai experimental de minimalisme visual i alt rendiment desenvolupat amb Angular 22, Signals i SSG.",
+      "en": "Explore the personal portfolio of Lluc Llull. An experimental space focused on visual minimalism and high performance built with Angular 22, Signals, and SSG."
     }
   },
   "body": [
@@ -33,9 +33,9 @@
             "en": "" 
           },
           "text": {
-            "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 19 y SSG para garantizar una navegación instantánea.",
-            "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 19 i SSG per garantir una navegació instantània.",
-            "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 19 and SSG to ensure instantaneous navigation."
+            "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 22 y SSG para garantizar una navegación instantánea.",
+            "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 22 i SSG per garantir una navegació instantània.",
+            "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 22 and SSG to ensure instantaneous navigation."
           },
           "highlight": {
             "es": "",
@@ -81,7 +81,7 @@
           },
           {
             "label": { "es": "Tecnologías", "ca": "Tecnologies", "en": "Techstack" },
-            "value": "Angular 19 | Signals | Standalone | SSG | Vercel | Cloudflare R2"
+            "value": "Angular 22 | Signals | Standalone | SSG | Vercel | Cloudflare R2"
           },
           {
             "label": { "es": "Año", "ca": "Any", "en": "Year" },
@@ -136,9 +136,9 @@
             "en": "The native i18n Multi-language implementation ensures a fluid international reach, seamlessly adapting the full experience to the user's language without penalizing global performance."
           },
           "rightColumn": {
-            "es": "El ecosistema de Angular 19 con componentes Standalone potencia un desarrollo modular y limpio. Cada píxel responde a una intención de minimalismo visual que elimina distracciones para centrarse en el contenido.",
-            "ca": "L'ecosistema d'Angular 19 amb components Standalone potencia un desenvolupament modular i net. Cada píxel respon a una intenció de minimalisme visual que elimina distraccions per centrar-se en el contingut.",
-            "en": "The Angular 19 ecosystem with Standalone components drives a modular and clean development structure. Every pixel reflects a visual minimalism designed to eliminate distractions and center focus on content."
+            "es": "El ecosistema de Angular 22 con componentes Standalone potencia un desarrollo modular y limpio. Cada píxel responde a una intención de minimalismo visual que elimina distracciones para centrarse en el contenido.",
+            "ca": "L'ecosistema d'Angular 22 amb components Standalone potencia un desenvolupament modular i net. Cada píxel respon a una intenció de minimalisme visual que elimina distraccions per centrar-se en el contingut.",
+            "en": "The Angular 22 ecosystem with Standalone components drives a modular and clean development structure. Every pixel reflects a visual minimalism designed to eliminate distractions and center focus on content."
           }
         },
         "multimedia": {
