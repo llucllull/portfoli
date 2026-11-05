@@ -1,8 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
+import { UiLibLangItemI } from '@lluc_llull/ui-lib/interfaces';
+import { mapLangModal } from '@lluc_llull/ui-lib/mapper';
 import { Router } from '@angular/router';
-import { LangModalComponent } from '@lluc_llull/ui-lib/modals';
 import { LayoutService } from '../layout/layout.service';
 import { SiteConfigService } from '../site-config/site-config.service';
 
@@ -10,30 +10,49 @@ import { SiteConfigService } from '../site-config/site-config.service';
   providedIn: 'root',
 })
 export class LanguageService {
+  readonly isModalOpen = signal(false);
+  readonly isModalClosing = signal(false);
+  readonly modalLanguages = signal<UiLibLangItemI[]>([]);
+  private pendingLanguage?: UiLibLangItemI;
+
   constructor(
-    private dialog: MatDialog,
     private router: Router,
     private siteConfig: SiteConfigService,
     @Inject(PLATFORM_ID) private readonly platformId: Object,
     private layout: LayoutService,
   ) {}
+
   openLanguagesModal() {
-    const dialogRef = this.dialog.open(LangModalComponent, {
-      data: {
-        langs: this.siteConfig.getLanguages(),
-        currentLang: this.siteConfig.getLanguage(),
-      },
-      enterAnimationDuration: '120ms',
-      exitAnimationDuration: '100ms',
-      panelClass: 'lang-modal',
-      backdropClass: 'lang-backdrop',
-    });
+    if (this.isModalOpen() || this.isModalClosing()) return;
 
-    dialogRef.afterClosed().subscribe((selected) => {
-      if (!selected) return;
+    this.modalLanguages.set(
+      mapLangModal(this.siteConfig.getLanguages(), this.siteConfig.getLanguage()),
+    );
+    this.isModalClosing.set(false);
+    this.isModalOpen.set(true);
+  }
 
-      this.changeLanguage(selected.code);
-    });
+  closeLanguagesModal() {
+    if (!this.isModalOpen() && !this.isModalClosing()) return;
+
+    this.isModalClosing.set(true);
+    this.isModalOpen.set(false);
+  }
+
+  selectLanguage(lang: UiLibLangItemI) {
+    this.pendingLanguage = lang;
+    this.closeLanguagesModal();
+  }
+
+  finishLanguagesModalClose(event: TransitionEvent) {
+    if (!this.isModalClosing() || event.propertyName !== 'visibility') return;
+    if (!(event.target instanceof HTMLElement) || !event.target.classList.contains('modal-content')) return;
+
+    this.isModalClosing.set(false);
+
+    const selected = this.pendingLanguage;
+    this.pendingLanguage = undefined;
+    if (selected) this.changeLanguage(selected.code);
   }
 
   changeLanguage(lang: string) {

@@ -15,3 +15,13 @@
 @if (layout.footer(); as footerComponent) {
   <dynamic-renderer [components]="[footerComponent]"> </dynamic-renderer>
 }
+
+@if (language.isModalOpen() || language.isModalClosing()) {
+  <lib-lang-modal
+    [langs]="language.modalLanguages()"
+    [closing]="language.isModalClosing()"
+    (close)="language.closeLanguagesModal()"
+    (select)="language.selectLanguage($event)"
+    (transitionend)="language.finishLanguagesModalClose($event)"
+  ></lib-lang-modal>
+}

@@ -12,11 +12,10 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
   provideRouter,
-  withInMemoryScrolling
+  withInMemoryScrolling,
 } from '@angular/router';
 import { icons, LucideAngularModule } from 'lucide-angular';
 
-import { MatDialogModule } from '@angular/material/dialog';
 import { Meta, Title } from '@angular/platform-browser';
 import { CDN_BASE_URL, CLOUDINARY_CLOUD_NAME, MapperService } from '@lluc_llull/ui-lib/mapper';
 import { environment } from '../environments/environment';
@@ -34,7 +33,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
-    importProvidersFrom(MatDialogModule, LucideAngularModule.pick(icons)),
+    importProvidersFrom(LucideAngularModule.pick(icons)),
     MapperService,
     SeoService,
     Title,
