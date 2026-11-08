@@ -1,3 +1,10 @@
 @if (page(); as pageData) {
-  <dynamic-renderer [components]="pageData.body"></dynamic-renderer>
+  @if (hasHeroAsFirstComponent && !heroRendered()) {
+    <div class="hero-loading-placeholder col-span-full" aria-hidden="true"></div>
+  }
+
+  <dynamic-renderer
+    [components]="pageData.body"
+    (firstComponentRendered)="markFirstComponentAsRendered()"
+  ></dynamic-renderer>
 }

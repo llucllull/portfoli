@@ -31,7 +31,6 @@
             ],
             "styles": [
               "node_modules/@lluc_llull/ui-lib/styles/main.css",
-              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": [],

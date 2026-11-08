@@ -9,12 +9,10 @@ import {
   withEventReplay,
   withIncrementalHydration,
 } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {
   provideRouter,
   withInMemoryScrolling,
 } from '@angular/router';
-import { icons, LucideAngularModule } from 'lucide-angular';
 
 import { Meta, Title } from '@angular/platform-browser';
 import { CDN_BASE_URL, CLOUDINARY_CLOUD_NAME, MapperService } from '@lluc_llull/ui-lib/mapper';
@@ -32,8 +30,6 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(withFetch()),
-    provideAnimationsAsync(),
-    importProvidersFrom(LucideAngularModule.pick(icons)),
     MapperService,
     SeoService,
     Title,

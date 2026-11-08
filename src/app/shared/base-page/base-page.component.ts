@@ -4,6 +4,7 @@ import {
   Component,
   computed,
   effect,
+  signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,12 +21,18 @@ import { DynamicRendererComponent } from '../dynamic-renderer/dynamic-renderer.c
   standalone: true,
   imports: [CommonModule, DynamicRendererComponent],
   templateUrl: './base-page.component.html',
+  styles: `
+    .hero-loading-placeholder {
+      min-height: calc(100vh - 10rem);
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasePageComponent {
   private url = toSignal(this.route.url);
   private params = toSignal(this.route.paramMap);
   private lastSlug = '';
+  protected heroRendered = signal(false);
 
   slug = computed(() => {
     const url = this.router.url;
@@ -45,6 +52,11 @@ export class BasePageComponent {
     protected router: Router,
     private seoService: SeoService,
   ) {
+    effect(() => {
+      this.page();
+      this.heroRendered.set(false);
+    });
+
     effect(() => {
       const params = this.params();
 
@@ -103,4 +115,12 @@ export class BasePageComponent {
       body: this.mapper.mapComponents(body),
     };
   });
+
+  protected get hasHeroAsFirstComponent(): boolean {
+    return this.page().body[0]?.name === 'hero-section';
+  }
+
+  protected markFirstComponentAsRendered(): void {
+    this.heroRendered.set(true);
+  }
 }

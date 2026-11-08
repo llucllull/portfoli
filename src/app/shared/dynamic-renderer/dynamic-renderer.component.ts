@@ -1,6 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
+  EventEmitter,
+  Output,
   PLATFORM_ID,
   ViewContainerRef,
   effect,
@@ -25,6 +27,7 @@ import {
 })
 export class DynamicRendererComponent {
   components = input<BodyComponent<any>[]>([]);
+  @Output() firstComponentRendered = new EventEmitter<void>();
   private rendered = false;
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
@@ -56,6 +59,10 @@ export class DynamicRendererComponent {
         });
       } else {
         await this.createComponent(c);
+      }
+
+      if (isFirst) {
+        this.firstComponentRendered.emit();
       }
     }
   }

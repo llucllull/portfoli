@@ -51,8 +51,8 @@ importers:
         specifier: ^1.22.0
         version: 1.22.0
       '@lluc_llull/ui-lib':
-        specifier: ^0.34.3
-        version: 0.34.3(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(@cloudinary/ng@2.1.6(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(swiper@12.1.4)(three@0.183.2)
+        specifier: ^0.35.0
+        version: 0.35.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(@cloudinary/ng@2.1.6(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(swiper@12.1.4)(three@0.183.2)
       '@supabase/supabase-js':
         specifier: ^2.50.2
         version: 2.105.4
@@ -775,8 +775,8 @@ packages:
       '@inquirer/prompts': '>= 3 < 9'
       listr2: 11.1.0
 
-  '@lluc_llull/ui-lib@0.34.3':
-    resolution: {integrity: sha512-Co7FbCvO3taO9XunYDsAHKnaAfMzncrkT9DJ/wNMWyPRmp0Z4kLfSaFAaJrxeKf38uswtMWNH6RlbjFdc/swrQ==}
+  '@lluc_llull/ui-lib@0.35.0':
+    resolution: {integrity: sha512-YjJ5pbAXRhXbVE0VRahxiHi+V834kB71++TPLsPkJRfsPGGL9t6PHODpKPs7Hw56Ov2dIFEftyKeppU41TUaDA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@angular/common': ^22.0.0
@@ -3647,7 +3647,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@lluc_llull/ui-lib@0.34.3(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(@cloudinary/ng@2.1.6(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(swiper@12.1.4)(three@0.183.2)':
+  '@lluc_llull/ui-lib@0.35.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(@cloudinary/ng@2.1.6(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(@cloudinary/url-gen@1.22.0)(lucide-angular@0.577.0(@angular/common@22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)))(swiper@12.1.4)(three@0.183.2)':
     dependencies:
       '@angular/common': 22.2.4(@angular/core@22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2))(rxjs@7.8.2)
       '@angular/core': 22.2.4(@angular/compiler@22.2.4)(rxjs@7.8.2)
