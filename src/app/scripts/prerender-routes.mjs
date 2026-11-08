@@ -27,6 +27,7 @@ for (const lang of langs) {
     `/${lang}`,
     `/${lang}/about`,
     `/${lang}/contact`,
+    `/${lang}/privacy`,
     `/${lang}/projects`,
     `/${lang}/legal`
   );

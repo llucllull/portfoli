@@ -137,6 +137,58 @@
       }
     },
 
+    "contact-form": {
+      "component": "contact-form",
+      "props": {
+        "privacyUrl": {
+          "es": "/es/privacy",
+          "ca": "/ca/privacy",
+          "en": "/en/privacy"
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Contacto",
+            "src": "/images/pages/contact.avif"
+          }
+        },
+        "texts": {
+          "eyebrow": { "es": "CONTACTO", "ca": "CONTACTE", "en": "CONTACT" },
+          "title": { "es": "Cuéntame tu idea", "ca": "Explica'm la teva idea", "en": "Tell me about your idea" },
+          "intro": { "es": "Escríbeme y te responderé pronto.", "ca": "Escriu-me i et respondré aviat.", "en": "Send me a message and I will reply soon." },
+          "requiredHint": { "es": "Los campos con * son obligatorios.", "ca": "Els camps amb * són obligatoris.", "en": "Fields marked with * are required." },
+          "name": { "es": "Nombre", "ca": "Nom", "en": "First name" },
+          "surname": { "es": "Apellidos", "ca": "Llinatges", "en": "Last name" },
+          "email": { "es": "Email", "ca": "Email", "en": "Email" },
+          "phone": { "es": "Teléfono", "ca": "Telèfon", "en": "Phone" },
+          "message": { "es": "Mensaje", "ca": "Missatge", "en": "Message" },
+          "namePlaceholder": { "es": "Tu nombre", "ca": "El teu nom", "en": "Your first name" },
+          "surnamePlaceholder": { "es": "Tus apellidos", "ca": "Els teus llinatges", "en": "Your last name" },
+          "emailPlaceholder": { "es": "nombre@ejemplo.com", "ca": "nom@exemple.com", "en": "name@example.com" },
+          "phonePlaceholder": { "es": "+34 600 000 000", "ca": "+34 600 000 000", "en": "+1 555 000 0000" },
+          "messagePlaceholder": { "es": "¿En qué puedo ayudarte?", "ca": "Com et puc ajudar?", "en": "How can I help?" },
+          "privacyTitle": { "es": "Protección de datos:", "ca": "Protecció de dades:", "en": "Data protection:" },
+          "privacyResponsible": { "es": "Responsable: [COMPLETAR].", "ca": "Responsable: [COMPLETAR].", "en": "Controller: [COMPLETE]." },
+          "privacyPurpose": { "es": "Finalidad: responder consultas.", "ca": "Finalitat: respondre consultes.", "en": "Purpose: to reply to enquiries." },
+          "privacyLegalBasis": { "es": "Legitimación: [COMPLETAR].", "ca": "Legitimació: [COMPLETAR].", "en": "Legal basis: [COMPLETE]." },
+          "privacyRecipients": { "es": "Destinatarios: [COMPLETAR].", "ca": "Destinataris: [COMPLETAR].", "en": "Recipients: [COMPLETE]." },
+          "privacyRetention": { "es": "Conservación: el tiempo necesario para responder y cumplir obligaciones legales.", "ca": "Conservació: el temps necessari per respondre i complir obligacions legals.", "en": "Retention: as needed to reply and meet legal obligations." },
+          "privacyRights": { "es": "Derechos: [COMPLETAR: email de contacto].", "ca": "Drets: [COMPLETAR: email de contacte].", "en": "Rights: [COMPLETE: contact email]." },
+          "privacyLinkLead": { "es": "Más información en la", "ca": "Més informació a la", "en": "More information in the" },
+          "privacyLink": { "es": "Política de privacidad", "ca": "Política de privacitat", "en": "Privacy policy" },
+          "privacyLinkTail": { "es": ".", "ca": ".", "en": "." },
+          "send": { "es": "Enviar mensaje", "ca": "Enviar missatge", "en": "Send message" },
+          "sending": { "es": "Enviando…", "ca": "Enviant…", "en": "Sending…" },
+          "success": { "es": "Mensaje enviado correctamente.", "ca": "Missatge enviat correctament.", "en": "Message sent successfully." },
+          "error": { "es": "No se pudo enviar el mensaje.", "ca": "No s'ha pogut enviar el missatge.", "en": "The message could not be sent." },
+          "deliveryNotConfigured": { "es": "El servicio de envío no está configurado.", "ca": "El servei d'enviament no està configurat.", "en": "The delivery service is not configured." },
+          "requiredError": { "es": "Este campo es obligatorio.", "ca": "Aquest camp és obligatori.", "en": "This field is required." },
+          "emailError": { "es": "Introduce un email válido.", "ca": "Introdueix un email vàlid.", "en": "Enter a valid email address." },
+          "lengthError": { "es": "Se supera la longitud permitida.", "ca": "Se supera la longitud permesa.", "en": "The maximum length has been exceeded." },
+          "invalidError": { "es": "Revisa este campo.", "ca": "Revisa aquest camp.", "en": "Please check this field." }
+        }
+      }
+    },
+
     "category-progress": {
       "component": "category-progress",
       "props": {
@@ -449,6 +501,77 @@
             }
           }
         ]
+      }
+    },
+
+    "split-showcase": {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": { "es": "Proyecto", "ca": "Projecte", "en": "Project" },
+          "subtitle": { "es": "Subtítulo", "ca": "Subtítol", "en": "Subtitle" },
+          "description": { "es": "Descripción", "ca": "Descripció", "en": "Description" }
+        },
+        "meta": [
+          { "label": { "es": "Año", "ca": "Any", "en": "Year" }, "value": "2026" }
+        ]
+      }
+    },
+
+    "asymmetric-media": {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            { "src": "/images/dummy/showcase-left.png", "alt": "Imagen vertical" },
+            { "src": "/images/dummy/showcase-right.png", "alt": "Imagen horizontal" }
+          ]
+        }
+      }
+    },
+
+    "media-intro": {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": { "es": "Texto destacado", "ca": "Text destacat", "en": "Highlighted text" },
+          "secondaryText": { "es": "Texto secundario", "ca": "Text secundari", "en": "Secondary text" }
+        },
+        "multimedia": {
+          "video": {
+            "src": "/videos/dummy/teaser.mp4",
+            "poster": "/images/dummy/video-cover.png",
+            "hasPlayButton": true
+          }
+        }
+      }
+    },
+
+    "columns-media-stacked": {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": { "es": "Columna izquierda", "ca": "Columna esquerra", "en": "Left column" },
+          "rightColumn": { "es": "Columna derecha", "ca": "Columna dreta", "en": "Right column" }
+        },
+        "multimedia": {
+          "image": { "src": "/images/dummy/full-width-media.webp", "alt": "Imagen apilada" }
+        }
+      }
+    },
+
+    "mosaic-grid": {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": { "es": "Texto editorial", "ca": "Text editorial", "en": "Editorial text" }
+        },
+        "multimedia": {
+          "images": [
+            { "src": "/images/dummy/grid-1.jpg", "alt": "Imagen 1" },
+            { "src": "/images/dummy/grid-2.jpg", "alt": "Imagen 2" }
+          ]
+        }
       }
     }
   }

@@ -28,6 +28,10 @@ import {
 export class DynamicRendererComponent {
   components = input<BodyComponent<any>[]>([]);
   @Output() firstComponentRendered = new EventEmitter<void>();
+  @Output() componentCreated = new EventEmitter<{
+    name: string;
+    instance: unknown;
+  }>();
   private rendered = false;
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
@@ -94,5 +98,7 @@ export class DynamicRendererComponent {
         }
       }
     }
+
+    this.componentCreated.emit({ name: c.name, instance: ref.instance });
   }
 }

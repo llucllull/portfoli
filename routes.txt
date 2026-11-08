@@ -2,6 +2,7 @@
 /es
 /es/about
 /es/contact
+/es/privacy
 /es/projects
 /es/legal
 /es/projects/puro-group
@@ -14,6 +15,7 @@
 /ca
 /ca/about
 /ca/contact
+/ca/privacy
 /ca/projects
 /ca/legal
 /ca/projects/puro-group
@@ -26,6 +28,7 @@
 /en
 /en/about
 /en/contact
+/en/privacy
 /en/projects
 /en/legal
 /en/projects/puro-group

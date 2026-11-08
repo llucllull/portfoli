@@ -6,7 +6,7 @@
       "ca": "Contacte | Lluc Llull - Parlem del teu proper projecte?",
       "en": "Contact | Lluc Llull - Let's build something together!"
     },
-	"description": {
+    "description": {
       "es": "¿Tienes una idea o necesitas un desarrollador? Ponte en contacto conmigo para colaboraciones, proyectos o simplemente para saludar.",
       "ca": "Tens una idea o busques un desenvolupador? Contacta amb mi per a col·laboracions, projectes o per fer un cafè virtual.",
       "en": "Have a project in mind or looking for a developer? Reach out for collaborations, freelance work, or just to say hi."
@@ -17,21 +17,9 @@
       "component": "section-intro",
       "props": {
         "texts": {
-          "pretitle": {
-            "es": "",
-            "ca": "",
-            "en": ""
-          },
-          "title": {
-            "es": "Hablemos",
-            "ca": "Parlem",
-            "en": "Let's talk"
-          },
-          "subtitle": {
-            "es": "",
-            "ca": "",
-            "en": ""
-          },
+          "pretitle": { "es": "", "ca": "", "en": "" },
+          "title": { "es": "Hablemos", "ca": "Parlem", "en": "Let's talk" },
+          "subtitle": { "es": "", "ca": "", "en": "" },
           "text": {
             "es": "Si quieres trabajar conmigo o tienes alguna pregunta puedes escribirme.",
             "ca": "Si vols treballar amb mi o tens alguna pregunta pots escriure'm.",
@@ -49,11 +37,7 @@
             "ca": "Contacte",
             "en": "Contact"
           },
-          "socialsTitle": {
-            "es": "Socials",
-            "ca": "Socials",
-            "en": "Socials"
-          }
+          "socialsTitle": { "es": "Socials", "ca": "Socials", "en": "Socials" }
         },
         "items": [
           {
@@ -103,6 +87,165 @@
           "image": {
             "alt": "Contacto",
             "src": "/images/pages/contact.avif"
+          }
+        }
+      }
+    },
+    {
+      "component": "contact-form",
+      "props": {
+        "privacyUrl": {
+          "es": "/es/privacy",
+          "ca": "/ca/privacy",
+          "en": "/en/privacy"
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Contacto",
+            "src": "/images/pages/contact.avif"
+          }
+        },
+        "texts": {
+          "eyebrow": { "es": "CONTACTO", "ca": "CONTACTE", "en": "CONTACT" },
+          "title": {
+            "es": "Cuéntame tu idea",
+            "ca": "Explica’m la teva idea",
+            "en": "Tell me about your idea"
+          },
+          "intro": {
+            "es": "Escríbeme y te responderé lo antes posible.",
+            "ca": "Escriu-me i et respondré tan aviat com pugui.",
+            "en": "Send me a message and I’ll get back to you as soon as I can."
+          },
+          "requiredHint": {
+            "es": "Los campos con * son obligatorios.",
+            "ca": "Els camps amb * són obligatoris.",
+            "en": "Fields marked with * are required."
+          },
+          "name": { "es": "Nombre", "ca": "Nom", "en": "First name" },
+          "surname": {
+            "es": "Apellidos",
+            "ca": "Llinatges",
+            "en": "Last name"
+          },
+          "email": { "es": "Email", "ca": "Email", "en": "Email" },
+          "phone": { "es": "Teléfono", "ca": "Telèfon", "en": "Phone" },
+          "message": { "es": "Mensaje", "ca": "Missatge", "en": "Message" },
+          "namePlaceholder": {
+            "es": "Tu nombre",
+            "ca": "El teu nom",
+            "en": "Your first name"
+          },
+          "surnamePlaceholder": {
+            "es": "Tus apellidos",
+            "ca": "Els teus llinatges",
+            "en": "Your last name"
+          },
+          "emailPlaceholder": {
+            "es": "nombre@ejemplo.com",
+            "ca": "nom@exemple.com",
+            "en": "name@example.com"
+          },
+          "phonePlaceholder": {
+            "es": "+34 600 000 000",
+            "ca": "+34 600 000 000",
+            "en": "+1 555 000 0000"
+          },
+          "messagePlaceholder": {
+            "es": "¿En qué puedo ayudarte?",
+            "ca": "Com et puc ajudar?",
+            "en": "How can I help?"
+          },
+          "privacyTitle": {
+            "es": "Protección de datos:",
+            "ca": "Protecció de dades:",
+            "en": "Data protection:"
+          },
+          "privacyResponsible": {
+            "es": "Responsable: [COMPLETAR: nombre o razón social].",
+            "ca": "Responsable: [COMPLETAR: nom o raó social].",
+            "en": "Controller: [COMPLETE: name or legal entity]."
+          },
+          "privacyPurpose": {
+            "es": "Finalidad: atender y responder a las consultas recibidas a través del formulario.",
+            "ca": "Finalitat: atendre i respondre les consultes rebudes a través del formulari.",
+            "en": "Purpose: to handle and reply to enquiries submitted through this form."
+          },
+          "privacyLegalBasis": {
+            "es": "Legitimación: [COMPLETAR: base jurídica aplicable].",
+            "ca": "Legitimació: [COMPLETAR: base jurídica aplicable].",
+            "en": "Legal basis: [COMPLETE: applicable legal basis]."
+          },
+          "privacyRecipients": {
+            "es": "Destinatarios: [COMPLETAR: proveedores que tratarán los datos].",
+            "ca": "Destinataris: [COMPLETAR: proveïdors que tractaran les dades].",
+            "en": "Recipients: [COMPLETE: providers that will process the data]."
+          },
+          "privacyRetention": {
+            "es": "Conservación: durante el tiempo necesario para atender la consulta y cumplir las obligaciones legales aplicables.",
+            "ca": "Conservació: durant el temps necessari per atendre la consulta i complir les obligacions legals aplicables.",
+            "en": "Retention: as long as needed to handle the enquiry and meet applicable legal obligations."
+          },
+          "privacyRights": {
+            "es": "Derechos: puedes ejercer tus derechos escribiendo a [COMPLETAR: email de contacto].",
+            "ca": "Drets: pots exercir els teus drets escrivint a [COMPLETAR: email de contacte].",
+            "en": "Rights: exercise your rights by writing to [COMPLETE: contact email]."
+          },
+          "privacyLinkLead": {
+            "es": "Puedes consultar información adicional en la",
+            "ca": "Pots consultar més informació a la",
+            "en": "You can find more information in the"
+          },
+          "privacyLink": {
+            "es": "Política de privacidad",
+            "ca": "Política de privacitat",
+            "en": "Privacy policy"
+          },
+          "privacyLinkTail": {
+            "es": ". Los datos se utilizarán exclusivamente para responder a tu consulta, no para newsletters ni publicidad.",
+            "ca": ". Les dades s’utilitzaran exclusivament per respondre la consulta, no per a newsletters ni publicitat.",
+            "en": ". Your data will only be used to reply to your enquiry, not for newsletters or advertising."
+          },
+          "send": {
+            "es": "Enviar mensaje",
+            "ca": "Enviar missatge",
+            "en": "Send message"
+          },
+          "sending": { "es": "Enviando…", "ca": "Enviant…", "en": "Sending…" },
+          "success": {
+            "es": "Mensaje enviado correctamente. Gracias por ponerte en contacto.",
+            "ca": "Missatge enviat correctament. Gràcies per contactar.",
+            "en": "Message sent successfully. Thank you for getting in touch."
+          },
+          "error": {
+            "es": "No se ha podido enviar el mensaje. Inténtalo de nuevo más tarde.",
+            "ca": "No s’ha pogut enviar el missatge. Torna-ho a provar més tard.",
+            "en": "The message could not be sent. Please try again later."
+          },
+          "deliveryNotConfigured": {
+            "es": "El servicio de envío no está configurado todavía; puedes escribirme a hola@llucllull.dev.",
+            "ca": "El servei d’enviament encara no està configurat; em pots escriure a hola@llucllull.dev.",
+            "en": "The delivery service is not configured yet; you can email me at hola@llucllull.dev."
+          },
+          "requiredError": {
+            "es": "Este campo es obligatorio.",
+            "ca": "Aquest camp és obligatori.",
+            "en": "This field is required."
+          },
+          "emailError": {
+            "es": "Introduce un email válido.",
+            "ca": "Introdueix un email vàlid.",
+            "en": "Enter a valid email address."
+          },
+          "lengthError": {
+            "es": "El contenido supera la longitud permitida.",
+            "ca": "El contingut supera la longitud permesa.",
+            "en": "The content exceeds the allowed length."
+          },
+          "invalidError": {
+            "es": "Revisa este campo.",
+            "ca": "Revisa aquest camp.",
+            "en": "Please check this field."
           }
         }
       }

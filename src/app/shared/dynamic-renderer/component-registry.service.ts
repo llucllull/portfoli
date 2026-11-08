@@ -30,6 +30,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
   'contact-minimal': () =>
     import('@lluc_llull/ui-lib/content/contact-minimal').then((m) => m.ContactMinimalComponent),
 
+  'contact-form': () =>
+    import('@lluc_llull/ui-lib/forms/contact-form').then((m) => m.ContactFormComponent),
+
   'media-split': () =>
     import('@lluc_llull/ui-lib/content/media-split').then((m) => m.MediaSplitComponent),
 

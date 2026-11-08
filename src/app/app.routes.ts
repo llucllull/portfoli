@@ -60,6 +60,14 @@ export const routes: Routes = [
           ),
         resolve: { page: pageResolver },
       },
+      {
+        path: 'privacy',
+        loadComponent: () =>
+          import('./pages/privacy/privacy.component').then(
+            (m) => m.PrivacyComponent,
+          ),
+        resolve: { page: pageResolver },
+      },
 
       {
         path: '**',
