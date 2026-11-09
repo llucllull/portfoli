@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
     {
@@ -25,12 +24,24 @@
   "redirects": [{ "source": "/", "destination": "/es", "permanent": false }],
   "rewrites": [
     {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
       "source": "/es/:path*",
       "destination": "/es/:path*/index.html"
     },
     {
+      "source": "/ca",
+      "destination": "/ca/index.html"
+    },
+    {
       "source": "/ca/:path*",
       "destination": "/ca/:path*/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
     },
     {
       "source": "/en/:path*",
