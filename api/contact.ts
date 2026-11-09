@@ -20,8 +20,6 @@ export const config = {
     },
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const emailPattern = /^[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+$/;
 const controlCharacters = /[\u0000-\u001f\u007f]/g;
 
@@ -99,15 +97,21 @@ export default async function handler(
         return;
     }
 
-    const contactEmail = process.env.CONTACT_EMAIL;
+    const contactEmail = process.env['CONTACT_EMAIL'];
+    const apiKey = process.env['RESEND_API_KEY'];
 
-    if (!process.env.RESEND_API_KEY || !contactEmail) {
+    if (!apiKey || !contactEmail) {
         console.error('Contact delivery environment variables missing');
-        res.status(503).json({ error: 'contact_delivery_not_configured' });
+
+        res.status(503).json({
+            error: 'contact_delivery_not_configured',
+        });
+
         return;
     }
 
     try {
+        const resend = new Resend(apiKey);
         const fullName = `${name} ${surname}`.trim();
 
         const { data, error } = await resend.emails.send({
@@ -129,15 +133,24 @@ export default async function handler(
 
         if (error) {
             console.error('Resend delivery error:', error);
-            res.status(502).json({ error: 'contact_delivery_failed' });
+
+            res.status(502).json({
+                error: 'contact_delivery_failed',
+            });
+
             return;
         }
 
         console.info('Contact email sent:', data?.id);
 
-        res.status(200).json({ message: 'contact_sent' });
+        res.status(200).json({
+            message: 'contact_sent',
+        });
     } catch (error) {
         console.error('Contact delivery exception:', error);
-        res.status(502).json({ error: 'contact_delivery_failed' });
+
+        res.status(502).json({
+            error: 'contact_delivery_failed',
+        });
     }
 }
