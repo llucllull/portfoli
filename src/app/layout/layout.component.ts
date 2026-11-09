@@ -26,13 +26,19 @@ export class LayoutComponent {
 
   currentLang = this.siteConfig.getLanguage();
   platformId = inject(PLATFORM_ID);
-  mobileHeader = computed<BodyComponent<any>>(() => {
+  headerComponents = computed(() => {
     const header = this.layout.header();
+    return header ? [header] : [];
+  });
 
-    return {
-      ...header!,
-      name: 'header-mobile',
-    };
+  mobileHeaderComponents = computed(() => {
+    const header = this.layout.header();
+    return header ? [{ ...header, name: 'header-mobile' }] : [];
+  });
+
+  footerComponents = computed(() => {
+    const footer = this.layout.footer();
+    return footer ? [footer] : [];
   });
 
   get isBrowser(): boolean {

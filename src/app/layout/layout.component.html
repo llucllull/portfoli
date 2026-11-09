@@ -1,9 +1,9 @@
-@if (layout.header(); as headerComponent) {
+@if (layout.header()) {
   <div class="header-container">
     @if (isBrowser && screen.isXs()) {
-      <dynamic-renderer [components]="[mobileHeader()]"> </dynamic-renderer>
+      <dynamic-renderer [components]="mobileHeaderComponents()"> </dynamic-renderer>
     } @else {
-      <dynamic-renderer [components]="[headerComponent]"> </dynamic-renderer>
+      <dynamic-renderer [components]="headerComponents()"> </dynamic-renderer>
     }
   </div>
 }
@@ -12,8 +12,8 @@
   <ng-content></ng-content>
 </main>
 
-@if (layout.footer(); as footerComponent) {
-  <dynamic-renderer [components]="[footerComponent]"> </dynamic-renderer>
+@if (layout.footer()) {
+  <dynamic-renderer [components]="footerComponents()"> </dynamic-renderer>
 }
 
 @if (language.isModalOpen() || language.isModalClosing()) {
