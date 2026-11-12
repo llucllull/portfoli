@@ -59,6 +59,9 @@ export const COMPONENT_REGISTRY: Record<string, ComponentLoader> = {
 
   'mosaic-grid': () =>
     import('@lluc_llull/ui-lib/content/mosaic-grid').then((m) => m.MosaicGridComponent),
+
+  'text-mosaic-hero': () =>
+    import('@lluc_llull/ui-lib/content/text-mosaic-hero').then((m) => m.TextMosaicHeroComponent),
 };
 
 export const COMPONENT_CACHE: Record<string, Type<any>> = {};

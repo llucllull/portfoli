@@ -573,6 +573,22 @@
           ]
         }
       }
+    },
+
+    "text-mosaic-hero": {
+      "component": "text-mosaic-hero",
+      "props": {
+        "texts": {
+          "title": { "es": "WHO DAAT BOY", "ca": "WHO DAAT BOY", "en": "WHO DAAT BOY" }
+        },
+        "multimedia": {
+          "images": [
+            { "src": "/images/dummy/mosaic-1.jpg", "alt": "Imagen 1" },
+            { "src": "/images/dummy/mosaic-2.jpg", "alt": "Imagen 2" },
+            { "src": "/images/dummy/mosaic-3.jpg", "alt": "Imagen 3" }
+          ]
+        }
+      }
     }
   }
 }
