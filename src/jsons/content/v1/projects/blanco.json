@@ -1,0 +1,242 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "Blanco Hotel Formentera | Motor de reservas e interfaz (Clicktotravel)",
+      "ca": "Blanco Hotel Formentera | Motor de reserves i interfície (Clicktotravel)",
+      "en": "Blanco Hotel Formentera | Booking engine and interface (Clicktotravel)"
+    },
+    "description": {
+      "es": "Mi trabajo en la web de Blanco Hotel Formentera: integración del motor de reservas, componentes de interfaz y arquitectura SSR dentro del equipo de Clicktotravel.",
+      "ca": "La meva feina a la web de Blanco Hotel Formentera: integració del motor de reserves, components d'interfície i arquitectura SSR dins l'equip de Clicktotravel.",
+      "en": "My work on the Blanco Hotel Formentera site: booking engine integration, interface components and SSR architecture within the Clicktotravel team."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Blanco",
+            "ca": "Blanco",
+            "en": "Blanco"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Blanco Hotel Formentera es un proyecto de Clicktotravel. Formé parte del equipo que lo desarrolló y me centré en dos frentes: la integración del motor de reservas y el acabado de una interfaz que tenía que parecer sencilla.",
+            "ca": "Blanco Hotel Formentera és un projecte de Clicktotravel. Vaig formar part de l'equip que el va desenvolupar i em vaig centrar en dos fronts: la integració del motor de reserves i l'acabat d'una interfície que havia de semblar senzilla.",
+            "en": "Blanco Hotel Formentera is a Clicktotravel project. I was part of the team that built it, focused on two fronts: the booking engine integration and the finish of an interface that had to look simple."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Portada de la web de Blanco Hotel Formentera",
+            "src": "/images/projects/blanco/projects-blanco.png",
+            "public_id": "1_axdydk"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Blanco: reservar sin ruido",
+            "ca": "Blanco: reservar sense soroll",
+            "en": "Blanco: booking without the noise"
+          },
+          "subtitle": {
+            "es": "Integración, estados y detalle. Lo que hay detrás de una web mínima.",
+            "ca": "Integració, estats i detall. El que hi ha darrere d'una web mínima.",
+            "en": "Integration, states and detail. What sits behind a minimal website."
+          },
+          "description": {
+            "es": "Un motor de reservas no perdona: disponibilidad, tarifas y errores tienen que llegar bien y a la primera. Trabajé en la comunicación con el motor, en el tratamiento de las respuestas y en los estados intermedios que nadie mira hasta que fallan. La idea era que reservar resultara tan directo que el usuario no intuyera cuántas piezas había debajo.",
+            "ca": "Un motor de reserves no perdona: disponibilitat, tarifes i errors han d'arribar bé i a la primera. Vaig treballar en la comunicació amb el motor, en el tractament de les respostes i en els estats intermedis que ningú mira fins que fallen. La idea era que reservar fos tan directe que l'usuari no intuís quantes peces hi havia a sota.",
+            "en": "A booking engine doesn't forgive: availability, rates and errors have to land right the first time. I worked on the communication with the engine, the handling of responses and the in-between states nobody looks at until they break. The goal was for booking to feel so direct that users never guessed how many pieces were underneath."
+          }
+        },
+        "meta": [
+          {
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Boutique hotel & booking engine"
+          },
+          {
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 17 | SSR | Booking Engine | Signals + Standalone | Bitbucket Pipelines"
+          },
+          {
+            "label": {
+              "es": "Cliente",
+              "ca": "Client",
+              "en": "Client"
+            },
+            "value": "Blanco Hotel Formentera"
+          },
+          {
+            "label": {
+              "es": "Empresa",
+              "ca": "Empresa",
+              "en": "Company"
+            },
+            "value": "Clicktotravel"
+          },
+          {
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
+            "value": "2024"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver sitio web",
+              "ca": "veure lloc web",
+              "en": "view live site"
+            },
+            "icon": "arrow-right",
+            "url": "https://blancohotelformentera.com/es",
+            "link_type": "external"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Vista de escritorio de la web de Blanco Hotel Formentera",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "5_fbli2h"
+            },
+            {
+              "alt": "Detalle de la interfaz minimalista de Blanco",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "8_cqftsx"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "SSR y renderizado bajo demanda para no perder la primera impresión.",
+            "ca": "SSR i renderitzat sota demanda per no perdre la primera impressió.",
+            "en": "SSR and on-demand rendering so the first impression isn't kept waiting."
+          },
+          "secondaryText": {
+            "es": "La web se movía entre contenido estático y datos de reserva. Montamos una arquitectura híbrida con SSR para que la página llegara vestida desde el servidor, y un sistema que decide qué bloques renderizar según lo que devuelve la petición. Así el contenido editorial no dependía del motor y el motor no frenaba el contenido.",
+            "ca": "La web es movia entre contingut estàtic i dades de reserva. Vam muntar una arquitectura híbrida amb SSR perquè la pàgina arribés vestida des del servidor, i un sistema que decideix quins blocs renderitzar segons el que retorna la petició. Així el contingut editorial no depenia del motor i el motor no frenava el contingut.",
+            "en": "The site lived between static content and booking data. We set up a hybrid SSR architecture so the page arrived dressed from the server, plus a system that decides which blocks to render based on the request response. Editorial content no longer depended on the engine, and the engine no longer held content back."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Bloque editorial de Blanco Hotel Formentera",
+            "src": "/images/projects/blanco/projects-blanco.png",
+            "public_id": "10_eabg1x"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "En la interfaz me tocó construir y ajustar componentes interactivos: galerías, selectores, transiciones. El diseño de Blanco es muy limpio, y eso no perdona: cualquier salto o transición a destiempo se ve. Pasé bastante tiempo puliendo detalles que el usuario solo percibe cuando están mal.",
+            "ca": "A la interfície em va tocar construir i ajustar components interactius: galeries, selectors, transicions. El disseny de Blanco és molt net, i això no perdona: qualsevol salt o transició a destemps es veu. Vaig passar força temps polint detalls que l'usuari només percep quan estan malament.",
+            "en": "On the interface I built and tuned interactive components: galleries, selectors, transitions. Blanco's design is very clean, and that doesn't forgive: any mistimed jump or transition shows. I spent a fair amount of time polishing details users only notice when they're wrong."
+          },
+          "rightColumn": {
+            "es": "También ordené la capa de estilos: hojas globales y modulares, menos duplicidad y una base mobile-first de verdad. Revisar CSS heredado tiene menos glamour que montar una pantalla nueva, pero evita que el proyecto se vuelva lento de cambiar. Ahí aprendí a distinguir deuda técnica de simple desorden.",
+            "ca": "També vaig ordenar la capa d'estils: fulls globals i modulars, menys duplicitat i una base mobile-first de veritat. Revisar CSS heretat té menys glamur que muntar una pantalla nova, però evita que el projecte es torni lent de canviar. Allà vaig aprendre a distingir deute tècnic de simple desordre.",
+            "en": "I also tidied the style layer: global and modular sheets, less duplication and a genuinely mobile-first base. Cleaning up inherited CSS is less glamorous than building a new screen, but it stops the project from becoming slow to change. That's where I learned to tell technical debt from plain mess."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Componentes y estilos de Blanco Hotel Formentera",
+            "src": "/images/projects/blanco/projects-blanco.png",
+            "public_id": "4_ckg71i"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "En un hotel boutique, la web también forma parte de la estancia. Blanco me enseñó que la calma visual se consigue con bastante trabajo por debajo.",
+            "ca": "En un hotel boutique, la web també forma part de l'estada. Blanco em va ensenyar que la calma visual s'aconsegueix amb força feina per sota.",
+            "en": "For a boutique hotel, the website is part of the stay too. Blanco taught me that visual calm takes a lot of work underneath."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Home de Blanco Hotel Formentera",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "7_twt9ag"
+            },
+            {
+              "alt": "Página de habitaciones de Blanco",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "6_oseiou"
+            },
+            {
+              "alt": "Detalle del diseño mediterráneo",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "3_pjew1d"
+            },
+            {
+              "alt": "Vista móvil de Blanco Hotel Formentera",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "9_iahkq3"
+            },
+            {
+              "alt": "Página de reservas de Blanco",
+              "src": "/images/projects/blanco/projects-blanco.png",
+              "public_id": "2_eowkvi"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

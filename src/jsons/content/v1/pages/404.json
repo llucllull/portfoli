@@ -2,14 +2,14 @@
   "template": "404",
   "seo": {
     "title": {
-      "es": "Error 404 | Página no encontrada - llucllull.dev",
-      "ca": "Error 404 | Pàgina no trobada - llucllull.dev",
-      "en": "Error 404 | Page Not Found - llucllull.dev"
+      "es": "Error 404 | Página no encontrada · llucllull.dev",
+      "ca": "Error 404 | Pàgina no trobada · llucllull.dev",
+      "en": "Error 404 | Page not found · llucllull.dev"
     },
-	"description": {
-      "es": "Lo sentimos, esta página no existe. Pero no te preocupes, puedes volver al inicio y seguir explorando mi portfolio.",
-      "ca": "Ho sentim, aquesta pàgina no existeix. Pots tornar a l'inici per seguir navegant pel meu portfolio.",
-      "en": "Oops! This page doesn't exist. You can head back to the homepage to keep browsing my portfolio."
+    "description": {
+      "es": "Esta página no existe. Puede que el enlace esté mal o que haya movido algo de sitio. Vuelve al inicio y seguimos navegando.",
+      "ca": "Aquesta pàgina no existeix. Potser l'enllaç està malament o he mogut alguna cosa de lloc. Torna a l'inici i seguim navegant.",
+      "en": "This page doesn't exist. The link may be wrong, or I may have moved something. Head back home and we'll keep browsing."
     }
   },
   "body": [
@@ -23,9 +23,9 @@
             "en": "Oops!"
           },
           "subtitle": {
-            "es": "La página que buscas no existe",
-            "ca": "La pàgina que cerques no existeix",
-            "en": "The page you are looking for not exist"
+            "es": "Esta página no existe",
+            "ca": "Aquesta pàgina no existeix",
+            "en": "This page doesn't exist"
           },
           "highlight": {
             "es": "404",

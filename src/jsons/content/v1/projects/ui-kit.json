@@ -1,0 +1,234 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "UI Kit | Librería de componentes Angular publicada en npm",
+      "ca": "UI Kit | Llibreria de components Angular publicada a npm",
+      "en": "UI Kit | Angular component library published on npm"
+    },
+    "description": {
+      "es": "Una librería Angular 22 con 35 componentes, Storybook, tests en Vitest y publicación automática en npm. La base visual que uso en mis proyectos.",
+      "ca": "Una llibreria Angular 22 amb 35 components, Storybook, tests amb Vitest i publicació automàtica a npm. La base visual que faig servir als meus projectes.",
+      "en": "An Angular 22 library with 35 components, Storybook, Vitest tests and automated npm publishing. The visual foundation behind my projects."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "UI Kit",
+            "ca": "UI Kit",
+            "en": "UI Kit"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Una librería de componentes Angular que nació para no repetir la misma cabecera, el mismo footer y el mismo formulario en cada proyecto. Hoy es un paquete publicado en npm, con Storybook, tests y un pipeline que se encarga de la release.",
+            "ca": "Una llibreria de components Angular que va néixer per no repetir la mateixa capçalera, el mateix footer i el mateix formulari a cada projecte. Avui és un paquet publicat a npm, amb Storybook, tests i un pipeline que s'encarrega de la release.",
+            "en": "An Angular component library born from not wanting to rebuild the same header, footer and form on every project. Today it's a package published on npm, with Storybook, tests and a pipeline that handles the release."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Portada del UI Kit con varios componentes de la librería",
+            "src": "/images/projects/ui-kit/projects-ui-kit.png",
+            "public_id": "projects-ui-kit_wzefb6"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "UI Kit: componentes que ya conocen el camino",
+            "ca": "UI Kit: components que ja coneixen el camí",
+            "en": "UI Kit: components that already know the way"
+          },
+          "subtitle": {
+            "es": "Una base común para proyectos distintos.",
+            "ca": "Una base comuna per a projectes diferents.",
+            "en": "One shared base for different projects."
+          },
+          "description": {
+            "es": "La librería reúne las piezas que aparecen una y otra vez: héroes, bloques de contenido, cabeceras, footers, formularios, modales y sliders. Cada entrada se puede importar por separado, así que un proyecto no carga lo que no usa. Los componentes son standalone y comparten un sistema de theming, iconos y utilidades de scroll.",
+            "ca": "La llibreria reuneix les peces que apareixen una i una altra vegada: herois, blocs de contingut, capçaleres, footers, formularis, modals i sliders. Cada entrada es pot importar per separat, així que un projecte no carrega el que no utilitza. Els components són standalone i comparteixen un sistema de theming, icones i utilitats de scroll.",
+            "en": "The library gathers the pieces that show up again and again: heroes, content blocks, headers, footers, forms, modals and sliders. Each entry point can be imported separately, so a project doesn't load what it doesn't use. Components are standalone and share theming, icons and scroll utilities."
+          }
+        },
+        "meta": [
+          {
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Librería de componentes / design system"
+          },
+          {
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 22 | Standalone + Signals | Storybook 10 | Vitest + jsdom | ng-packagr | GitHub Actions | npm · pnpm"
+          },
+          {
+            "label": {
+              "es": "Paquete",
+              "ca": "Paquet",
+              "en": "Package"
+            },
+            "value": "@lluc_llull/ui-lib · v0.37.3"
+          },
+          {
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
+            "value": "2026"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver en npm",
+              "ca": "veure a npm",
+              "en": "view on npm"
+            },
+            "icon": "arrow-right",
+            "url": "https://www.npmjs.com/package/@lluc_llull/ui-lib",
+            "link_type": "external"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Documentación de un componente en Storybook",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            },
+            {
+              "alt": "Estructura de entry points de la librería",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "35 componentes, 16 puntos de entrada y una sola forma de hacer las cosas.",
+            "ca": "35 components, 16 punts d'entrada i una sola manera de fer les coses.",
+            "en": "35 components, 16 entry points and one consistent way of doing things."
+          },
+          "secondaryText": {
+            "es": "El paquete está dividido en entry points secundarios: content, forms, headers, footers, modals, theme, mapper, directives y utilidades. Esa separación permite importar solo lo necesario y mantener el bundle a raya. El MapperService traduce datos de un CMS a componentes tipados; el ThemeService centraliza colores y estilos. La idea es que la capa visual no se reinvente en cada proyecto.",
+            "ca": "El paquet està dividit en entry points secundaris: content, forms, headers, footers, modals, theme, mapper, directives i utilitats. Aquesta separació permet importar només el necessari i mantenir el bundle a ratlla. El MapperService tradueix dades d'un CMS a components tipats; el ThemeService centralitza colors i estils. La idea és que la capa visual no es reinventi a cada projecte.",
+            "en": "The package is split into secondary entry points: content, forms, headers, footers, modals, theme, mapper, directives and utilities. That separation lets consumers import only what they need and keeps the bundle in check. MapperService turns CMS data into typed component props; ThemeService centralises colours and styles. The point is to stop reinventing the visual layer on every project."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Mapa de entry points y arquitectura del UI Kit",
+            "src": "/images/projects/ui-kit/projects-ui-kit.png",
+            "public_id": "projects-ui-kit_wzefb6"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "Storybook es la documentación viva. Los componentes que más se usan tienen su historia y sus variantes, así que puedo revisar estados y comportamientos sin montar una página de prueba. La publicación también está automatizada: al empujar un tag, GitHub Actions ejecuta los tests con cobertura, compila la librería con ng-packagr y publica en npm. Si el tag no coincide con la versión del package.json, el proceso se detiene.",
+            "ca": "Storybook és la documentació viva. Els components que més es fan servir tenen la seva història i les seves variants, així que puc revisar estats i comportaments sense muntar una pàgina de prova. La publicació també està automatitzada: en pujar un tag, GitHub Actions executa els tests amb cobertura, compila la llibreria amb ng-packagr i publica a npm. Si el tag no coincideix amb la versió del package.json, el procés s'atura.",
+            "en": "Storybook is the living documentation. The components used most have their story and variants, so I can check states and behaviour without building a test page. Publishing is automated too: push a tag, GitHub Actions runs the tests with coverage, builds the library with ng-packagr and publishes to npm. If the tag doesn't match the package.json version, the process stops."
+          },
+          "rightColumn": {
+            "es": "Los tests corren con Vitest y jsdom sobre los 35 componentes. La cobertura ronda el 99 % en líneas, pero lo importante es otra cosa: que un cambio en un formulario no rompa un footer. Prettier, Sass y pnpm completan el día a día. La librería se usa en este portfolio y en otros proyectos, así que cualquier mejora vuelve a todos a la vez.",
+            "ca": "Els tests corren amb Vitest i jsdom sobre els 35 components. La cobertura ronda el 99 % en línies, però l'important és una altra cosa: que un canvi en un formulari no trenqui un footer. Prettier, Sass i pnpm completen el dia a dia. La llibreria s'utilitza en aquest portfoli i en altres projectes, així que qualsevol millora torna a tots alhora.",
+            "en": "Tests run with Vitest and jsdom across all 35 components. Line coverage sits around 99%, but the real point is different: a change to a form shouldn't break a footer. Prettier, Sass and pnpm fill in the day-to-day. The library is used in this portfolio and other projects, so every improvement reaches all of them at once."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Pipeline de GitHub Actions y resultados de tests del UI Kit",
+            "src": "/images/projects/ui-kit/projects-ui-kit.png",
+            "public_id": "projects-ui-kit_wzefb6"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "Un design system no es una colección de componentes bonitos. Es la forma de que cinco proyectos no parezcan cinco equipos distintos.",
+            "ca": "Un design system no és una col·lecció de components bonics. És la manera que cinc projectes no semblin cinc equips diferents.",
+            "en": "A design system isn't a collection of pretty components. It's how five projects stop looking like five different teams."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Componente hero documentado en Storybook",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            },
+            {
+              "alt": "Formulario de contacto con sus estados de validación",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            },
+            {
+              "alt": "Variantes de cabeceras y footers de la librería",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            },
+            {
+              "alt": "Componentes de mosaico y parallax del UI Kit",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            },
+            {
+              "alt": "Modales y sliders de la librería en Storybook",
+              "src": "/images/projects/ui-kit/projects-ui-kit.png",
+              "public_id": "projects-ui-kit_wzefb6"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

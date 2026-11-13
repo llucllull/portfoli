@@ -1,14 +1,22 @@
 {
-  "version": "1.0.0",
-  "lastUpdate": "2026-03-06",
+  "version": "1.1.0",
+  "lastUpdate": "2026-11-13",
   "pages": [
     "home",
     "about",
+    "projects",
     "contact",
-	"404",
-	"projects"
+    "legal",
+    "privacy",
+    "404"
   ],
   "projects": [
-    "puro-hotels"
+    "arima",
+    "blanco",
+    "lluc-llull",
+    "numad-studios",
+    "puro-group",
+    "tent-hotels",
+    "ui-kit"
   ]
 }

@@ -2,95 +2,17 @@
   "template": "contact",
   "seo": {
     "title": {
-      "es": "Contacto | Lluc Llull - ¿Hablamos de tu próximo proyecto?",
-      "ca": "Contacte | Lluc Llull - Parlem del teu proper projecte?",
-      "en": "Contact | Lluc Llull - Let's build something together!"
+      "es": "Contacto | Lluc Llull",
+      "ca": "Contacte | Lluc Llull",
+      "en": "Contact | Lluc Llull"
     },
     "description": {
-      "es": "¿Tienes una idea o necesitas un desarrollador? Ponte en contacto conmigo para colaboraciones, proyectos o simplemente para saludar.",
-      "ca": "Tens una idea o busques un desenvolupador? Contacta amb mi per a col·laboracions, projectes o per fer un cafè virtual.",
-      "en": "Have a project in mind or looking for a developer? Reach out for collaborations, freelance work, or just to say hi."
+      "es": "Escríbeme si necesitas un desarrollador front-end o quieres comentar un proyecto. Respondo lo antes que puedo.",
+      "ca": "Escriu-me si necessites un desenvolupador front-end o vols comentar un projecte. Responc tan aviat com puc.",
+      "en": "Get in touch if you need a front-end developer or want to talk through a project. I reply as soon as I can."
     }
   },
   "body": [
-    {
-      "component": "section-intro",
-      "props": {
-        "texts": {
-          "pretitle": { "es": "", "ca": "", "en": "" },
-          "title": { "es": "Hablemos", "ca": "Parlem", "en": "Let's talk" },
-          "subtitle": { "es": "", "ca": "", "en": "" },
-          "text": {
-            "es": "Si quieres trabajar conmigo o tienes alguna pregunta puedes escribirme.",
-            "ca": "Si vols treballar amb mi o tens alguna pregunta pots escriure'm.",
-            "en": "If you want to work with me or have any question feel free to contact me."
-          }
-        }
-      }
-    },
-    {
-      "component": "contact-minimal",
-      "props": {
-        "texts": {
-          "contactsTitle": {
-            "es": "Contacto",
-            "ca": "Contacte",
-            "en": "Contact"
-          },
-          "socialsTitle": { "es": "Socials", "ca": "Socials", "en": "Socials" }
-        },
-        "items": [
-          {
-            "buttons": [
-              {
-                "page": "",
-                "url": "mailto:hola@llucllull.dev",
-                "icon": "",
-                "label": {
-                  "es": "hola@llucllull.dev",
-                  "ca": "hola@llucllull.dev",
-                  "en": "hola@llucllull.dev"
-                },
-                "link_type": "external"
-              },
-              {
-                "page": "",
-                "url": "tel:34629427301",
-                "icon": "",
-                "label": {
-                  "es": "+34 629 427 301",
-                  "ca": "+34 629 427 301",
-                  "en": "+34 629 427 301"
-                },
-                "link_type": "external"
-              }
-            ]
-          },
-          {
-            "buttons": [
-              {
-                "label": "linkedin",
-                "url": "https://www.linkedin.com/in/lluc-llull/",
-                "icon": "",
-                "linkType": "external"
-              },
-              {
-                "label": "github",
-                "url": "https://github.com/llucllull",
-                "icon": "",
-                "linkType": "external"
-              }
-            ]
-          }
-        ],
-        "multimedia": {
-          "image": {
-            "alt": "Contacto",
-            "src": "/images/pages/contact.avif"
-          }
-        }
-      }
-    },
     {
       "component": "contact-form",
       "props": {
@@ -101,12 +23,12 @@
         },
         "multimedia": {
           "image": {
-            "alt": "Contacto",
-            "src": "/images/pages/contact.avif"
+            "alt": "Formulario de contacto de Lluc Llull",
+            "src": "/images/pages/contact.avif",
+            "public_id": "contact_eloowo"
           }
         },
         "texts": {
-          "eyebrow": { "es": "CONTACTO", "ca": "CONTACTE", "en": "CONTACT" },
           "title": {
             "es": "Cuéntame tu idea",
             "ca": "Explica’m la teva idea",
@@ -122,15 +44,31 @@
             "ca": "Els camps amb * són obligatoris.",
             "en": "Fields marked with * are required."
           },
-          "name": { "es": "Nombre", "ca": "Nom", "en": "First name" },
+          "name": {
+            "es": "Nombre",
+            "ca": "Nom",
+            "en": "First name"
+          },
           "surname": {
             "es": "Apellidos",
             "ca": "Llinatges",
             "en": "Last name"
           },
-          "email": { "es": "Email", "ca": "Email", "en": "Email" },
-          "phone": { "es": "Teléfono", "ca": "Telèfon", "en": "Phone" },
-          "message": { "es": "Mensaje", "ca": "Missatge", "en": "Message" },
+          "email": {
+            "es": "Email",
+            "ca": "Email",
+            "en": "Email"
+          },
+          "phone": {
+            "es": "Teléfono",
+            "ca": "Telèfon",
+            "en": "Phone"
+          },
+          "message": {
+            "es": "Mensaje",
+            "ca": "Missatge",
+            "en": "Message"
+          },
           "namePlaceholder": {
             "es": "Tu nombre",
             "ca": "El teu nom",
@@ -162,34 +100,34 @@
             "en": "Data protection:"
           },
           "privacyResponsible": {
-            "es": "Responsable: [COMPLETAR: nombre o razón social].",
-            "ca": "Responsable: [COMPLETAR: nom o raó social].",
-            "en": "Controller: [COMPLETE: name or legal entity]."
+            "es": "Responsable: Lluc Llull Galmés.",
+            "ca": "Responsable: Lluc Llull Galmés.",
+            "en": "Data controller: Lluc Llull Galmés."
           },
           "privacyPurpose": {
-            "es": "Finalidad: atender y responder a las consultas recibidas a través del formulario.",
-            "ca": "Finalitat: atendre i respondre les consultes rebudes a través del formulari.",
-            "en": "Purpose: to handle and reply to enquiries submitted through this form."
+            "es": "Finalidad: atender y responder a las consultas recibidas a través del formulario de contacto.",
+            "ca": "Finalitat: atendre i respondre les consultes rebudes a través del formulari de contacte.",
+            "en": "Purpose: to handle and reply to enquiries submitted through the contact form."
           },
           "privacyLegalBasis": {
-            "es": "Legitimación: [COMPLETAR: base jurídica aplicable].",
-            "ca": "Legitimació: [COMPLETAR: base jurídica aplicable].",
-            "en": "Legal basis: [COMPLETE: applicable legal basis]."
+            "es": "Legitimación: el consentimiento del usuario al enviar el formulario.",
+            "ca": "Legitimació: el consentiment de l’usuari en enviar el formulari.",
+            "en": "Legal basis: the user's consent when submitting the form."
           },
           "privacyRecipients": {
-            "es": "Destinatarios: [COMPLETAR: proveedores que tratarán los datos].",
-            "ca": "Destinataris: [COMPLETAR: proveïdors que tractaran les dades].",
-            "en": "Recipients: [COMPLETE: providers that will process the data]."
+            "es": "Destinatarios: los datos personales no se compartirán con terceros.",
+            "ca": "Destinataris: les dades personals no es compartiran amb tercers.",
+            "en": "Recipients: personal data will not be shared with third parties."
           },
           "privacyRetention": {
-            "es": "Conservación: durante el tiempo necesario para atender la consulta y cumplir las obligaciones legales aplicables.",
-            "ca": "Conservació: durant el temps necessari per atendre la consulta i complir les obligacions legals aplicables.",
-            "en": "Retention: as long as needed to handle the enquiry and meet applicable legal obligations."
+            "es": "Conservación: durante el tiempo necesario para atender la consulta o hasta que solicites su supresión, sin perjuicio de las obligaciones legales aplicables.",
+            "ca": "Conservació: durant el temps necessari per atendre la consulta o fins que en sol·licitis la supressió, sens perjudici de les obligacions legals aplicables.",
+            "en": "Retention: for as long as necessary to handle the enquiry or until you request its deletion, without prejudice to applicable legal obligations."
           },
           "privacyRights": {
-            "es": "Derechos: puedes ejercer tus derechos escribiendo a [COMPLETAR: email de contacto].",
-            "ca": "Drets: pots exercir els teus drets escrivint a [COMPLETAR: email de contacte].",
-            "en": "Rights: exercise your rights by writing to [COMPLETE: contact email]."
+            "es": "Derechos: puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición, así como retirar tu consentimiento, escribiendo a hola@llucllull.dev.",
+            "ca": "Drets: pots exercir els teus drets d’accés, rectificació, supressió, limitació, portabilitat i oposició, així com retirar el teu consentiment, escrivint a hola@llucllull.dev.",
+            "en": "Rights: you can exercise your rights of access, rectification, erasure, restriction, data portability and objection, as well as withdraw your consent, by writing to hola@llucllull.dev."
           },
           "privacyLinkLead": {
             "es": "Puedes consultar información adicional en la",
@@ -211,7 +149,11 @@
             "ca": "Enviar missatge",
             "en": "Send message"
           },
-          "sending": { "es": "Enviando…", "ca": "Enviant…", "en": "Sending…" },
+          "sending": {
+            "es": "Enviando…",
+            "ca": "Enviant…",
+            "en": "Sending…"
+          },
           "success": {
             "es": "Mensaje enviado correctamente. Gracias por ponerte en contacto.",
             "ca": "Missatge enviat correctament. Gràcies per contactar.",

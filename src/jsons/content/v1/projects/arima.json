@@ -1,0 +1,242 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "Arima Hotel | Mi trabajo en la web durante Clicktotravel",
+      "ca": "Arima Hotel | La meva feina a la web durant Clicktotravel",
+      "en": "Arima Hotel | My work on the site at Clicktotravel"
+    },
+    "description": {
+      "es": "Cómo trabajé la capa de datos, la migración a SSR y el rendimiento de la web de Arima Hotel dentro del equipo de Clicktotravel.",
+      "ca": "Com vaig treballar la capa de dades, la migració a SSR i el rendiment de la web d'Arima Hotel dins l'equip de Clicktotravel.",
+      "en": "How I worked on the data layer, SSR migration and performance of the Arima Hotel website as part of the Clicktotravel team."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Arima",
+            "ca": "Arima",
+            "en": "Arima"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "La web de Arima Hotel la construyó el equipo de Clicktotravel. Yo me ocupé de una parte concreta: unificar las peticiones a la API, migrar la aplicación a SSR y quitar fricción al proceso de despliegue. Menos protagonismo visual, más trabajo de base.",
+            "ca": "La web d'Arima Hotel la va construir l'equip de Clicktotravel. Jo em vaig ocupar d'una part concreta: unificar les peticions a l'API, migrar l'aplicació a SSR i treure fricció al desplegament. Menys protagonisme visual, més feina de base.",
+            "en": "The Arima Hotel site was built by the Clicktotravel team. I handled a specific slice: consolidating API requests, moving the app to SSR and taking friction out of the deployment process. Less visual fanfare, more groundwork."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Portada de la web de Arima Hotel",
+            "src": "/images/projects/arima/projects-arima.png",
+            "public_id": "hero-section_x5ii8g"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Arima: la parte de la web que no se ve",
+            "ca": "Arima: la part de la web que no es veu",
+            "en": "Arima: the part of the site you don't see"
+          },
+          "subtitle": {
+            "es": "Datos, renderizado y despliegue. Mi trabajo dentro del equipo.",
+            "ca": "Dades, renderitzat i desplegament. La meva feina dins l'equip.",
+            "en": "Data, rendering and deployment. My work inside the team."
+          },
+          "description": {
+            "es": "Entré en el proyecto con una tarea bastante clara: ordenar cómo la web pedía datos. Centralicé las llamadas a la API REST para que disponibilidad e información del hotel no se pidieran cada una por su lado. Eso nos dio un flujo más predecible y menos duplicado, y a mí un mapa bastante preciso de cómo se movía la información por la aplicación.",
+            "ca": "Vaig entrar al projecte amb una tasca bastant clara: ordenar com la web demanava dades. Vaig centralitzar les crides a l'API REST perquè disponibilitat i informació de l'hotel no es demanessin cadascuna pel seu compte. Ens va donar un flux més previsible i menys duplicat, i a mi un mapa força precís de com es movia la informació per l'aplicació.",
+            "en": "I joined with a fairly clear job: tidy up how the site fetched data. I centralised the REST API calls so availability and hotel information weren't requested separately all over the place. It gave us a more predictable, less duplicated flow, and gave me a fairly precise map of how information moved through the app."
+          }
+        },
+        "meta": [
+          {
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Eco-hotel website"
+          },
+          {
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 17 | SSR | Signals + Standalone | REST API | Bitbucket Pipelines | SEO técnico"
+          },
+          {
+            "label": {
+              "es": "Cliente",
+              "ca": "Client",
+              "en": "Client"
+            },
+            "value": "Arima Hotel"
+          },
+          {
+            "label": {
+              "es": "Empresa",
+              "ca": "Empresa",
+              "en": "Company"
+            },
+            "value": "Clicktotravel"
+          },
+          {
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
+            "value": "2025"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver sitio web",
+              "ca": "veure lloc web",
+              "en": "view live site"
+            },
+            "icon": "arrow-right",
+            "url": "https://arimahotel.com/es",
+            "link_type": "external"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Vista de escritorio de la web de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "1_cfzcko"
+            },
+            {
+              "alt": "Detalle de una sección editorial de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "2_l8ktk1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "Pasar de SPA a SSR sin romper el trabajo del resto del equipo.",
+            "ca": "Passar de SPA a SSR sense trencar la feina de la resta de l'equip.",
+            "en": "Moving from SPA to SSR without breaking everyone else's work."
+          },
+          "secondaryText": {
+            "es": "La migración a Server-Side Rendering tenía dos objetivos: que Google encontrara contenido de verdad y que la primera pintura llegara antes. Adapté la base de la aplicación a un modelo híbrido y monté un sistema que decide qué componentes renderizar según la respuesta del servidor. Lo complicado no fue el SSR en sí, sino hacerlo convivir con pantallas que ya funcionaban y con un equipo que seguía entregando en paralelo.",
+            "ca": "La migració a Server-Side Rendering tenia dos objectius: que Google trobés contingut de veritat i que la primera pintura arribés abans. Vaig adaptar la base de l'aplicació a un model híbrid i vaig muntar un sistema que decideix quins components renderitzar segons la resposta del servidor. El complicat no va ser el SSR en si, sinó fer-lo conviure amb pantalles que ja funcionaven i amb un equip que seguia entregant en paral·lel.",
+            "en": "The move to Server-Side Rendering had two goals: give Google real content to index and get the first paint on screen sooner. I adapted the app's base to a hybrid model and built a system that decides which components to render from the server response. The hard part wasn't SSR itself, but making it coexist with screens that already worked and a team still shipping in parallel."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Bloque de contenido de la web de Arima Hotel",
+            "src": "/images/projects/arima/projects-arima.png",
+            "public_id": "3_edumfh"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "Las pipelines de Bitbucket también pasaron por mis manos. Revisé los pasos de build y despliegue para quitar esperas innecesarias y dejar el proceso más corto. No fue un cambio espectacular, pero se notó: menos tiempo mirando cómo compila y más margen para probar lo que acabábamos de subir.",
+            "ca": "Les pipelines de Bitbucket també van passar per les meves mans. Vaig revisar els passos de build i desplegament per treure esperes innecessàries i deixar el procés més curt. No va ser un canvi espectacular, però es va notar: menys temps mirant com compila i més marge per provar el que acabàvem de pujar.",
+            "en": "The Bitbucket pipelines went through my hands too. I reviewed the build and deploy steps to cut unnecessary waiting and shorten the process. Nothing dramatic, but it showed: less time watching a build and more room to test what we'd just pushed."
+          },
+          "rightColumn": {
+            "es": "En la parte visual trabajé con el resto del equipo en componentes reutilizables y en una maquetación que aguantara el diseño del hotel sin volverse frágil. También puse lo que suele quedar para el final: metadatos dinámicos, HTML semántico y datos estructurados. En un hotel, aparecer bien en una búsqueda de habitaciones vale más que cualquier animación.",
+            "ca": "En la part visual vaig treballar amb la resta de l'equip en components reutilitzables i en una maquetació que aguantés el disseny de l'hotel sense tornar-se fràgil. També hi vaig posar el que sol quedar per al final: metadades dinàmiques, HTML semàntic i dades estructurades. En un hotel, sortir bé en una cerca d'habitacions val més que qualsevol animació.",
+            "en": "On the visual side I worked with the rest of the team on reusable components and a layout that could hold the hotel's design without turning brittle. I also handled what usually gets left for last: dynamic metadata, semantic HTML and structured data. For a hotel, showing up properly in a room search is worth more than any animation."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Componentes y estilos de la web de Arima Hotel",
+            "src": "/images/projects/arima/projects-arima.png",
+            "public_id": "4_io2a6g"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "Arima es un buen recordatorio de que una web sostenible no va solo de colores verdes: también de no cargar de más, renderizar a tiempo y no repetir trabajo. Eso lo aprendí allí, con el equipo de Clicktotravel.",
+            "ca": "Arima és un bon recordatori que una web sostenible no va només de colors verds: també de no carregar de més, renderitzar a temps i no repetir feina. Això ho vaig aprendre allà, amb l'equip de Clicktotravel.",
+            "en": "Arima is a good reminder that a sustainable website isn't just green colours: it's also not overloading the page, rendering on time and not doing the same work twice. I learned that there, with the Clicktotravel team."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Home de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "7_wpqu56"
+            },
+            {
+              "alt": "Página de habitaciones de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "5_in9bzz"
+            },
+            {
+              "alt": "Detalle del diseño editorial de Arima",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "8_k2x0xv"
+            },
+            {
+              "alt": "Vista móvil de la web de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "6_pwcwvn"
+            },
+            {
+              "alt": "Página de contacto de Arima Hotel",
+              "src": "/images/projects/arima/projects-arima.png",
+              "public_id": "9_zuketm"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

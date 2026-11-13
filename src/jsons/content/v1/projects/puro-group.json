@@ -1,0 +1,250 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "Puro Group | Web multi-site y SSR (Clicktotravel)",
+      "ca": "Puro Group | Web multi-site i SSR (Clicktotravel)",
+      "en": "Puro Group | Multi-site website and SSR (Clicktotravel)"
+    },
+    "description": {
+      "es": "Mi trabajo en la web de Puro Group: arquitectura multi-site, migración a SSR, rendimiento y componentes de interfaz dentro del equipo de Clicktotravel.",
+      "ca": "La meva feina a la web de Puro Group: arquitectura multi-site, migració a SSR, rendiment i components d'interfície dins l'equip de Clicktotravel.",
+      "en": "My work on the Puro Group site: multi-site architecture, SSR migration, performance and interface components within the Clicktotravel team."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Puro Group",
+            "ca": "Puro Group",
+            "en": "Puro Group"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Puro Group agrupa varios establecimientos con una identidad común y públicos distintos. La web la desarrolló el equipo de Clicktotravel; yo trabajé en la base que comparten, en la migración a SSR y en el rendimiento. Mi objetivo era que añadir una propiedad no significara rehacer la aplicación.",
+            "ca": "Puro Group agrupa diversos establiments amb una identitat comuna i públics diferents. La web la va desenvolupar l'equip de Clicktotravel; jo vaig treballar en la base que comparteixen, en la migració a SSR i en el rendiment. El meu objectiu era que afegir una propietat no signifiqués refer l'aplicació.",
+            "en": "Puro Group brings together several properties with a shared identity and different audiences. The site was built by the Clicktotravel team; I worked on the base they share, the SSR migration and performance. My goal was that adding a property wouldn't mean rebuilding the app."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Portada de la web de Puro Group",
+            "src": "/images/projects/puro-group/projects-puro.png",
+            "public_id": "10_ryuna7"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Puro Group: una base, varias marcas",
+            "ca": "Puro Group: una base, diverses marques",
+            "en": "Puro Group: one base, several brands"
+          },
+          "subtitle": {
+            "es": "Multi-site sin multiplicar el mantenimiento.",
+            "ca": "Multi-site sense multiplicar el manteniment.",
+            "en": "Multi-site without multiplying maintenance."
+          },
+          "description": {
+            "es": "El reto no era hacer una web bonita para cada hotel, sino evitar que cada hotel acabara con su propia web imposible de mantener. Trabajé en la arquitectura multi-site, en cómo se resolvía el contenido según la propiedad y en una capa de peticiones a la API que fuera común. La marca cambiaba; la forma de construir, no.",
+            "ca": "El repte no era fer una web bonica per a cada hotel, sinó evitar que cada hotel acabés amb la seva pròpia web impossible de mantenir. Vaig treballar en l'arquitectura multi-site, en com es resolia el contingut segons la propietat i en una capa de peticions a l'API que fos comuna. La marca canviava; la manera de construir, no.",
+            "en": "The challenge wasn't making a pretty site for each hotel, but stopping each hotel from ending up with its own unmaintainable site. I worked on the multi-site architecture, how content was resolved per property, and a shared API request layer. The brand changed; the way we built it didn't."
+          }
+        },
+        "meta": [
+          {
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Multi-property hotel group"
+          },
+          {
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 17 | SSR | Multi-site | Signals + Standalone | Bitbucket Pipelines"
+          },
+          {
+            "label": {
+              "es": "Cliente",
+              "ca": "Client",
+              "en": "Client"
+            },
+            "value": "Puro Group"
+          },
+          {
+            "label": {
+              "es": "Empresa",
+              "ca": "Empresa",
+              "en": "Company"
+            },
+            "value": "Clicktotravel"
+          },
+          {
+            "label": {
+              "es": "Localización",
+              "ca": "Localització",
+              "en": "Location"
+            },
+            "value": "Mallorca, Balearic Islands"
+          },
+          {
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
+            "value": "2025"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver sitio web",
+              "ca": "veure lloc web",
+              "en": "view live site"
+            },
+            "icon": "arrow-right",
+            "url": "https://purogroup.com/es/home",
+            "link_type": "external"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Vista de escritorio de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "5_gnypnv"
+            },
+            {
+              "alt": "Detalle de una propiedad de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "4_fkrsbv"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "Migrar a SSR y enrutar contenido distinto sin duplicar la aplicación.",
+            "ca": "Migrar a SSR i encaminar contingut diferent sense duplicar l'aplicació.",
+            "en": "Moving to SSR and routing different content without duplicating the app."
+          },
+          "secondaryText": {
+            "es": "Pasamos de una SPA a una arquitectura híbrida con SSR para mejorar indexación y primera carga. Además del renderizado en servidor, trabajé en el enrutamiento dinámico y en un motor que decide qué secciones se montan según la respuesta. En un multi-site eso es delicado: un cambio en la base afecta a varias marcas a la vez, y hay que poder probarlo.",
+            "ca": "Vam passar d'una SPA a una arquitectura híbrida amb SSR per millorar indexació i primera càrrega. A més del renderitzat en servidor, vaig treballar en l'encaminament dinàmic i en un motor que decideix quines seccions es munten segons la resposta. En un multi-site això és delicat: un canvi a la base afecta diverses marques alhora, i cal poder provar-lo.",
+            "en": "We moved from a SPA to a hybrid SSR architecture to improve indexing and first load. Beyond server rendering, I worked on dynamic routing and an engine that decides which sections mount based on the response. On a multi-site that's delicate: one change to the base affects several brands at once, and you have to be able to test it."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Bloque de contenido multi-site de Puro Group",
+            "src": "/images/projects/puro-group/projects-puro.png",
+            "public_id": "3_zvq9ee"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "Rendimiento fue otra parte importante. Revisé la carga diferida de imágenes, el peso del bundle y los tiempos de respuesta. No se trata de sacar un 100 en una auditoría, sino de que la web no se sienta pesada en un móvil con mala cobertura, que es como la va a usar media clientela.",
+            "ca": "Rendiment va ser una altra part important. Vaig revisar la càrrega diferida d'imatges, el pes del bundle i els temps de resposta. No es tracta de treure un 100 en una auditoria, sinó que la web no es noti pesada en un mòbil amb mala cobertura, que és com la farà servir mitja clientela.",
+            "en": "Performance was another big part. I reviewed lazy image loading, bundle weight and response times. It's not about scoring 100 in an audit, but making sure the site doesn't feel heavy on a phone with poor signal, which is how half the audience will use it."
+          },
+          "rightColumn": {
+            "es": "En la interfaz trabajé en componentes interactivos y en la capa de estilos globales con Angular, buscando que el lujo de la marca no se rompiera al cambiar de dispositivo. Mantener la consistencia entre varias webs es más difícil de lo que parece: cada detalle que se duplica acaba divergiendo.",
+            "ca": "A la interfície vaig treballar en components interactius i en la capa d'estils globals amb Angular, buscant que el luxe de la marca no es trenqués en canviar de dispositiu. Mantenir la consistència entre diverses webs és més difícil del que sembla: cada detall que es duplica acaba divergint.",
+            "en": "On the interface I worked on interactive components and the global style layer with Angular, making sure the brand's luxury didn't break when the device changed. Keeping consistency across several sites is harder than it looks: every duplicated detail eventually drifts."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Componentes y estilos de Puro Group",
+            "src": "/images/projects/puro-group/projects-puro.png",
+            "public_id": "9_of150j"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "Puro Group me dejó una lección bastante práctica: escalar no es añadir páginas, es evitar que cada página nueva invente su propia forma de hacer lo mismo.",
+            "ca": "Puro Group em va deixar una lliçó força pràctica: escalar no és afegir pàgines, és evitar que cada pàgina nova inventi la seva pròpia manera de fer el mateix.",
+            "en": "Puro Group left me with a practical lesson: scaling isn't adding pages, it's stopping each new page from inventing its own way of doing the same thing."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Home de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "7_hgvoml"
+            },
+            {
+              "alt": "Página de una propiedad de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "8_hyzmge"
+            },
+            {
+              "alt": "Detalle del diseño editorial de Puro",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "2_awn5ak"
+            },
+            {
+              "alt": "Vista móvil de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "1_cih9dm"
+            },
+            {
+              "alt": "Página de contacto de Puro Group",
+              "src": "/images/projects/puro-group/projects-puro.png",
+              "public_id": "0_f2wzde"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

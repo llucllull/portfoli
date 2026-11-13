@@ -6,7 +6,7 @@
     "start": "ng cache clean && ng serve portfoli --configuration development",
     "dev": "ng serve",
     "clean": "rimraf dist routes.txt",
-    "prebuild": "npm run routes",
+    "prebuild": "pnpm run routes",
     "routes": "node src/app/scripts/prerender-routes.mjs",
     "sitemap": "node src/app/scripts/generate-sitemap.mjs",
     "build": "ng build",

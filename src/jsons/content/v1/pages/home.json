@@ -2,14 +2,14 @@
   "template": "home",
   "seo": {
     "title": {
-      "es": "Lluc Llull | Desarrollador Front End",
-      "ca": "Lluc Llull | Desenvolupador Front End",
-      "en": "Lluc Llull | Front End Developer"
+      "es": "Lluc Llull | Desarrollador front-end en Mallorca",
+      "ca": "Lluc Llull | Desenvolupador front-end a Mallorca",
+      "en": "Lluc Llull | Front-end developer in Mallorca"
     },
-	"description": {
-      "es": "Ingeniero de software especializado en crear aplicaciones web escalables y experiencias digitales de alto rendimiento. ¡Explora mi mundo de código!",
-      "ca": "Enginyer de programari especialitzat en crear aplicacions web escalables i experiències digitals d'alt rendiment. Explora el meu codi!",
-      "en": "Software Engineer focused on building scalable web applications and high-performance digital experiences. Explore my world of code!"
+    "description": {
+      "es": "Soy Lluc Llull, desarrollador front-end en Mallorca. Trabajo con Angular, cuido el rendimiento y construyo webs que se entienden y se sienten rápidas.",
+      "ca": "Sóc Lluc Llull, desenvolupador front-end a Mallorca. Treballo amb Angular, cuido el rendiment i construeixo webs que s'entenen i es senten ràpides.",
+      "en": "I'm Lluc Llull, a front-end developer in Mallorca. I work with Angular, care about performance and build websites that make sense and feel fast."
     }
   },
   "body": [
@@ -60,16 +60,15 @@
             "url": "",
             "icon": "arrow-right",
             "label": {
-              "es": "más sobre mi",
+              "es": "más sobre mí",
               "ca": "més sobre mi",
               "en": "more about me"
             },
             "link_type": "internal"
           }
         ],
-		"variant": "text",
-		"multimedia": {
-		}
+        "variant": "text",
+        "multimedia": {}
       }
     }
   ]

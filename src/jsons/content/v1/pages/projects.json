@@ -2,14 +2,14 @@
   "template": "projects",
   "seo": {
     "title": {
-      "es": "Proyectos y Portfolio | Lluc Llull - Soluciones Digitales",
-      "ca": "Projectes i Portfolio | Lluc Llull - Solucions Digitals",
-      "en": "Projects & Portfolio | Lluc Llull - Digital Solutions"
+      "es": "Proyectos | Lluc Llull · Webs y producto digital",
+      "ca": "Projectes | Lluc Llull · Webs i producte digital",
+      "en": "Projects | Lluc Llull · Websites and digital product"
     },
     "description": {
-      "es": "Galería de proyectos destacados en desarrollo web y software. Desde arquitecturas complejas hasta interfaces minimalistas.",
-      "ca": "Recull de projectes destacats en desenvolupament web. Solucions tecnològiques des de la idea fins a la implementació.",
-      "en": "A showcase of my featured work in web development and software design. From complex backends to sleek frontends."
+      "es": "Una selección de webs que he construido o en las que he puesto buena parte del código. Hoteles, alojamientos y proyectos propios. Cada uno con su problema y su solución.",
+      "ca": "Una selecció de webs que he construït o en les quals he posat bona part del codi. Hotels, allotjaments i projectes propis. Cadascun amb el seu problema i la seva solució.",
+      "en": "A selection of websites I've built or worked on. Hotels, accommodation and personal projects. Each one with its own problem and solution."
     }
   },
   "body": [
@@ -26,8 +26,9 @@
         },
         "multimedia": {
           "image": {
-            "alt": "Proyectos",
-            "src": "/images/pages/projects.avif"
+            "alt": "Proyectos de Lluc Llull",
+            "src": "/images/pages/projects.avif",
+            "public_id": "projects_y8j39a"
           }
         },
         "items": [
@@ -38,24 +39,38 @@
               "en": "Puro Group"
             },
             "description": {
-              "es": "Rediseño y desarrollo de la plataforma digital para el ecosistema de lujo de Puro Group. Una experiencia de alta fidelidad centrada en el rendimiento y la escalabilidad, desarrollada formando parte del equipo de ClickToTravel.",
-              "ca": "Redisseny i desenvolupament de la plataforma digital per a l'ecosistema de luxe de Puro Group. Una experiència d'alta fidelitat centrada en el rendiment i l'escalabilitat, desenvolupada formant part de l'equip de ClickToTravel",
-              "en": "Redesign and development of the digital platform for the Puro Group luxury ecosystem. A high-fidelity experience focused on performance and scalability, developed as part of the ClickToTravel development team."
+              "es": "La plataforma multi-site de los hoteles de Puro Group en Mallorca. Dentro del equipo de Clicktotravel trabajé en el sistema de rutas, las peticiones a la API y el paso a SSR, con una base común para todos los establecimientos.",
+              "ca": "La plataforma multi-site dels hotels de Puro Group a Mallorca. Dins l'equip de Clicktotravel vaig treballar en el sistema de rutes, les peticions a l'API i el pas a SSR, amb una base comuna per a tots els establiments.",
+              "en": "The multi-site platform for Puro Group's hotels in Mallorca. At Clicktotravel I worked on the routing system, API requests and the move to SSR, with one shared base for every property."
             },
             "tags": [
               "Angular 17",
               "SSR",
+              "Multi-site",
               "Signals + Standalone",
-              "Enterprise Architecture",
+              "API REST",
               "Bitbucket"
             ],
             "multimedia": {
               "image": {
-                "alt": "Puro Group",
-                "src": "/images/projects/puro-group/projects-puro.png"
+                "alt": "Portada de la web de Puro Group",
+                "src": "/images/projects/puro-group/projects-puro.png",
+                "public_id": "projects-puro_eo0bsy"
               }
             },
-            "buttons": []
+            "buttons": [
+              {
+                "page": "projects/puro-group",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "puro-group",
+                  "ca": "puro-group",
+                  "en": "puro-group"
+                },
+                "link_type": "internal"
+              }
+            ]
           },
           {
             "title": {
@@ -64,25 +79,39 @@
               "en": "Lluc Llull"
             },
             "description": {
-              "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 22 y SSG para garantizar una navegación instantánea.",
-              "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 22 i SSG per garantir una navegació instantània.",
-              "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 22 and SSG to ensure instantaneous navigation."
+              "es": "Mi portfolio, y también mi banco de pruebas. Angular 22, contenido en JSON, SSG en tres idiomas y despliegue en Vercel con los assets en Cloudflare R2. Una web que se compone desde los datos y no desde páginas sueltas.",
+              "ca": "El meu portfoli, i també el meu banc de proves. Angular 22, contingut en JSON, SSG en tres idiomes i desplegament a Vercel amb els assets a Cloudflare R2. Una web que es compon des de les dades i no des de pàgines soltes.",
+              "en": "My portfolio, and my testing ground too. Angular 22, JSON-driven content, SSG in three languages and deployment on Vercel with assets on Cloudflare R2. A site composed from data rather than separate pages."
             },
             "tags": [
               "Angular 22",
               "Signals + Standalone",
-              "i18n Multi-language",
-              "SSG",
-              "Vercel",
-              "Cloudflare R2"
+              "Zoneless",
+              "i18n ES/CA/EN",
+              "SSG (prerender)",
+              "Vercel + Cloudflare R2",
+              "Vitest"
             ],
             "multimedia": {
               "image": {
-                "alt": "Lluc Llull",
-                "src": "/images/projects/portfoli/projects-portfoli.png"
+                "alt": "Portada del portfolio de Lluc Llull",
+                "src": "/images/projects/portfoli/projects-portfoli.png",
+                "public_id": "projects-portfoli_ecool2"
               }
             },
-            "buttons": []
+            "buttons": [
+              {
+                "page": "projects/lluc-llull",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "lluc llull",
+                  "ca": "lluc llull",
+                  "en": "lluc llull"
+                },
+                "link_type": "internal"
+              }
+            ]
           },
           {
             "title": {
@@ -91,25 +120,39 @@
               "en": "UI Kit"
             },
             "description": {
-              "es": "Sistema de diseño modular y librería de componentes UI desarrollada con Angular. Una arquitectura exalable y documentada en Storybook para garantizar consistencia visual en múltiples proyectos.",
-              "ca": "Sistema de disseny modular i llibreria de components UI desenvolupada amb Angular. Una arquitectura escalable i documentada a Storybook per garantir consistència visual en múltiples projectes.",
-              "en": "Modular design system and UI component library developed with Angular. A scalable architecture documented in Storybook to guarantee visual consistency across multiple projects."
+              "es": "Una librería Angular publicada en npm con 35 componentes y 16 entry points. Nació para dejar de repetir cabeceras, footers y formularios en cada proyecto. Incluye Storybook, tests en Vitest y publicación automática desde GitHub Actions.",
+              "ca": "Una llibreria Angular publicada a npm amb 35 components i 16 entry points. Va néixer per deixar de repetir capçaleres, footers i formularis a cada projecte. Inclou Storybook, tests amb Vitest i publicació automàtica des de GitHub Actions.",
+              "en": "An Angular library published on npm with 35 components and 16 entry points. It started as a way to stop rebuilding headers, footers and forms on every project. It includes Storybook, Vitest tests and automated publishing from GitHub Actions."
             },
             "tags": [
               "Angular 22",
-              "Signals + Standalone",
-              "Storybook",
-              "Github Actions (CI/CD)",
-              "Angular Material",
-              "Jasmine/Karma"
+              "Standalone + Signals",
+              "Storybook 10",
+              "Vitest",
+              "GitHub Actions",
+              "ng-packagr",
+              "pnpm"
             ],
             "multimedia": {
               "image": {
-                "alt": "UI Kit",
-                "src": "/images/projects/ui-kit/projects-ui-kit.png"
+                "alt": "Portada del UI Kit de Lluc Llull",
+                "src": "/images/projects/ui-kit/projects-ui-kit.png",
+                "public_id": "projects-ui-kit_wzefb6"
               }
             },
-            "buttons": []
+            "buttons": [
+              {
+                "page": "projects/ui-kit",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "ui kit",
+                  "ca": "ui kit",
+                  "en": "ui kit"
+                },
+                "link_type": "internal"
+              }
+            ]
           },
           {
             "title": {
@@ -118,24 +161,38 @@
               "en": "Arima"
             },
             "description": {
-              "es": "Desarrollo de la plataforma digital para Arima Hotel, referente en arquitectura Passivhaus y sostenibilidad. Una interfaz fluida que traslada el concepto de lujo orgánico y bienestar al entorno web, realizada durante mi etapa en ClickToTravel.",
-              "ca": "Desenvolupament de la plataforma digital per a Arima Hotel, referent en arquitectura Passivhaus i sostenibilitat. Una interfície fluida que trasllada el concepte de luxe orgànic i benestar a l'entorn web, realitzada durant la meva etapa a ClickToTravel.",
-              "en": "Development of the digital platform for Arima Hotel, a benchmark in Passivhaus architecture and sustainability. A fluid interface that brings the concept of organic luxury and well-being to the web environment, created during my time at ClickToTravel."
+              "es": "La web de Arima Hotel, un hotel Passivhaus donde la calma también forma parte del producto. En Clicktotravel me ocupé de la capa de peticiones a la API, la migración a SSR y los estilos, para que la experiencia se sintiera ligera también en móvil.",
+              "ca": "La web d'Arima Hotel, un hotel Passivhaus on la calma també forma part del producte. A Clicktotravel em vaig ocupar de la capa de peticions a l'API, la migració a SSR i els estils, perquè l'experiència se sentís lleugera també al mòbil.",
+              "en": "Arima Hotel's website, a Passivhaus hotel where calm is part of the product. At Clicktotravel I handled the API request layer, the SSR migration and the styles, so the experience felt light on mobile too."
             },
             "tags": [
               "Angular 17",
               "SSR",
               "Signals + Standalone",
-              "SEO Optimized",
+              "API REST",
+              "SEO técnico",
               "Bitbucket"
             ],
             "multimedia": {
               "image": {
-                "alt": "Arima",
-                "src": "/images/projects/arima/projects-arima.png"
+                "alt": "Portada de la web de Arima Hotel",
+                "src": "/images/projects/arima/projects-arima.png",
+                "public_id": "projects-arima_pa88ax"
               }
             },
-            "buttons": []
+            "buttons": [
+              {
+                "page": "projects/arima",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "arima",
+                  "ca": "arima",
+                  "en": "arima"
+                },
+                "link_type": "internal"
+              }
+            ]
           },
           {
             "title": {
@@ -144,78 +201,78 @@
               "en": "Blanco"
             },
             "description": {
-              "es": "Ecosistema digital para Blanco Hotel Formentera, integrando un motor de reservas de alto rendimiento. Una interfaz minimalista que refleja el espíritu mediterráneo, desarrollada como parte del equipo de ClickToTravel.",
-              "ca": "Ecosistema digital per a Blanco Hotel Formentera, integrant un motor de reserves d'alt rendiment. Una interfície minimalista que reflecteix l'esperit mediterrani, desenvolupada com a part de l'equip de ClickToTravel.",
-              "en": "Digital ecosystem for Blanco Hotel Formentera, integrating a high-performance booking engine. A minimalist interface reflecting the Mediterranean spirit, developed as part of the ClickToTravel team."
+              "es": "Blanco Hotel Formentera: mucho blanco, mucho aire y un motor de reservas que no podía hacer esperar a nadie. En Clicktotravel integré la reserva, ordené el CSS y pulí la interfaz hasta que se sintió igual de cuidada en cualquier pantalla.",
+              "ca": "Blanco Hotel Formentera: molt de blanc, molt d'aire i un motor de reserves que no podia fer esperar ningú. A Clicktotravel vaig integrar la reserva, vaig ordenar el CSS i vaig polir la interfície fins que es va sentir igual de cuidada a qualsevol pantalla.",
+              "en": "Blanco Hotel Formentera: plenty of white, plenty of space and a booking engine that couldn't keep anyone waiting. At Clicktotravel I integrated the booking flow, cleaned up the CSS and refined the interface until it felt equally considered on any screen."
             },
             "tags": [
               "Angular 17",
               "SSR",
-              "Booking Engine Integration",
+              "Booking Engine",
               "Signals + Standalone",
+              "CSS architecture",
               "Bitbucket"
             ],
             "multimedia": {
               "image": {
-                "alt": "Blanco",
-                "src": "/images/projects/blanco/projects-blanco.png"
+                "alt": "Portada de la web de Blanco Hotel Formentera",
+                "src": "/images/projects/blanco/projects-blanco.png",
+                "public_id": "projects-blanco_jeilrb"
               }
             },
-            "buttons": []
+            "buttons": [
+              {
+                "page": "projects/blanco",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "blanco",
+                  "ca": "blanco",
+                  "en": "blanco"
+                },
+                "link_type": "internal"
+              }
+            ]
           },
-		      {
+          {
             "title": {
               "es": "Numad Studios",
               "ca": "Numad Studios",
               "en": "Numad Studios"
             },
             "description": {
-              "es": "Plataforma digital para Numad Studios en San Sebastián, un concepto de alojamiento híbrido para nòmadas digitales y estudiantes. Una interfaz técnica y funcional que integra criterios de sostenibilidad Passivhaus, desarrollada como parte del equipo de ClickToTravel.",
-              "ca": "Plataforma digital per a Numad Studios a Sant Sebastià, un concepte d'allotjament híbrid per a nòmades digitals i estudiants. Una interfície tècnica i funcional que integra criteris de sostenibilitat Passivhaus, desenvolupada com a part de l'equip de ClickToTravel.",
-              "en": "Digital platform for Numad Studios in San Sebastian, a hybrid accommodation concept for digital nomads and students. A technical and functional interface integrating Passivhaus sustainability criteria, developed as part of the ClickToTravel team."
+              "es": "Una plataforma para nómadas digitales y estudiantes en San Sebastián. En Clicktotravel trabajé la capa de datos para que tarifas y disponibilidad no se quedaran viejas, y los componentes que las mostraban en móvil.",
+              "ca": "Una plataforma per a nòmades digitals i estudiants a Sant Sebastià. A Clicktotravel vaig treballar la capa de dades perquè tarifes i disponibilitat no es quedessin velles, i els components que les mostraven al mòbil.",
+              "en": "A platform for digital nomads and students in San Sebastian. At Clicktotravel I worked on the data layer so rates and availability stayed fresh, and on the components that displayed them on mobile."
             },
             "tags": [
               "Angular 17",
               "SSR",
-              "Booking Engine Integration",
+              "API REST",
               "Signals + Standalone",
-              "Passivhaus Digital Branding",
-              "Bitbucket"
+              "CI/CD Bitbucket",
+              "SEO técnico"
             ],
             "multimedia": {
               "image": {
-                "alt": "Numad Studios",
-                "src": "/images/projects/numad/projects-numad.png"
+                "alt": "Portada de la web de Numad Studios",
+                "src": "/images/projects/numad/projects-numad.png",
+                "public_id": "projects-numad_rsbryk"
               }
             },
-            "buttons": []
-          },
-          {
-            "title": {
-              "es": "Tent Hotels",
-              "ca": "Tent Hotels",
-              "en": "Tent Hotels"
-            },
-            "description": {
-              "es": "Desarrollo de la plataforma multihotel para tent Hotels, redefiniendo el concepto vacacional con un enfoque 'Camp-Life' urbano. Una arquitectura escalable que gestiona múltiples establecimientos bajo una experiencia de usuario dinámica y optimizada, realizada integrando el equipo de ClickToTravel.",
-              "ca": "Desenvolupament de la plataforma multihotel per a tent Hotels, redefinint el concepte vacacional amb un enfocament 'Camp-Life' urbà. Una arquitectura escalable que gestiona múltiples establiments sota una experiència d'usuari dinàmica i optimitzada, realitzada integrant l'equip de ClickToTravel.",
-              "en": "Development of the multi-hotel platform for tent Hotels, redefining the holiday concept with an urban 'Camp-Life' approach. A scalable architecture managing multiple properties under a dynamic and optimized user experience, created as part of the ClickToTravel team."
-            },
-            "tags": [
-              "Angular 17",
-              "Mobile First",
-              "Signals + Standalone",
-              "Multi-property Architecture",
-              "REST API Integration",
-              "Bitbucket"
-            ],
-            "multimedia": {
-              "image": {
-                "alt": "Tent Hotels",
-                "src": "/images/projects/tent/projects-tent.png"
+            "buttons": [
+              {
+                "page": "projects/numad-studios",
+                "url": "",
+                "icon": "",
+                "label": {
+                  "es": "numad-studios",
+                  "ca": "numad-studios",
+                  "en": "numad-studios"
+                },
+                "link_type": "internal"
               }
-            },
-            "buttons": []
+            ]
           }
         ]
       }

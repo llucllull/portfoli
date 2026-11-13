@@ -1,0 +1,242 @@
+{
+  "template": "project-detail",
+  "seo": {
+    "title": {
+      "es": "Numad Studios | Datos, SSR y rendimiento (Clicktotravel)",
+      "ca": "Numad Studios | Dades, SSR i rendiment (Clicktotravel)",
+      "en": "Numad Studios | Data, SSR and performance (Clicktotravel)"
+    },
+    "description": {
+      "es": "Mi trabajo en la web de Numad Studios: capa de peticiones a la API, SSR, componentes reutilizables y pipelines de despliegue dentro del equipo de Clicktotravel.",
+      "ca": "La meva feina a la web de Numad Studios: capa de peticions a l'API, SSR, components reutilitzables i pipelines de desplegament dins l'equip de Clicktotravel.",
+      "en": "My work on the Numad Studios site: API request layer, SSR, reusable components and deployment pipelines within the Clicktotravel team."
+    }
+  },
+  "body": [
+    {
+      "component": "hero-section",
+      "props": {
+        "texts": {
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "title": {
+            "es": "Numad Studios",
+            "ca": "Numad Studios",
+            "en": "Numad Studios"
+          },
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          },
+          "text": {
+            "es": "Numad Studios es otro proyecto de Clicktotravel en el que participé. Un alojamiento híbrido para estancias largas, con un público que compara, pregunta y reserva desde el móvil. Mi trabajo estuvo en la capa de datos, en el rendimiento y en dejar el despliegue en un sitio predecible.",
+            "ca": "Numad Studios és un altre projecte de Clicktotravel en què vaig participar. Un allotjament híbrid per a estades llargues, amb un públic que compara, pregunta i reserva des del mòbil. La meva feina va ser a la capa de dades, al rendiment i a deixar el desplegament en un lloc previsible.",
+            "en": "Numad Studios is another Clicktotravel project I worked on. Hybrid accommodation for longer stays, with an audience that compares, asks questions and books from their phone. My work sat in the data layer, performance and making deployment predictable."
+          },
+          "highlight": {
+            "es": "",
+            "ca": "",
+            "en": ""
+          }
+        },
+        "buttons": [],
+        "variant": "image",
+        "multimedia": {
+          "image": {
+            "alt": "Portada de la web de Numad Studios",
+            "src": "/images/projects/numad/projects-numad.png",
+            "public_id": "10_wvnxiu"
+          }
+        }
+      }
+    },
+    {
+      "component": "split-showcase",
+      "props": {
+        "texts": {
+          "title": {
+            "es": "Numad: una web para quedarse semanas",
+            "ca": "Numad: una web per quedar-s'hi setmanes",
+            "en": "Numad: a website for staying weeks"
+          },
+          "subtitle": {
+            "es": "Peticiones ordenadas, componentes reutilizables y entregas más cortas.",
+            "ca": "Peticions ordenades, components reutilitzables i lliuraments més curts.",
+            "en": "Tidy requests, reusable components and shorter releases."
+          },
+          "description": {
+            "es": "El proyecto tenía que explicar un modelo de alojamiento poco habitual y, a la vez, responder rápido a consultas de disponibilidad y tarifas. Centralicé las llamadas a la API para que la información no se pidiera desde diez sitios distintos y trabajé con el equipo en los componentes que mostraban esos datos. Cuando el flujo está claro, la interfaz se vuelve mucho más fácil de mantener.",
+            "ca": "El projecte havia d'explicar un model d'allotjament poc habitual i, alhora, respondre ràpid a consultes de disponibilitat i tarifes. Vaig centralitzar les crides a l'API perquè la informació no es demanés des de deu llocs diferents i vaig treballar amb l'equip en els components que mostraven aquestes dades. Quan el flux és clar, la interfície es torna molt més fàcil de mantenir.",
+            "en": "The project had to explain an unusual accommodation model while responding quickly to availability and rate queries. I centralised the API calls so information wasn't requested from ten different places, and worked with the team on the components that displayed it. When the flow is clear, the interface becomes much easier to maintain."
+          }
+        },
+        "meta": [
+          {
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Hybrid accommodation platform"
+          },
+          {
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 17 | SSR | REST API | Signals + Standalone | Bitbucket Pipelines | SEO técnico"
+          },
+          {
+            "label": {
+              "es": "Cliente",
+              "ca": "Client",
+              "en": "Client"
+            },
+            "value": "Numad Studios"
+          },
+          {
+            "label": {
+              "es": "Empresa",
+              "ca": "Empresa",
+              "en": "Company"
+            },
+            "value": "Clicktotravel"
+          },
+          {
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
+            "value": "2024"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver sitio web",
+              "ca": "veure lloc web",
+              "en": "view live site"
+            },
+            "icon": "arrow-right",
+            "url": "https://numadstudios.com/es",
+            "link_type": "external"
+          }
+        ]
+      }
+    },
+    {
+      "component": "asymmetric-media",
+      "props": {
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Vista de escritorio de Numad Studios",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "3_dxuspl"
+            },
+            {
+              "alt": "Detalle de los estudios y espacios de Numad",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "6_cbc5pi"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "component": "media-intro",
+      "props": {
+        "texts": {
+          "highlightedText": {
+            "es": "SSR y componentes que se montan según lo que responde el servidor.",
+            "ca": "SSR i components que es munten segons el que respon el servidor.",
+            "en": "SSR and components mounted according to what the server returns."
+          },
+          "secondaryText": {
+            "es": "La arquitectura híbrida con SSR nos permitió servir contenido indexable y, al mismo tiempo, mantener partes de la web que se renderizan según la respuesta del servidor. No era solo SEO: también era evitar que el usuario mirara una pantalla vacía mientras llegaban los datos.",
+            "ca": "L'arquitectura híbrida amb SSR ens va permetre servir contingut indexable i, alhora, mantenir parts de la web que es renderitzen segons la resposta del servidor. No era només SEO: també era evitar que l'usuari mirés una pantalla buida mentre arribaven les dades.",
+            "en": "The hybrid SSR architecture let us serve indexable content while keeping parts of the site that render from the server response. It wasn't just SEO: it also kept users from staring at an empty screen while data arrived."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Bloque de contenido de Numad Studios",
+            "src": "/images/projects/numad/projects-numad.png",
+            "public_id": "1_r3u0kp"
+          }
+        }
+      }
+    },
+    {
+      "component": "columns-media-stacked",
+      "props": {
+        "texts": {
+          "leftColumn": {
+            "es": "En Bitbucket trabajé sobre las pipelines: build, tests y despliegue. Recortamos pasos y tiempos para que una entrega no se convirtiera en una espera. Prefiero pipelines aburridas: si no hablamos de ellas, es que funcionan.",
+            "ca": "A Bitbucket vaig treballar sobre les pipelines: build, tests i desplegament. Vam retallar passos i temps perquè un lliurament no es convertís en una espera. Prefereixo pipelines avorrides: si no en parlem, és que funcionen.",
+            "en": "On Bitbucket I worked on the pipelines: build, tests and deploy. We cut steps and waiting time so a release wouldn't turn into a hold-up. I prefer boring pipelines: if nobody talks about them, they're working."
+          },
+          "rightColumn": {
+            "es": "La parte de estilos y SEO también cayó de mi lado. Componentes responsivos, HTML semántico y datos estructurados para un negocio que vive de que lo encuentren. Añadir eso al final suele salir caro; hacerlo mientras se construye, no.",
+            "ca": "La part d'estils i SEO també va caure del meu costat. Components responsius, HTML semàntic i dades estructurades per a un negoci que viu de que el trobin. Afegir-ho al final sol sortir car; fer-ho mentre es construeix, no.",
+            "en": "Styles and SEO landed on my side too. Responsive components, semantic HTML and structured data for a business that lives on being found. Bolting that on at the end usually costs more; doing it while building doesn't."
+          }
+        },
+        "multimedia": {
+          "image": {
+            "alt": "Componentes y estilos de Numad Studios",
+            "src": "/images/projects/numad/projects-numad.png",
+            "public_id": "7_gojlba"
+          }
+        }
+      }
+    },
+    {
+      "component": "mosaic-grid",
+      "props": {
+        "texts": {
+          "editorialText": {
+            "es": "Numad mezcla estancias cortas y largas, y la web tenía que hacer lo mismo sin complicarse. Esa idea de simplicidad bajo un modelo complejo es lo que me llevo del proyecto.",
+            "ca": "Numad barreja estades curtes i llargues, i la web havia de fer el mateix sense complicar-se. Aquesta idea de simplicitat sota un model complex és el que m'emporto del projecte.",
+            "en": "Numad mixes short and long stays, and the site had to do the same without getting complicated. That idea of simplicity under a complex model is what I take from the project."
+          }
+        },
+        "multimedia": {
+          "images": [
+            {
+              "alt": "Home de Numad Studios",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "9_p6uo41"
+            },
+            {
+              "alt": "Página de estudios de Numad",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "5_a721cg"
+            },
+            {
+              "alt": "Detalle del diseño editorial de Numad",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "8_oval8k"
+            },
+            {
+              "alt": "Vista móvil de Numad Studios",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "2_fb5npl"
+            },
+            {
+              "alt": "Página de contacto de Numad Studios",
+              "src": "/images/projects/numad/projects-numad.png",
+              "public_id": "4_iryqrs"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

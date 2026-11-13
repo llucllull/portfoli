@@ -2,14 +2,14 @@
   "template": "project-detail",
   "seo": {
     "title": {
-      "es": "Lluc Llull - Portfolio Minimalista y de Alto Rendimiento",
-      "ca": "Lluc Llull - Portfoli Minimalista i d'Alt Rendiment",
-      "en": "Lluc Llull - Minimalist & High-Performance Portfolio"
+      "es": "Lluc Llull | Portfolio personal con Angular 22 y SSG",
+      "ca": "Lluc Llull | Portfoli personal amb Angular 22 i SSG",
+      "en": "Lluc Llull | Personal portfolio built with Angular 22 and SSG"
     },
     "description": {
-      "es": "Explora el portafolio personal de Lluc Llull. Un espacio experimental de minimalismo visual y alto rendimiento desarrollado con Angular 22, Signals y SSG.",
-      "ca": "Explora el portfoli personal de Lluc Llull. Un espai experimental de minimalisme visual i alt rendiment desenvolupat amb Angular 22, Signals i SSG.",
-      "en": "Explore the personal portfolio of Lluc Llull. An experimental space focused on visual minimalism and high performance built with Angular 22, Signals, and SSG."
+      "es": "El portfolio de Lluc Llull: contenido en JSON, Angular 22 con Signals, SSG, tres idiomas y despliegue en Vercel con assets en Cloudflare R2.",
+      "ca": "El portfoli de Lluc Llull: contingut en JSON, Angular 22 amb Signals, SSG, tres idiomes i desplegament a Vercel amb assets a Cloudflare R2.",
+      "en": "Lluc Llull's portfolio: JSON-driven content, Angular 22 with Signals, SSG, three languages and deployment on Vercel with assets on Cloudflare R2."
     }
   },
   "body": [
@@ -17,25 +17,25 @@
       "component": "hero-section",
       "props": {
         "texts": {
-          "pretitle": { 
-            "es": "", 
-            "ca": "", 
-            "en": "" 
+          "pretitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
           },
           "title": {
             "es": "Lluc Llull - Portfolio",
             "ca": "Lluc Llull - Portfoli",
             "en": "Lluc Llull - Portfolio"
           },
-          "subtitle": { 
-            "es": "", 
-            "ca": "", 
-            "en": "" 
+          "subtitle": {
+            "es": "",
+            "ca": "",
+            "en": ""
           },
           "text": {
-            "es": "Mi espacio personal diseñado bajo una arquitectura de alto rendimiento y minimalismo visual. Un proyecto experimental donde implemento Angular 22 y SSG para garantizar una navegación instantánea.",
-            "ca": "El meu espai personal dissenyat sota una arquitectura d'alt rendiment i minimalisme visual. Un projecte experimental on implemento Angular 22 i SSG per garantir una navegació instantània.",
-            "en": "My personal space designed under a high-performance architecture and visual minimalism. An experimental project where I implement Angular 22 and SSG to ensure instantaneous navigation."
+            "es": "Mi portfolio también es mi banco de pruebas. Aquí junto Angular 22, Signals, generación estática y contenido en JSON para ver hasta dónde puedo llevar la velocidad sin sacrificar el diseño.",
+            "ca": "El meu portfoli també és el meu banc de proves. Aquí ajunto Angular 22, Signals, generació estàtica i contingut en JSON per veure fins on puc portar la velocitat sense sacrificar el disseny.",
+            "en": "My portfolio doubles as my testing ground. It brings together Angular 22, Signals, static generation and JSON-driven content to see how far I can push speed without compromising the design."
           },
           "highlight": {
             "es": "",
@@ -47,7 +47,7 @@
         "variant": "image",
         "multimedia": {
           "image": {
-            "alt": "Lluc Llull",
+            "alt": "Home del portfolio de Lluc Llull",
             "src": "/images/projects/portfoli/projects-portfoli.png",
             "public_id": "projects-portfoli_ecool2"
           }
@@ -59,33 +59,57 @@
       "props": {
         "texts": {
           "title": {
-            "es": "Lluc Llull Portfolio",
-            "ca": "Lluc Llull Portfoli",
-            "en": "Lluc Llull Portfolio"
+            "es": "Lluc Llull: una web que se construye desde los datos",
+            "ca": "Lluc Llull: una web que es construeix des de les dades",
+            "en": "Lluc Llull: a website built from data"
           },
           "subtitle": {
-            "es": "Un oasis de rendimiento, código limpio y estilo.",
-            "ca": "Un oasi de rendiment, codi net i estil.",
-            "en": "An oasis of performance, clean code, and style."
+            "es": "Menos plantilla, más sistema.",
+            "ca": "Menys plantilla, més sistema.",
+            "en": "Less template, more system."
           },
           "description": {
-            "es": "El reto principal consistió en unificar un diseño extremadamente limpio con una infraestructura técnica impecable. Se priorizó la experiencia de usuario eliminando tiempos de carga innecesarios mediante técnicas modernas de renderizado estático.",
-            "ca": "El repte principal va consistir a unificar un disseny extremadament net amb una infraestructura tècnica impecable. Es va prioritzar l'experiència d'usuari eliminant temps de càrrega innecessaris mitjançant tècniques modernes de renderització estàtica.",
-            "en": "The main challenge was to unify an extremely clean design with an impeccable technical infrastructure. User experience was prioritized by eliminating unnecessary loading times through modern static rendering techniques."
+            "es": "La web no está montada a base de páginas sueltas. Cada página se compone desde JSON: el contenido decide qué bloques aparecen y en qué orden. Un registro de componentes traduce esos datos a Angular, así que puedo añadir una sección o cambiar un texto sin tocar la estructura. El resultado es un portfolio que se mantiene vivo sin recompilar por cualquier frase.",
+            "ca": "La web no està muntada a base de pàgines soltes. Cada pàgina es compon des de JSON: el contingut decideix quins blocs apareixen i en quin ordre. Un registre de components tradueix aquestes dades a Angular, així que puc afegir una secció o canviar un text sense tocar l'estructura. El resultat és un portfoli que es manté viu sense recompilar per qualsevol frase.",
+            "en": "This site isn't a pile of separate pages. Each page is composed from JSON: the content decides which blocks appear and in what order. A component registry turns that data into Angular, so I can add a section or change a line of copy without touching the structure. The result is a portfolio that stays alive without a rebuild for every sentence."
           }
         },
         "meta": [
           {
-            "label": { "es": "Categoría", "ca": "Categoria", "en": "Category" },
-            "value": "Personal Portfolio / Experimental Lab"
+            "label": {
+              "es": "Categoría",
+              "ca": "Categoria",
+              "en": "Category"
+            },
+            "value": "Portfolio personal / laboratorio"
           },
           {
-            "label": { "es": "Tecnologías", "ca": "Tecnologies", "en": "Techstack" },
-            "value": "Angular 22 | Signals | Standalone | SSG | Vercel | Cloudflare R2"
+            "label": {
+              "es": "Tecnologías",
+              "ca": "Tecnologies",
+              "en": "Techstack"
+            },
+            "value": "Angular 22 | Signals + Standalone | Zoneless | SSG (prerender) | i18n ES/CA/EN | Vercel | Cloudflare R2 + DNS | Vitest"
           },
           {
-            "label": { "es": "Año", "ca": "Any", "en": "Year" },
+            "label": {
+              "es": "Año",
+              "ca": "Any",
+              "en": "Year"
+            },
             "value": "2026"
+          }
+        ],
+        "buttons": [
+          {
+            "label": {
+              "es": "ver sitio web",
+              "ca": "veure lloc web",
+              "en": "view live site"
+            },
+            "icon": "arrow-right",
+            "url": "https://llucllull.dev/es",
+            "link_type": "external"
           }
         ]
       }
@@ -94,12 +118,20 @@
       "component": "asymmetric-media",
       "props": {
         "multimedia": {
-          "image": {
-            "alt": "Lluc Llull",
-            "src": "/images/projects/portfoli/projects-portfoli.png",
-            "public_id": "projects-portfoli_ecool2"
-          }
-        }
+          "images": [
+            {
+              "alt": "Vista móvil del portfolio de Lluc Llull",
+              "src": "/images/projects/portfoli/projects-portfoli.png",
+              "public_id": "projects-portfoli_ecool2"
+            },
+            {
+              "alt": "Vista de escritorio de la home de llucllull.dev",
+              "src": "/images/pages/about/about01.webp",
+              "public_id": "about01_rup5bu"
+            }
+          ]
+        },
+        "direction": "left"
       }
     },
     {
@@ -107,23 +139,24 @@
       "props": {
         "texts": {
           "highlightedText": {
-            "es": "Navegación instantánea impulsada por una arquitectura moderna basada en Signals y compilación estática.",
-            "ca": "Navegació instantània impulsada per una arquitectura moderna basada en Signals i compilació estàtica.",
-            "en": "Instantaneous navigation powered by a modern architecture built upon Signals and static generation."
+            "es": "SSG para servir HTML listo. Signals para que la interfaz no se quede atrás.",
+            "ca": "SSG per servir HTML a punt. Signals perquè la interfície no es quedi enrere.",
+            "en": "SSG to serve ready-made HTML. Signals so the interface keeps up."
           },
           "secondaryText": {
-            "es": "Gracias al despliegue optimizado en Vercel y el almacenamiento de recursos estáticos en Cloudflare R2, el portafolio logra métricas perfectas en Core Web Vitals, redefiniendo la velocidad de carga.",
-            "ca": "Gràcies al desplegament optimitzat a Vercel i l'emmagatzematge de recursos estàtics a Cloudflare R2, el portfoli aconsegueix mètriques perfectes a Core Web Vitals, redefinint la velocitat de càrrega.",
-            "en": "Thanks to optimized deployment on Vercel and asset storage on Cloudflare R2, the portfolio achieves flawless Core Web Vitals metrics, redefining loading speeds."
+            "es": "Cada ruta se prerenderiza en tres idiomas y se sirve como HTML estático desde Vercel. Los assets viven en Cloudflare R2, detrás de un CDN y con el DNS gestionado en Cloudflare. En el navegador, Angular 22 funciona sin zonas: los Signals mueven el estado y la hidratación incremental termina de activar lo que hace falta. El usuario ve la página antes de que el JavaScript acabe de arrancar.",
+            "ca": "Cada ruta es prerenderitza en tres idiomes i se serveix com a HTML estàtic des de Vercel. Els assets viuen a Cloudflare R2, darrere d'un CDN i amb el DNS gestionat a Cloudflare. Al navegador, Angular 22 funciona sense zones: els Signals mouen l'estat i la hidratació incremental acaba d'activar el que cal. L'usuari veu la pàgina abans que el JavaScript acabi d'arrencar.",
+            "en": "Every route is prerendered in three languages and served as static HTML from Vercel. Assets live on Cloudflare R2 behind a CDN, with DNS managed in Cloudflare. In the browser, Angular 22 runs zoneless: Signals drive state and incremental hydration activates only what's needed. Users see the page before JavaScript has finished booting."
           }
         },
         "multimedia": {
           "image": {
-            "alt": "Lluc Llull",
+            "alt": "Arquitectura del portfolio: JSON, Angular 22, SSG, Vercel y Cloudflare R2",
             "src": "/images/projects/portfoli/projects-portfoli.png",
             "public_id": "projects-portfoli_ecool2"
           }
-        }
+        },
+        "direction": "left"
       }
     },
     {
@@ -131,23 +164,24 @@
       "props": {
         "texts": {
           "leftColumn": {
-            "es": "La implementación nativa de i18n Multi-language asegura un alcance internacional fluido, adaptando la experiencia completa al idioma del usuario de forma nativa sin penalizar el rendimiento global.",
-            "ca": "La implementació nativa d'i18n Multi-language assegura un abast internacional fluid, adaptant l'experiència completa a l'idioma de l'usuari de forma nativa sense penalitzar el rendiment global.",
-            "en": "The native i18n Multi-language implementation ensures a fluid international reach, seamlessly adapting the full experience to the user's language without penalizing global performance."
+            "es": "El contenido está en tres idiomas y no como un añadido. El JSON guarda las traducciones, la URL lleva el idioma y el cambio se resuelve sin recargar de más. Añadir una cadena nueva es editar un archivo, no perseguir textos por componentes.",
+            "ca": "El contingut està en tres idiomes i no com un afegit. El JSON guarda les traduccions, la URL porta l'idioma i el canvi es resol sense recarregar de més. Afegir una cadena nova és editar un fitxer, no perseguir textos per components.",
+            "en": "Content exists in three languages, not as an afterthought. JSON holds the translations, the URL carries the language and switching resolves without unnecessary reloads. Adding a new string means editing a file, not hunting text across components."
           },
           "rightColumn": {
-            "es": "El ecosistema de Angular 22 con componentes Standalone potencia un desarrollo modular y limpio. Cada píxel responde a una intención de minimalismo visual que elimina distracciones para centrarse en el contenido.",
-            "ca": "L'ecosistema d'Angular 22 amb components Standalone potencia un desenvolupament modular i net. Cada píxel respon a una intenció de minimalisme visual que elimina distraccions per centrar-se en el contingut.",
-            "en": "The Angular 22 ecosystem with Standalone components drives a modular and clean development structure. Every pixel reflects a visual minimalism designed to eliminate distractions and center focus on content."
+            "es": "Uso Angular 22 con componentes standalone y una librería propia, @lluc_llull/ui-lib, que también mantengo. La estética es deliberadamente sobria: mucho espacio, tipografía clara y movimiento justo. El diseño no compite con el contenido; lo sostiene. Vitest cubre la lógica y el build se comprueba antes de publicar.",
+            "ca": "Utilitzo Angular 22 amb components standalone i una llibreria pròpia, @lluc_llull/ui-lib, que també mantinc. L'estètica és deliberadament sòbria: molt d'espai, tipografia clara i moviment just. El disseny no competeix amb el contingut; el sosté. Vitest cobreix la lògica i el build es comprova abans de publicar.",
+            "en": "I use Angular 22 with standalone components and my own library, @lluc_llull/ui-lib, which I also maintain. The look is deliberately restrained: plenty of space, clear typography and just enough motion. Design doesn't compete with content; it holds it up. Vitest covers the logic and the build is checked before publishing."
           }
         },
         "multimedia": {
           "image": {
-            "alt": "Lluc Llull",
+            "alt": "Detalle de la interfaz y la tipografía del portfolio",
             "src": "/images/projects/portfoli/projects-portfoli.png",
             "public_id": "projects-portfoli_ecool2"
           }
-        }
+        },
+        "direction": "left"
       }
     },
     {
@@ -155,17 +189,39 @@
       "props": {
         "texts": {
           "editorialText": {
-            "es": "Un diseño editorial digital concebido para exponer ideas, experimentos y código de la forma más pura y eficiente posible.",
-            "ca": "Un disseny editorial digital concebut per exposar idees, experiments i codi de la forma més pura i eficient possible.",
-            "en": "A digital editorial layout conceived to showcase ideas, experiments, and code in the purest and most efficient way possible."
+            "es": "Un portfolio no tiene que demostrar todo lo que sé. Tiene que dejar claro cómo trabajo.",
+            "ca": "Un portfoli no ha de demostrar tot el que sé. Ha de deixar clar com treballo.",
+            "en": "A portfolio doesn't have to prove everything I know. It has to make clear how I work."
           }
         },
         "multimedia": {
-          "image": {
-            "alt": "Lluc Llull",
-            "src": "/images/projects/portfoli/projects-portfoli.png",
-            "public_id": "projects-portfoli_ecool2"
-          }
+          "images": [
+            {
+              "alt": "Home del portfolio en español",
+              "src": "/images/projects/portfoli/projects-portfoli.png",
+              "public_id": "projects-portfoli_ecool2"
+            },
+            {
+              "alt": "Página de proyectos del portfolio",
+              "src": "/images/pages/about/about01.webp",
+              "public_id": "about01_rup5bu"
+            },
+            {
+              "alt": "Selector de idioma del portfolio",
+              "src": "/images/projects/portfoli/projects-portfoli.png",
+              "public_id": "projects-portfoli_ecool2"
+            },
+            {
+              "alt": "Página de contacto del portfolio",
+              "src": "/images/pages/about/about01.webp",
+              "public_id": "about01_rup5bu"
+            },
+            {
+              "alt": "Composición de las vistas móvil y de escritorio del portfolio",
+              "src": "/images/projects/portfoli/projects-portfoli.png",
+              "public_id": "projects-portfoli_ecool2"
+            }
+          ]
         }
       }
     }
